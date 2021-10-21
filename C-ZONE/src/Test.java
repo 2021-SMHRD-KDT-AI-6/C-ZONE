@@ -10,5 +10,6 @@ public class Test {
 		System.out.println("³ªµµ Ä¿¹ÔÇÒ²¨¾ß");
 		
 	    System.out.println("ÇÏÀ×");
+	    System.out.println("¾È³ç");
 	}
 }
