@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.smhrd.mybatis.BoardMapper">
+	
+	<select id="Index" resultType="kr.smhrd.util.SuperVO">
+		select * from articles, carping_sites 
+		where articles.article_num = carping_sites.article_num 
+		order by articles.article_num desc
+	</select>
+	
+</mapper>
