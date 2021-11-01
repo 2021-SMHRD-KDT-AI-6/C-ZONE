@@ -1622,3 +1622,115 @@ table a,
     font-size: 1.8rem;
   }
 }
+
+
+/* ======================== 서리 ======================== */
+
+/* ======================== log-in / sign-up ======================== */
+.signupMain {
+  background-color: whitesmoke;
+}
+
+.signup_hr {
+  width: 500px;
+  align: center;
+  border: 1px solid black;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.e-mail_i,
+.password_i {
+  width: 30px;
+  height: 30px;
+}
+
+#log-in {
+  margin: 0 auto;
+  text-align: center;
+  padding: 120px 0px;
+}
+
+.log_menu_list {
+  color: black;
+  margin: 10px auto;
+  padding: 8px;
+  border: 2px solid green;
+  border-radius: 5px;
+  background-color: yellowgreen;
+  width: 300px;
+  cursor: pointer;
+}
+
+.log_menu_list:hover {
+  background-color: lightgreen;
+}
+
+.log_in_menu {
+  margin: 10px auto;
+  border: 2px solid green;
+  border-radius: 5px;
+  width: 300px;
+}
+
+.e-mail {
+  display: flex;
+  margin: 5px;
+}
+
+.e-mail_i {
+  padding-right: 5px;
+}
+
+.e-mail_text {
+  width: 95%;
+}
+
+.password {
+  display: flex;
+  margin: 5px;
+}
+
+.password_i {
+  padding-right: 6px;
+  padding-left: 2px;
+}
+
+.password_text {
+  width: 95%;
+}
+
+.sign_up {
+  color: black;
+  height: 50px;
+  line-height: 40px;
+  font-weight: bold;
+  font-size: 20px;
+  box-sizing: border-box;
+  border: 4px solid green;
+  border-radius: 5px;
+  background-color: yellowgreen;
+  width: 300px;
+  margin: 20px auto;
+  cursor: pointer;
+}
+
+.sign_up:hover {
+  background-color: springgreen;
+}
+
+.log_service_menu {
+  color: black;
+  display: inline;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 3px 7px;
+  cursor: pointer;
+}
+
+.log_service_menu:hover {
+  border: 2px solid black;
+}
+
+/* ========================  ======================== */
+
