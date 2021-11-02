@@ -84,7 +84,7 @@
         <h6 class="heading">±Û¾²±â</h6>
         <ul>
           <li><a href="Index.do">Home</a></li>
-          <li><a href="login.do">Write</a></li>
+          <li><a href="write.do">Write</a></li>
         </ul>
         <!-- ################################################################################################ -->
       </div>
