@@ -539,6 +539,10 @@ File: Layout CSS
 .news_feed a {
   color: black;
 }
+.thumbnail {
+  width: 300px;
+  height: 300px;
+}
 .contents {
   margin-left: 20px;
 }
