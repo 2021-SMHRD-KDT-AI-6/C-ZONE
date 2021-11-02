@@ -1736,5 +1736,101 @@ table a,
   cursor: pointer;
 }
 
+<<<<<<< HEAD
+=======
+.sign_up:hover {
+  background-color: springgreen;
+}
+
+.log_service_menu {
+  color: black;
+  display: inline;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 3px 7px;
+  cursor: pointer;
+}
+
+.log_service_menu:hover {
+  border: 2px solid black;
+}
+/* 마이페이지 */
+.pushTop {
+  margin-top: 190px;
+}
+#profile {
+  width: 180px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  float: right;
+}
+#member_profile_pic {
+  border-radius: 100%;
+}
+#member_name {
+  text-align: center;
+  padding-top: 18px;
+  font-size: 30px;
+}
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-6/C-ZONE.git
 /* ========================  ======================== */
+/* 글쓰기페이지 */
+#write_ h1 {
+  margin: 0;
+}
+#write_first {
+  display: flex;
+  margin-bottom: 20px;
+}
+#write_first > #write_title {
+  padding-right: 20px;
+  line-height: 43px;
+}
+#write_first > input {
+  width: 1080px;
+}
+#write_second {
+  display: flex;
+}
+#write_second > #write_pic {
+  line-height: 66px;
+  padding-right: 20px;
+}
+#write_second > #write_pic_file {
+  line-height: 66px;
+}
+#write_second > #write_level_form {
+  display: flex;
+  justify-content: space-between;
+}
+#write_second > #write_level_form > #write_level {
+  line-height: 66px;
+  margin-right: 10px;
+}
+#write_second > #write_level_form > .write_level_check {
+  line-height: 66px;
+}
+#write_second > #write_level_form > input[type="radio"] {
+  margin: 27px 10px 0 10px;
+}
+#write_second > #write_level_form > #carping_level_explanation {
+  margin-left: 50px;
+}
+#write_third {
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+#write_third > #write_location {
+  padding: 20px 0 20px 0;
+}
+#write_fourth {
+  margin-top: 20px;
+}
+#write_fourth > #write_complete {
+  margin-top: 20px;
+  width: 100px;
+  height: 50px;
+  float: right;
+}
 
