@@ -113,33 +113,31 @@ Licence URI: https://www.os-templates.com/template-terms
 <div class="signupMain">
       <!-- log-in -->
       <div id="log-in">
-        <div class="log_menu">
-          <div class="log_menu_list">카카오톡으로 로그인</div>
-          <div class="log_menu_list">Facebook으로 로그인</div>
-          <div class="log_menu_list">네이버로 로그인</div>
-        </div>
-  
+
         <hr class="signup_hr"/>
-  
+
           <div class="log_in_menu">
-          <div class="e-mail">       
-            <img class=e-mail_i src="images/demo/signup_logos/mail.png"></img>
-            <input class="e-mail_text" type="text" placeholder="Czon@Zmail.com"></input>
+          <div class="kakao">
+            <a href="https://kauth.kakao.com/oauth/authorize?client_id=9fad670e64c751e53f5f34e89c6305ae&redirect_uri=http://localhost:8081/practice3&response_type=code"></a>         
+            <img class=kakao_i src="images/demo/signup_logos/kakao_logo.png"></img>
+            <div class="kakao_text">Kakao 로그인</div>
           </div>
         </div>
         <div class="log_in_menu">
-          <div class="password">
-            <img class=password_i src="images/demo/signup_logos/password.png"></img>
-            <input class="password_text" type="password" maxlength="5" placeholder="비밀번호"></input>
+          <div class="facebook">
+            <img class=facebook_i src="images/demo/signup_logos/facebook_logo.png"></img>
+            <div class="facebook_text">Facebook 로그인</div>
           </div>
         </div>
-  
-          <div class="sign_up">로그인</div>
-  
-        <div class="log_service">
-          <div class="log_service_menu">비밀번호 재설정</div>
-          <div class="log_service_menu">회원가입</div>
+        <div class="log_in_menu">
+          <div class="naver">
+            <img class=naver_i src="images/demo/signup_logos/naver_logo.png"></img>
+            <div class="naver_text">Naver 로그인</div>
+          </div>
         </div>
+
+        <hr class="signup_hr"/>
+
       </div>
 </div>
 <!-- ################################################################################################ -->
