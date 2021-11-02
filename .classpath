@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="C-ZONE/src"/>
+	<classpathentry kind="src" path="practice3/src"/>
+	<classpathentry kind="lib" path="practice3/WebContent/WEB-INF/lib/lombok.jar"/>
+	<classpathentry kind="lib" path="practice3/WebContent/WEB-INF/lib/mybatis-3.4.6.jar"/>
+	<classpathentry kind="lib" path="practice3/WebContent/WEB-INF/lib/mysql-connector-java-8.0.26.jar"/>
+	<classpathentry kind="output" path="practice3/build/classes"/>
+</classpath>

@@ -122,14 +122,14 @@ Licence URI: https://www.os-templates.com/template-terms
         <hr class="signup_hr"/>
   
           <div class="log_in_menu">
-          <div class="e-mail">
-            <img class=e-mail_i src="/images/demo/signup_logos/mail.png"></img>
-            <input class="e-mail_text" type="text" placeholder="Gzon@Zmail.com"></input>
+          <div class="e-mail">       
+            <img class=e-mail_i src="images/demo/signup_logos/mail.png"></img>
+            <input class="e-mail_text" type="text" placeholder="Czon@Zmail.com"></input>
           </div>
         </div>
         <div class="log_in_menu">
           <div class="password">
-            <img class=password_i src="/images/demo/signup_logos/password.png"></img>
+            <img class=password_i src="images/demo/signup_logos/password.png"></img>
             <input class="password_text" type="password" maxlength="5" placeholder="비밀번호"></input>
           </div>
         </div>
