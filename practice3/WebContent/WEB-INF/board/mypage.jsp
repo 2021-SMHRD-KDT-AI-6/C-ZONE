@@ -4,7 +4,7 @@
 	pageEncoding="utf-8"%>
 <%
 	// Object Cating(객체형변환-제일중요)
-ArrayList<SuperVO> list = (ArrayList<SuperVO>) request.getAttribute("list");
+SuperVO vo = (SuperVO)request.getAttribute("vo");
 String cpath = request.getContextPath();
 %>
 <!DOCTYPE html>
@@ -127,36 +127,20 @@ Licence URI: https://www.os-templates.com/template-terms
 							</a>
 							<div class="article_top">
 								<div class="article_top_up">
-									<strong class="mb_id"><a href="#">닉네임</a></strong>
-									<div class="reg_date">2021-10-23</div>
+									<strong class="mb_id"><a href="#"><%=vo.getMb_id() %></a></strong>
+									<div class="reg_date"><%=vo.getReg_date() %></div>
 								</div>
 								<div class="article_top_down">
-									<a href="#"> 낙원을 장식하는 천자만흥이 어디 있으랴 </a>
+									<a href="#"><%=vo.getArticle_title() %> </a>
 									<div class="article_top_down_right">
-										<div class="likes">좋아요 100</div>
-										<div class="article_cnt">조회수 500</div>
-										<div class="carpinglevel">난이도 상</div>
+										<div class="likes">좋아요 <%=vo.getLikes() %></div>
+										<div class="article_cnt">조회수 <%=vo.getArticle_cnt() %></div>
+										<div class="carpinglevel">난이도<%=vo.getCarping_level() %></div>
 									</div>
 								</div>
 							</div>
 						</header>
-						<article>Lorem ipsum dolor sit amet consectetur
-							adipisicing elit. Iste accusamus, labore velit unde voluptatem,
-							debitis dolor culpa itaque pariatur laudantium repellendus
-							delectus aliquid voluptatum neque possimus ullam voluptate. Ut,
-							sunt! Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-							Repellat, praesentium sit sint nulla voluptatibus dolor
-							consectetur itaque, velit eos explicabo amet tempora dolore rem
-							laborum officiis assumenda atque nesciunt exercitationem? Lorem
-							ipsum dolor sit amet consectetur adipisicing elit. Enim vel odio
-							quidem, impedit explicabo incidunt maiores vitae et magnam eius
-							soluta quas molestiae nulla nobis aperiam. Iure suscipit eligendi
-							excepturi? Lorem ipsum dolor sit amet consectetur adipisicing
-							elit. Nesciunt officiis quidem temporibus ducimus alias officia
-							ipsum reprehenderit fugit eius sapiente dolor tempore repudiandae
-							repellat placeat, iste aliquid architecto reiciendis id. Lorem
-							ipsum dolor sit amet consectetur adipisicing elit. Id quas labore
-							animi, rem ipsa aliquam quia a. Commodi vero deleniti</article>
+						<article><%=vo.getArticle_content() %></article>
 					</div>
 				</div>
 				<div class="news_feed">

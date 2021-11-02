@@ -29,4 +29,16 @@ public class ArticleDAO {
 		session.close(); // ¹Ý³³(*)
 		return list;
 	}
+	
+	public SuperVO mypage(String mb_id) {
+		SqlSession session = sqlSessionFactory.openSession();
+		SuperVO vo = session.selectOne("mypage",mb_id);
+		return vo;
+	}
+	
+	public SuperVO memberpage(String mb_id) {
+		SqlSession session = sqlSessionFactory.openSession();
+		SuperVO vo = session.selectOne("memberpage",mb_id);
+		return vo;
+	}
 }

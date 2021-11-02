@@ -10,4 +10,17 @@
 		order by articles.article_num desc
 	</select>
 	
+	<select id="mypage" resultType="kr.smhrd.util.SuperVO">
+		select m.mb_profile_pic, a.*, c.*
+		from articles a, carping_sites c, members m
+		where a.article_num=c.article_num and a.mb_id=m.mb_id and a.mb_id='mb_id 01'
+		order by a.article_num desc
+	</select>
+	
+	<select id="memberpage" resultType="kr.smhrd.util.SuperVO">
+		select m.mb_profile_pic, a.*, c.*
+		from articles a, carping_sites c, members m
+		where a.article_num=c.article_num and a.mb_id=m.mb_id and a.mb_id='mb_id 02'
+		order by a.article_num desc
+	</select>
 </mapper>
