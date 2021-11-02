@@ -4,7 +4,9 @@ import java.util.HashMap;
 
 import kr.smhrd.controller.BoardIndexController;
 import kr.smhrd.controller.BoardLoginController;
+import kr.smhrd.controller.BoardMypageController;
 import kr.smhrd.controller.BoardSignupController;
+import kr.smhrd.controller.BoardWriteController;
 import kr.smhrd.controller.Controller;
 
 public class HandlerMapping {
@@ -18,6 +20,9 @@ public class HandlerMapping {
 		mappings.put("/Index.do", new BoardIndexController());
 		mappings.put("/login.do", new BoardLoginController());
 		mappings.put("/signup.do", new BoardSignupController());
+		mappings.put("/mypage.do", new BoardMypageController());
+		mappings.put("/memberpage.do", new BoardMypageController());
+		mappings.put("/write.do", new BoardWriteController());
 	}
 	public Controller getController(String key) {
 		return mappings.get(key);

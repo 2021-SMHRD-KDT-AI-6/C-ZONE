@@ -27,6 +27,10 @@ Licence URI: https://www.os-templates.com/template-terms
 	media="all" />
 </head>
 <body id="top">
+	<!-- ################################################################################################ -->
+	<!-- ################################################################################################ -->
+	<!-- ################################################################################################ -->
+	<!-- Top Background Image Wrapper -->
 	<div class="bgded overlay"
 		style="background-image: url('images/demo/backgrounds/01.png')">
 		<!-- ################################################################################################ -->
@@ -80,57 +84,131 @@ Licence URI: https://www.os-templates.com/template-terms
 		<!-- ################################################################################################ -->
 		<!-- ################################################################################################ -->
 		<div id="breadcrumb" class="hoc clear">
+			<div id="profile">
+				<img id="member_profile_pic" src="https://via.placeholder.com/180"
+					alt="프로필사진" /> <span id="member_name">김동선</span>
+			</div>
 			<!-- ################################################################################################ -->
-			<h6 class="heading">로그인</h6>
-			<ul>
-				<li><a href="Index.do">Home</a></li>
-				<li><a href="login.do">Log-in</a></li>
-			</ul>
+			<div class="pushTop">
+				<h6 class="heading">마이페이지</h6>
+				<ul>
+					<li><a href="Index.do">Home</a></li>
+					<li><a href="mypage.do">MY PAGE</a></li>
+				</ul>
+			</div>
 			<!-- ################################################################################################ -->
 		</div>
 		<!-- ################################################################################################ -->
 	</div>
+	<!-- End Top Background Image Wrapper -->
 	<!-- ################################################################################################ -->
 	<!-- ################################################################################################ -->
 	<!-- ################################################################################################ -->
-	<div class="signupMain">
-		<!-- log-in -->
-		<div id="log-in">
-			<div class="log_menu">
-				<div class="log_menu_list">카카오톡으로 로그인</div>
-				<div class="log_menu_list">Facebook으로 로그인</div>
-				<div class="log_menu_list">네이버로 로그인</div>
-			</div>
-
-			<hr class="signup_hr" />
-
-			<div class="log_in_menu">
-				<div class="e-mail">
-					<img class=e-mail_i src="images/demo/signup_logos/mail.png"></img>
-					<input class="e-mail_text" type="text" placeholder="Czon@Zmail.com"></input>
+	<div class="wrapper row3">
+		<main class="hoc container clear">
+			<section id="overview">
+				<div class="sectiontitle">
+					<p class="heading underline font-x2">정복지</p>
 				</div>
-			</div>
-			<div class="log_in_menu">
-				<div class="password">
-					<img class=password_i src="images/demo/signup_logos/password.png"></img>
-					<input class="password_text" type="password" maxlength="5"
-						placeholder="비밀번호"></input>
+				<img src="https://via.placeholder.com/1140x500" alt="트렌드" />
+				<hr class="btmspace-80" />
+
+				<div class="sectiontitle">
+					<p class="heading underline font-x2">내가 쓴 게시물</p>
 				</div>
-			</div>
-
-			<div class="sign_up">로그인</div>
-
-			<div class="log_service">
-				<div class="log_service_menu">비밀번호 재설정</div>
-				<div class="log_service_menu">회원가입</div>
-			</div>
-		</div>
+				<div class="news_feed">
+					<a href="#"> <img class="thumbnail"
+						src="https://via.placeholder.com/300" alt="썸네일" />
+					</a>
+					<div class="contents">
+						<header>
+							<a href="#"> <img class="profile_pic"
+								src="https://via.placeholder.com/70" alt="프로필사진" />
+							</a>
+							<div class="article_top">
+								<div class="article_top_up">
+									<strong class="mb_id"><a href="#">닉네임</a></strong>
+									<div class="reg_date">2021-10-23</div>
+								</div>
+								<div class="article_top_down">
+									<a href="#"> 낙원을 장식하는 천자만흥이 어디 있으랴 </a>
+									<div class="article_top_down_right">
+										<div class="likes">좋아요 100</div>
+										<div class="article_cnt">조회수 500</div>
+										<div class="carpinglevel">난이도 상</div>
+									</div>
+								</div>
+							</div>
+						</header>
+						<article>Lorem ipsum dolor sit amet consectetur
+							adipisicing elit. Iste accusamus, labore velit unde voluptatem,
+							debitis dolor culpa itaque pariatur laudantium repellendus
+							delectus aliquid voluptatum neque possimus ullam voluptate. Ut,
+							sunt! Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+							Repellat, praesentium sit sint nulla voluptatibus dolor
+							consectetur itaque, velit eos explicabo amet tempora dolore rem
+							laborum officiis assumenda atque nesciunt exercitationem? Lorem
+							ipsum dolor sit amet consectetur adipisicing elit. Enim vel odio
+							quidem, impedit explicabo incidunt maiores vitae et magnam eius
+							soluta quas molestiae nulla nobis aperiam. Iure suscipit eligendi
+							excepturi? Lorem ipsum dolor sit amet consectetur adipisicing
+							elit. Nesciunt officiis quidem temporibus ducimus alias officia
+							ipsum reprehenderit fugit eius sapiente dolor tempore repudiandae
+							repellat placeat, iste aliquid architecto reiciendis id. Lorem
+							ipsum dolor sit amet consectetur adipisicing elit. Id quas labore
+							animi, rem ipsa aliquam quia a. Commodi vero deleniti</article>
+					</div>
+				</div>
+				<div class="news_feed">
+					<img class="thumbnail" src="https://via.placeholder.com/300"
+						alt="썸네일" />
+					<div class="contents">
+						<header>
+							<a href="#"> <img class="profile_pic"
+								src="https://via.placeholder.com/70" alt="프로필사진" />
+							</a>
+							<div class="article_top">
+								<div class="article_top_up">
+									<strong class="mb_id"><a href="#">닉네임</a></strong>
+									<div class="reg_date">2021-10-23</div>
+								</div>
+								<div class="article_top_down">
+									<a href="#"> 낙원을 장식하는 천자만흥이 어디 있으랴 </a>
+									<div class="article_top_down_right">
+										<div class="likes">좋아요 100</div>
+										<div class="article_cnt">조회수 500</div>
+										<div class="carpinglevel">난이도 상</div>
+									</div>
+								</div>
+							</div>
+						</header>
+						<article>Lorem ipsum dolor sit amet consectetur
+							adipisicing elit. Iste accusamus, labore velit unde voluptatem,
+							debitis dolor culpa itaque pariatur laudantium repellendus
+							delectus aliquid voluptatum neque possimus ullam voluptate. Ut,
+							sunt! Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+							Repellat, praesentium sit sint nulla voluptatibus dolor
+							consectetur itaque, velit eos explicabo amet tempora dolore rem
+							laborum officiis assumenda atque nesciunt exercitationem? Lorem
+							ipsum dolor sit amet consectetur adipisicing elit. Enim vel odio
+							quidem, impedit explicabo incidunt maiores vitae et magnam eius
+							soluta quas molestiae nulla nobis aperiam. Iure suscipit eligendi
+							excepturi? Lorem ipsum dolor sit amet consectetur adipisicing
+							elit. Nesciunt officiis quidem temporibus ducimus alias officia
+							ipsum reprehenderit fugit eius sapiente dolor tempore repudiandae
+							repellat placeat, iste aliquid architecto reiciendis id. Lorem
+							ipsum dolor sit amet consectetur adipisicing elit. Id quas labore
+							animi, rem ipsa aliquam quia a. Commodi vero deleniti</article>
+					</div>
+				</div>
+			</section>
+		</main>
 	</div>
 	<!-- ################################################################################################ -->
 	<!-- ################################################################################################ -->
 	<!-- ################################################################################################ -->
 	<div class="bgded overlay row4"
-		style="background-image: url('../images/demo/backgrounds/05.png');">
+		style="background-image: url('../images/demo/backgrounds/05.png')">
 		<footer id="footer" class="hoc clear">
 			<!-- ################################################################################################ -->
 			<div id="ctdetails" class="clear">
@@ -176,7 +254,7 @@ Licence URI: https://www.os-templates.com/template-terms
 			</p>
 			<p class="fl_right">
 				Template by <a target="_blank" href="https://www.os-templates.com/"
-					title="Free Website Templates">OS Templates</a>
+					title="Free Website Templates"> OS Templates </a>
 			</p>
 			<!-- ################################################################################################ -->
 		</div>
