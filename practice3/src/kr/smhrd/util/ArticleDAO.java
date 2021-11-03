@@ -41,4 +41,11 @@ public class ArticleDAO {
 		SuperVO vo = session.selectOne("memberpage",mb_id);
 		return vo;
 	}
+	
+	public void write(SuperVO vo) {
+		SqlSession session=sqlSessionFactory.openSession(); // Connection 
+	      session.insert("write", vo); //insert SQL실행
+	      session.commit(); //완료
+	      session.close();  //반납(*)
+	}
 }

@@ -5,22 +5,26 @@
 <mapper namespace="kr.smhrd.mybatis.BoardMapper">
 	
 	<select id="Index" resultType="kr.smhrd.util.SuperVO">
-		select * from articles, carping_sites 
-		where articles.article_num = carping_sites.article_num 
-		order by articles.article_num desc
+		select * from articles
+		order by article_num desc
 	</select>
 	
 	<select id="mypage" resultType="kr.smhrd.util.SuperVO">
-		select m.mb_profile_pic, a.*, c.*
-		from articles a, carping_sites c, members m
-		where a.article_num=c.article_num and a.mb_id=m.mb_id and a.mb_id='mb_id 01'
+		select m.mb_profile_pic, a.*
+		from articles a, members m
+		where a.mb_id=m.mb_id and a.mb_id='mb_id 01'
 		order by a.article_num desc
 	</select>
 	
 	<select id="memberpage" resultType="kr.smhrd.util.SuperVO">
-		select m.mb_profile_pic, a.*, c.*
-		from articles a, carping_sites c, members m
-		where a.article_num=c.article_num and a.mb_id=m.mb_id and a.mb_id='mb_id 02'
+		select m.mb_profile_pic, a.*
+		from articles a, members m
+		where a.mb_id=m.mb_id and a.mb_id='mb_id 02'
 		order by a.article_num desc
 	</select>
+	
+	<insert id="write" parameterType="kr.smhrd.util.SuperVO">
+		insert into articles (article_title, article_content, mb_id, carping_level, latitude, longitude, carping_pic1)
+		values (#{article_title}, #{article_content}, #{mb_id}, #{carping_level}, #{latitude}, #{longitude}, #{carping_pic1})
+	</insert>
 </mapper>
