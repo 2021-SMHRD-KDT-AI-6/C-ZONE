@@ -27,4 +27,5 @@
 		insert into articles (article_title, article_content, mb_id, carping_level, latitude, longitude, carping_pic1)
 		values (#{article_title}, #{article_content}, #{mb_id}, #{carping_level}, #{latitude}, #{longitude}, #{carping_pic1})
 	</insert>
+	
 </mapper>

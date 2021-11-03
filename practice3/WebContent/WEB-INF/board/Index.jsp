@@ -160,12 +160,12 @@ Licence URI: https://www.os-templates.com/template-terms
 					for (SuperVO vo : list) {
 				%>
 				<div class="news_feed">
-					<a href="#"> <img class="thumbnail"
+					<a href="article.do"> <img class="thumbnail"
 						src="https://via.placeholder.com/300" alt="썸네일" />
 					</a>
 					<div class="contents">
 						<header>
-							<a href="#"> <img class="profile_pic"
+							<a href="article.do"> <img class="profile_pic"
 								src="https://via.placeholder.com/70" alt="프로필사진" />
 							</a>
 							<div class="article_top">
@@ -174,7 +174,7 @@ Licence URI: https://www.os-templates.com/template-terms
 									<div class="reg_date"><%=vo.getReg_date()%></div>
 								</div>
 								<div class="article_top_down">
-									<a href="#"> <%=vo.getArticle_title()%>
+									<a href="article.do"> <%=vo.getArticle_title()%>
 									</a>
 									<div class="article_top_down_right">
 										<div class="likes">

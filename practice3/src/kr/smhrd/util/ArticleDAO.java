@@ -48,4 +48,11 @@ public class ArticleDAO {
 	      session.commit(); //¿Ï·á
 	      session.close();  //¹Ý³³(*)
 	}
+	
+	public SuperVO article(String mb_id) {
+		SqlSession session=sqlSessionFactory.openSession(); // Connection 
+		SuperVO vo = session.selectOne("article",mb_id);
+		return vo;
+	     
+	}
 }
