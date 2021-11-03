@@ -47,7 +47,7 @@
               <li>
                 <a href="Index.do"><i class="fas fa-home"></i></a>
               </li>
-              <a href="#"><li id="searchform"></li></a>
+              <a href="search.do"><li id="searchform"></li></a>
             </ul>
             <!-- ################################################################################################ -->
           </div>
@@ -69,7 +69,7 @@
             <!-- ################################################################################################ -->
             <ul class="clear">
               <li class="active"><a href="Index.do">Home</a></li>
-              <li><a href="write.do">글쓰기</a></li>
+              <li><a href="writeForm.do">글쓰기</a></li>
               <li><a href="mypage.do">마이페이지</a></li>
               <li><a href="login.do">로그인</a></li>
             </ul>

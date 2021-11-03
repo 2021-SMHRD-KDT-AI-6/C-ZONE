@@ -2,6 +2,7 @@ package kr.smhrd.web;
 
 import java.util.HashMap;
 
+import kr.smhrd.controller.BoardArticleController;
 import kr.smhrd.controller.BoardIndexController;
 import kr.smhrd.controller.BoardLoginController;
 import kr.smhrd.controller.BoardMemberpageController;
@@ -28,6 +29,7 @@ public class HandlerMapping {
 		mappings.put("/writeForm.do", new BoardWriteFormController());
 		mappings.put("/write.do", new BoardWriteController());
 		mappings.put("/search.do", new BoardSearchController());
+		mappings.put("/article.do", new BoardArticleController());
 	}
 	public Controller getController(String key) {
 		return mappings.get(key);
