@@ -6,6 +6,7 @@ import kr.smhrd.controller.BoardIndexController;
 import kr.smhrd.controller.BoardLoginController;
 import kr.smhrd.controller.BoardMemberpageController;
 import kr.smhrd.controller.BoardMypageController;
+import kr.smhrd.controller.BoardSearchController;
 import kr.smhrd.controller.BoardSignupController;
 import kr.smhrd.controller.BoardWriteController;
 import kr.smhrd.controller.Controller;
@@ -24,6 +25,7 @@ public class HandlerMapping {
 		mappings.put("/mypage.do", new BoardMypageController());
 		mappings.put("/memberpage.do", new BoardMemberpageController());
 		mappings.put("/write.do", new BoardWriteController());
+		mappings.put("/search.do", new BoardSearchController());
 	}
 	public Controller getController(String key) {
 		return mappings.get(key);
