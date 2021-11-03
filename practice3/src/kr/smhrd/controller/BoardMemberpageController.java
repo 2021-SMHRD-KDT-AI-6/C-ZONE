@@ -1,6 +1,7 @@
 package kr.smhrd.controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -15,8 +16,8 @@ public class BoardMemberpageController implements Controller{
 		
 		String mb_id = request.getParameter("mb_id");
 		ArticleDAO dao = new ArticleDAO();
-		SuperVO vo= dao.memberpage(mb_id);
-		request.setAttribute("vo",vo);
+		List<SuperVO> list= dao.memberpage();
+		request.setAttribute("list",list);
 		return "memberpage";
 	}
 }

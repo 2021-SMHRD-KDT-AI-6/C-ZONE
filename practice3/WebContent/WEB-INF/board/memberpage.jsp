@@ -3,7 +3,7 @@
 	pageEncoding="utf-8"%>
 <%
 	// Object Cating(객체형변환-제일중요)
-SuperVO vo = (SuperVO)request.getAttribute("vo");
+ArrayList<SuperVO> list = (ArrayList<SuperVO>)request.getAttribute("list");
 String cpath = request.getContextPath();
 %>
 <!DOCTYPE html>
@@ -130,6 +130,9 @@ Licence URI: https://www.os-templates.com/template-terms
           <div class="sectiontitle">
             <p class="heading underline font-x2">강성운님이 쓴 게시물</p>
           </div>
+          <%
+			for (SuperVO vo : list) {
+			%>
           <div class="news_feed">
             <a href="#">
               <img
@@ -167,6 +170,7 @@ Licence URI: https://www.os-templates.com/template-terms
               </article>
             </div>
           </div>
+          <%} %>
           <div class="news_feed">
             <img
               class="thumbnail"
