@@ -28,8 +28,8 @@ public class HandlerMapping {
 		mappings.put("/memberpage.do", new BoardMemberpageController());
 		mappings.put("/writeForm.do", new BoardWriteFormController());
 		mappings.put("/write.do", new BoardWriteController());
-		mappings.put("/search.do", new BoardSearchController());
-		mappings.put("/article.do", new BoardArticleController());
+		mappings.put("/login.do", new BoardLoginController());
+		
 	}
 	public Controller getController(String key) {
 		return mappings.get(key);
