@@ -82,4 +82,10 @@ public class ArticleDAO {
 		session.close(); // ¹Ý³³(*)
 		return mb_num;
 	  }
+	public int writeView() {
+		SqlSession session = sqlSessionFactory.openSession();
+		int article_num = session.selectOne("writeview");
+		session.close();
+		return article_num;
+	}
 }
