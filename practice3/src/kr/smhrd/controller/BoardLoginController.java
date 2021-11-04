@@ -9,8 +9,6 @@ import javax.servlet.http.HttpSession;
 
 import kr.smhrd.util.ArticleDAO;
 import kr.smhrd.util.MbVO;
-import kr.smhrd.util.ArticleDAO;
-import kr.smhrd.util.MbVO;
 
 public class BoardLoginController implements Controller{
 	public String requestHandler(HttpServletRequest request, HttpServletResponse response)

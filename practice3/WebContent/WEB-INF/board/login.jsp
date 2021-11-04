@@ -1,7 +1,10 @@
+<%@page import="kr.smhrd.util.MbVO"%>
 <%@page import="kr.smhrd.util.SuperVO"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
+<% MbVO members=(MbVO)session.getAttribute("succ");%>
+	
 <%
 	// Object Cating(객체형변환-제일중요)
 ArrayList<SuperVO> list = (ArrayList<SuperVO>) request.getAttribute("list");
@@ -113,6 +116,8 @@ Licence URI: https://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <div class="signupMain">
       <!-- log-in -->
+      <% if(members==null){ %>
+      <form class="form-inline" action="<%=cpath%>/login.do" method="post">
       <div id="log-in">
       <hr class="signup_hr"/>
         <div class="log_in_menu">
@@ -128,8 +133,8 @@ Licence URI: https://www.os-templates.com/template-terms
         </div>
       </div>
 
-        <div class="log_in">로그인</div>
-
+        <div><button type="submit" class="log_in">로그인</button></div>
+     </form>    <% }%>
       <div class="log_service">
         <div class="log_service_menu">비밀번호 재설정</div>
         <div class="log_service_menu">회원가입</div>
