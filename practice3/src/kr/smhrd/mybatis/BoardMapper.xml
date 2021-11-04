@@ -34,7 +34,7 @@
 	
 	<select id="article" resultType="kr.smhrd.util.SuperVO">
 		select * from articles
-		where mb_num = #{mb_num}
+		where article_num = #{article_num}
 	</select>
 	
 
