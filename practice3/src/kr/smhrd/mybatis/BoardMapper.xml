@@ -36,4 +36,11 @@
 		select * from articles
 		where mb_num = #{mb_num}
 	</select>
+	
+
+		<select id="commentList" resultType="kr.smhrd.util.SuperVO">
+		select c.comment_num, c.reg_date, c.comment_content, c.article_num from comments c, articles a
+		where a.article_num = c.article_num and c.article_num = #{article_num}
+		order by c.comment_num desc
+	</select>
 </mapper>

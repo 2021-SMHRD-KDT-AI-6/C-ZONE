@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import kr.smhrd.util.ArticleDAO;
+import kr.smhrd.util.CommentDAO;
 import kr.smhrd.util.SuperVO;
 
 public class BoardArticleController implements Controller{
@@ -16,11 +17,15 @@ public class BoardArticleController implements Controller{
 	public String requestHandler(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		int mb_num = Integer.parseInt(request.getParameter("mb_num"));
+		int article_num = Integer.parseInt(request.getParameter("article_num"));
 		ArticleDAO dao = new ArticleDAO();
-		SuperVO vo = dao.article(mb_num);
+		SuperVO vo = dao.article(article_num);
 		request.setAttribute("vo", vo);
-	
+		
+		CommentDAO dao2 = new CommentDAO();
+		List<SuperVO> list = dao2.CommentList();
+		request.setAttribute("list", list);
+		
 		return "article";
 	}
 

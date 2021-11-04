@@ -12,6 +12,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class SuperVO {
 	// 정보은닉
+	// article
 	private int article_num;
 	private String article_title;
 	private String article_content;
@@ -19,7 +20,7 @@ public class SuperVO {
 	private int mb_num;
 	private int article_cnt;
 	private int likes;
-	
+	//write
 	private String latitude;
 	private String longitude;
 	private String carping_level;
@@ -28,5 +29,12 @@ public class SuperVO {
 	private String carping_pic3; 
 	private String carping_pic4; 
 	private String carping_loc;
-	
+	//comment
+	private String comment_content;
+	private String comment_num;
+	//member
+	private String mb_id;
+    private String mb_pwd;
+    private String mb_profile_pic;
+    private String mb_nickname;
 }
