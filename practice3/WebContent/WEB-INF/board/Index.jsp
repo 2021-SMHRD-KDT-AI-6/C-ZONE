@@ -160,6 +160,7 @@ Licence URI: https://www.os-templates.com/template-terms
 					for (SuperVO vo : list) {
 						
 				%>
+				<input type="hidden" name="article_num" value="<%=vo.getArticle_num()%>">
 				<div class="news_feed">
 					<a href="<%=cpath%>/article.do?article_num=<%=vo.getArticle_num()%>"> <img class="thumbnail"
 						src="https://via.placeholder.com/300" alt="썸네일" />

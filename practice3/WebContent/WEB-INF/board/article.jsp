@@ -104,7 +104,7 @@
 							<a href="memberpage.do"><img id="articlepage_profile_pic"
 								src="https://via.placeholder.com/70" alt="프로필사진" /></a>
 							<div id="articlepage_profile">
-								<a href="memberpage.do"><div id="articlepage_mb_id"><%=members.getMb_nickname()%></div></a>
+								<a href="memberpage.do"><div id="articlepage_mb_id">강성운</div></a>
 								<div id="articlepage_reg_date">2021-10-24</div>
 							</div>
 						</div>
@@ -131,6 +131,7 @@
 				<%
 					for (SuperVO comment : list) {
 				%>
+				
 				<div class="comment">
 					<div class="comment_first">
 						<a href="memberpage.do"> <img class="comment_profile_pic"
