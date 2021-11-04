@@ -16,7 +16,7 @@ public class BoardWriteController implements Controller{
 		// TODO Auto-generated method stub
 				String article_title = request.getParameter("article_title");
 				String article_content = request.getParameter("article_content");
-				String mb_id = request.getParameter("mb_id");
+				int mb_num = Integer.parseInt(request.getParameter("mb_num"));
 				String carping_level = request.getParameter("carping_level");
 				String latitude = request.getParameter("latitude");
 				String longitude = request.getParameter("longitude");
@@ -26,7 +26,7 @@ public class BoardWriteController implements Controller{
 				SuperVO vo = new SuperVO();
 				vo.setArticle_title(article_title);
 				vo.setArticle_content(article_content);
-				vo.setMb_id(mb_id);
+				vo.setMb_num(mb_num);
 			    vo.setCarping_level(carping_level);
 			    vo.setLatitude(latitude);
 			    vo.setLongitude(longitude);
@@ -34,7 +34,7 @@ public class BoardWriteController implements Controller{
 			
 				 ArticleDAO dao = new ArticleDAO();
 				 dao.write(vo);
-				return "redirect:/mypage.do";
+				return "redirect:/article.do";
 	}
 }
 

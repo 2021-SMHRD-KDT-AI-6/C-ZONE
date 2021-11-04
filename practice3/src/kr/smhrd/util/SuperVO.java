@@ -16,11 +16,10 @@ public class SuperVO {
 	private String article_title;
 	private String article_content;
 	private Date reg_date;
-	private String mb_id;
+	private int mb_num;
 	private int article_cnt;
 	private int likes;
 	
-	private int carping_num;
 	private String latitude;
 	private String longitude;
 	private String carping_level;

@@ -15,10 +15,11 @@ public class BoardArticleController implements Controller{
 	@Override
 	public String requestHandler(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
+		int mb_num = Integer.parseInt(request.getParameter("mb_num"));
 		ArticleDAO dao = new ArticleDAO();
-		List<SuperVO> list = dao.Index();
-		request.setAttribute("list", list);
+		SuperVO vo = dao.article(mb_num);
+		request.setAttribute("vo", vo);
 	
 		return "article";
 	}

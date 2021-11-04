@@ -1,5 +1,7 @@
+<%@page import="kr.smhrd.util.SuperVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
+<%SuperVO user = (SuperVO) session.getAttribute("succ");%>
 <!DOCTYPE html>
 <html lang="">
 <head>
@@ -209,6 +211,7 @@
 			</div>
 
 			<hr />
+			
 
 			<form action="#" id="comment_write">
 				<textarea type="text" id="comment_content" name="comment_content"

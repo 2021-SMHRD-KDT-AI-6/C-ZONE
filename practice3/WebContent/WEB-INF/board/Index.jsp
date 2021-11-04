@@ -170,7 +170,7 @@ Licence URI: https://www.os-templates.com/template-terms
 							</a>
 							<div class="article_top">
 								<div class="article_top_up">
-									<strong class="mb_id"><a href="#"><%=vo.getMb_id()%></a></strong>
+									<strong class="mb_id"><a href="#"><%=vo.getMb_num()%></a></strong>
 									<div class="reg_date"><%=vo.getReg_date()%></div>
 								</div>
 								<div class="article_top_down">

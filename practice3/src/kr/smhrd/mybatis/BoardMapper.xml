@@ -24,12 +24,16 @@
 	</select>
 	
 	<insert id="write" parameterType="kr.smhrd.util.SuperVO">
-		insert into articles (article_title, article_content, mb_id, carping_level, latitude, longitude, carping_pic1)
-		values (#{article_title}, #{article_content}, #{mb_id}, #{carping_level}, #{latitude}, #{longitude}, #{carping_pic1})
+		insert into articles (article_title, article_content, mb_num, carping_level, latitude, longitude, carping_pic1)
+		values (#{article_title}, #{article_content}, #{mb_num}, #{carping_level}, #{latitude}, #{longitude}, #{carping_pic1})
 	</insert>
 	<select id="isLogin" parameterType="kr.smhrd.util.MbVO" 
                      resultType="kr.smhrd.util.MbVO">
   select * from members where mb_id=#{mb_id} and mb_pwd=#{mb_pwd}
 </select> 
 	
+	<select id="article" resultType="kr.smhrd.util.SuperVO">
+		select * from articles
+		where mb_num = #{mb_num}
+	</select>
 </mapper>
