@@ -15,7 +15,7 @@ public class BoardCommentInsertController implements Controller{
 	public String requestHandler(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		int article_num = Integer.parseInt(request.getParameter("article_num"));
-		int mb_num = 100;
+		int mb_num = Integer.parseInt(request.getParameter("mb_num"));
 		String comment_content = request.getParameter("comment_content");
 		
 		SuperVO vo = new SuperVO();
@@ -26,7 +26,7 @@ public class BoardCommentInsertController implements Controller{
 		CommentDAO dao = new CommentDAO();
 		dao.CommentInsert(vo);
 		
-		return "redirect:/article.do";
+		return "redirect:/article.do?article_num=" + vo.getArticle_num();
 	}
 
 }

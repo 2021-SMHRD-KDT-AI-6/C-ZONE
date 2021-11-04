@@ -8,16 +8,23 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import kr.smhrd.util.ArticleDAO;
+import kr.smhrd.util.MbVO;
 import kr.smhrd.util.SuperVO;
 
 public class BoardMemberpageController implements Controller{
 	public String requestHandler(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		String mb_id = request.getParameter("mb_id");
+		int mb_num = Integer.parseInt(request.getParameter("mb_num"));
+		
 		ArticleDAO dao = new ArticleDAO();
-		List<SuperVO> list= dao.memberpage();
+		
+		SuperVO vo = dao.memberprofile(mb_num);
+		request.setAttribute("vo", vo);
+		
+		List<SuperVO> list= dao.memberpage(mb_num);
 		request.setAttribute("list",list);
+		
 		return "memberpage";
 	}
 }

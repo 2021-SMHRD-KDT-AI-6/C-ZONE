@@ -1,8 +1,8 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="kr.smhrd.util.MbVO"%>
 <%@page import="kr.smhrd.util.SuperVO"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
 <% MbVO members=(MbVO)session.getAttribute("succ");%>
 <%
 	SuperVO vo = (SuperVO) request.getAttribute("vo");
@@ -10,7 +10,6 @@
 <%
 	ArrayList<SuperVO> list = (ArrayList<SuperVO>) request.getAttribute("list");
 %>
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-6/C-ZONE.git
 <!DOCTYPE html>
 <html lang="">
 <head>
@@ -68,16 +67,16 @@
 					<ul class="clear">
 						<li class="active"><a href="Index.do">Home</a></li>
 						<% if(members==null){ %>
-						<li><a href="login.do">±Û¾²±â</a></li>
-						<li><a href="login.do">¸¶ÀÌÆäÀÌÁö</a></li>
+						<li><a href="login.do">ê¸€ì“°ê¸°</a></li>
+						<li><a href="login.do">ë§ˆì´íŽ˜ì´ì§€</a></li>
 						<% } else { %>
-						<li><a href="writeForm.do">±Û¾²±â</a></li>
-						<li><a href="mypage.do">¸¶ÀÌÆäÀÌÁö</a></li>
+						<li><a href="writeForm.do">ê¸€ì“°ê¸°</a></li>
+						<li><a href="mypage.do">ë§ˆì´íŽ˜ì´ì§€</a></li>
 						<% }%>
 						<% if(members==null){ %>
-						<li><a href="login.do">·Î±×ÀÎ</a></li>
+						<li><a href="login.do">ë¡œê·¸ì¸</a></li>
 						<% } else { %>
-						<li><a href="logout.do" onclick="outFn()">·Î±×¾Æ¿ô</a></li>
+						<li><a href="logout.do" onclick="outFn()">ë¡œê·¸ì•„ì›ƒ</a></li>
 						<% }%>
 					</ul>
 					<!-- ################################################################################################ -->
@@ -89,7 +88,7 @@
 		<!-- ################################################################################################ -->
 		<div id="breadcrumb" class="hoc clear">
 			<!-- ################################################################################################ -->
-			<h6 class="heading">°Ô½Ã±Û</h6>
+			<h6 class="heading">ê²Œì‹œê¸€</h6>
 			<ul>
 				<li><a href="Index.do">Home</a></li>
 				<li><a href="Index.do">ARTICLE</a></li>
@@ -110,7 +109,7 @@
 						<div id="articlepage_title"><%=vo.getArticle_title()%></div>
 						<div id="articlepage_second">
 							<a href="memberpage.do"><img id="articlepage_profile_pic"
-								src="https://via.placeholder.com/70" alt="ÇÁ·ÎÇÊ»çÁø" /></a>
+								src="https://via.placeholder.com/70" alt="í”„ë¡œí•„ì‚¬ì§„" /></a>
 							<div id="articlepage_profile">
 								<a href="memberpage.do"><div id="articlepage_mb_id"><%=vo.getMb_nickname() %></div></a>
 								<div id="articlepage_reg_date"><%=vo.getReg_date() %></div>
@@ -118,33 +117,33 @@
 						</div>
 						<div id="articlepage_third">
 							<div id="articlepage_level">
-								³­ÀÌµµ
+								ë‚œì´ë„
 								<%=vo.getCarping_level()%></div>
 							<div id="articlepage_like">
 								<div id="articlepage_like_num">
-									ÁÁ¾Æ¿ä
+									ì¢‹ì•„ìš”
 									<%=vo.getLikes()%></div>
 								<div id="articlepage_heart"></div>
 							</div>
 						</div>
 					</div>
-					<img src="https://via.placeholder.com/300x200" alt="Áöµµ" />
+					<img src="https://via.placeholder.com/300x200" alt="ì§€ë„" />
 				</div>
 				<hr />
 				<div id="articlepage_content">
 					<%=vo.getArticle_content()%>
 				</div>
 				<hr />
-				<div id="comment_title">´ñ±Û</div>
+				<div id="comment_title">ëŒ“ê¸€</div>
 				
 				<%
 					for (SuperVO comment : list) {
 				%>
-				
+				<input type="hidden" name="mb_num" value="<%=members.getMb_num()%>" />
 				<div class="comment">
 					<div class="comment_first">
 						<a href="memberpage.do"> <img class="comment_profile_pic"
-							src="https://via.placeholder.com/70" alt="ÇÁ·ÎÇÊ»çÁø" />
+							src="https://via.placeholder.com/70" alt="í”„ë¡œí•„ì‚¬ì§„" />
 						</a>
 						<div class="comment_profile">
 							<a href="memberpage.do"><div class="articlepage_mb_id"><%=comment.getMb_nickname() %></div></a>
@@ -163,7 +162,7 @@
 					<input type="hidden" name="article_num" value="<%=vo.getArticle_num() %>" />
 					<input type="hidden" name="mb_num" />
 					<textarea type="text" id="comment_content" name="comment_content"
-						placeholder="´ñ±ÛÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä.">
+						placeholder="ëŒ“ê¸€ì„ ìž…ë ¥í•´ì£¼ì„¸ìš”.">
           </textarea>
 					<input type="submit" id="comment_btn" />
 				</form>

@@ -1,10 +1,11 @@
+<%@page import="kr.smhrd.util.SuperVO"%>
 <%@page import="kr.smhrd.util.MbVO"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 <% MbVO members=(MbVO)session.getAttribute("succ");%>
 <%
-	// Object Cating(객체형변환-제일중요)
+SuperVO vo = (SuperVO) request.getAttribute("vo");
 ArrayList<SuperVO> list = (ArrayList<SuperVO>)request.getAttribute("list");
 String cpath = request.getContextPath();
 %>
@@ -27,7 +28,6 @@ Licence URI: https://www.os-templates.com/template-terms
 <link href="layout/styles/layout.css" rel="stylesheet" type="text/css"
 	media="all" />
 </head>
-<%@page import="kr.smhrd.util.SuperVO"%>
 <body id="top">
 	<!-- ################################################################################################ -->
 	<!-- ################################################################################################ -->
@@ -128,8 +128,9 @@ Licence URI: https://www.os-templates.com/template-terms
 					<p class="heading underline font-x2">강성운님이 쓴 게시물</p>
 				</div>
 				<%
-			for (SuperVO vo : list) {
+			for (SuperVO vo2 : list) {
 			%>
+				<input type="hidden" name="mb_num" value="<%=vo2.getMb_num()%>"/>
 				<div class="news_feed">
 					<a href="#"> <img class="thumbnail"
 						src="https://via.placeholder.com/300" alt="썸네일" />
@@ -141,20 +142,20 @@ Licence URI: https://www.os-templates.com/template-terms
 							</a>
 							<div class="article_top">
 								<div class="article_top_up">
-									<strong class="mb_num"><a href="#"><%=vo.getMb_num() %></a></strong>
-									<div class="reg_date"><%=vo.getReg_date() %></div>
+									<strong class="mb_num"><a href="#"><%=vo2.getMb_num() %></a></strong>
+									<div class="reg_date"><%=vo2.getReg_date() %></div>
 								</div>
 								<div class="article_top_down">
-									<a href="#"><%=vo.getArticle_title() %> </a>
+									<a href="#"><%=vo2.getArticle_title() %> </a>
 									<div class="article_top_down_right">
 										<div class="likes">
 											좋아요
-											<%=vo.getLikes() %></div>
+											<%=vo2.getLikes() %></div>
 										<div class="article_cnt">
-											조회수<%=vo.getArticle_cnt() %></div>
+											조회수<%=vo2.getArticle_cnt() %></div>
 										<div class="carpinglevel">
 											난이도
-											<%=vo.getCarping_level() %></div>
+											<%=vo2.getCarping_level() %></div>
 									</div>
 								</div>
 							</div>
