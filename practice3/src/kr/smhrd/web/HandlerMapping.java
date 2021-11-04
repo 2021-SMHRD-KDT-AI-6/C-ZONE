@@ -34,12 +34,9 @@ public class HandlerMapping {
 		mappings.put("/write.do", new BoardWriteController());
 		mappings.put("/sl.do", new BoardSLController());
 		mappings.put("/article.do", new BoardArticleController());
-<<<<<<< HEAD
 		mappings.put("/commentInsert.do", new BoardCommentInsertController());
-=======
 		mappings.put("/logout.do", new BoardLogoutController());
 		mappings.put("/insert.do", new BoardSignupInsertController());
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-6/C-ZONE.git
 		
 	}
 	public Controller getController(String key) {

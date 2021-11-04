@@ -43,16 +43,13 @@
 		order by c.comment_num desc
 	</select>
 	
-<<<<<<< HEAD
 	<insert id="commentInsert" parameterType="kr.smhrd.util.SuperVO">
 		insert into comments (mb_num, article_num, comment_content) 
 		values (#{mb_num}, #{article_num}, #{comment_content})
 	</insert>
 	
-=======
 	<insert id="insert" parameterType="kr.smhrd.util.MbVO">
 		insert into members (mb_id, mb_pwd, admin_yn, mb_profile_pic, mb_nickname)
 		values (#{mb_id}, #{mb_pwd}, #{admin_yn}, #{mb_profile_pic}, #{mb_nickname})
 	</insert>
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-6/C-ZONE.git
 </mapper>
