@@ -26,7 +26,7 @@ public class BoardCommentInsertController implements Controller{
 		CommentDAO dao = new CommentDAO();
 		dao.CommentInsert(vo);
 		
-		return "redirect:/article.do";
+		return "redirect:/article.do?article_num=" + article_num;
 	}
 
 }

@@ -3,6 +3,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
+
 <% MbVO members=(MbVO)session.getAttribute("succ");%>
 <%
 	// Object Cating(객체형변환-제일중요)
