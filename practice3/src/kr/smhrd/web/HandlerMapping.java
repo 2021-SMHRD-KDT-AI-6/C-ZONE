@@ -37,6 +37,7 @@ public class HandlerMapping {
 		mappings.put("/commentInsert.do", new BoardCommentInsertController());
 		mappings.put("/logout.do", new BoardLogoutController());
 		mappings.put("/insert.do", new BoardSignupInsertController());
+		mappings.put("/search.do", new BoardSearchController());
 		
 	}
 	public Controller getController(String key) {

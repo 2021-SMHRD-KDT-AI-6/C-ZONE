@@ -18,10 +18,9 @@ public class BoardWriteController implements Controller{
 				String article_content = request.getParameter("article_content");
 				int mb_num = Integer.parseInt(request.getParameter("mb_num"));
 				String carping_level = request.getParameter("carping_level");
-				String latitude = request.getParameter("latitude");
-				String longitude = request.getParameter("longitude");
+				double latitude = Double.parseDouble(request.getParameter("latitude"));
+				double longitude = Double.parseDouble(request.getParameter("longitude"));
 				String carping_pic1 = request.getParameter("carping_pic1");
-				
 				
 				SuperVO vo = new SuperVO();
 				vo.setArticle_title(article_title);
@@ -32,9 +31,13 @@ public class BoardWriteController implements Controller{
 			    vo.setLongitude(longitude);
 			    vo.setCarping_pic1(carping_pic1);
 			
-				 ArticleDAO dao = new ArticleDAO();
-				 dao.write(vo);
-				return "redirect:/article.do";
+				ArticleDAO dao = new ArticleDAO();
+				dao.write(vo);
+				System.out.println(vo.getArticle_num());
+				
+				int article_num = dao.writeView();
+//				return "redirect:/Index.do";
+ 				return "redirect:/article.do?article_num=" + article_num;
 	}
 }
 

@@ -1,10 +1,12 @@
 <%@page import="kr.smhrd.util.MbVO"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
 <%
 	String cpath = request.getContextPath();
 %>
-<% MbVO members=(MbVO)session.getAttribute("succ");%>
+<%
+	MbVO members = (MbVO) session.getAttribute("succ");
+%>
 <!DOCTYPE html>
 <html lang="">
 <head>
@@ -61,13 +63,19 @@
 					<!-- ################################################################################################ -->
 					<ul class="clear">
 						<li class="active"><a href="Index.do">Home</a></li>
-						<li><a href="writeForm.do">±Û¾²±â</a></li>
-						<li><a href="mypage.do">¸¶ÀÌÆäÀÌÁö</a></li>
-						<% if(members==null){ %>
-						<li><a href="login.do">·Î±×ÀÎ</a></li>
-						<% } else { %>
-						<li><a href="logout.do" onclick="outFn()">·Î±×¾Æ¿ô</a></li>
-						<% }%>
+						<li><a href="writeForm.do">ê¸€ì“°ê¸°</a></li>
+						<li><a href="mypage.do?mb_num=<%=members.getMb_num()%>">ë§ˆì´í˜ì´ì§€</a></li>
+						<%
+							if (members == null) {
+						%>
+						<li><a href="login.do">ë¡œê·¸ì¸</a></li>
+						<%
+							} else {
+						%>
+						<li><a href="logout.do" onclick="outFn()">ë¡œê·¸ì•„ì›ƒ</a></li>
+						<%
+							}
+						%>
 					</ul>
 					<!-- ################################################################################################ -->
 				</nav>
@@ -78,10 +86,10 @@
 		<!-- ################################################################################################ -->
 		<div id="breadcrumb" class="hoc clear">
 			<!-- ################################################################################################ -->
-			<h6 class="heading">±Û¾²±â</h6>
+			<h6 class="heading">ê¸€ì“°ê¸°</h6>
 			<ul>
 				<li><a href="Index.do">Home</a></li>
-				<li><a href="write.do">Write</a></li>
+				<li><a href="writeForm.do">Write</a></li>
 			</ul>
 			<!-- ################################################################################################ -->
 		</div>
@@ -92,101 +100,48 @@
 	<!-- ################################################################################################ -->
 	<!-- ################################################################################################ -->
 	<div class="wrapper row3">
-
-
-
-
-
-
-
 		<main class="hoc container clear">
-			<form name="frm" id="write_" action="<%=cpath%>/write.do"
-				method="post">
+			<form name="frm" id="write_" action="write.do" method="post">
 				<input type="hidden" name="latitude" id="latitude" value="">
 				<input type="hidden" name="longitude" id="longitude" value="">
+				<input type="hidden" name="mb_num" id="mb_num"
+					value="<%=members.getMb_num()%>">
 				<div id="write_top">
 					<div id="write_first">
-						<h1 id="write_title">Á¦¸ñ</h1>
-						<input type="text" placeholder="Á¦¸ñ" name="article_title" />
+						<h1 id="write_title">ì œëª©</h1>
+						<input type="text" placeholder="ì œëª©" name="article_title" />
 					</div>
 					<hr />
 
 					<div id="write_second">
-						<h1 id="write_pic">»çÁø Ã·ºÎ</h1>
+						<h1 id="write_pic">ì‚¬ì§„ ì²¨ë¶€</h1>
 						<input id="write_pic_file" type="file" name="carping_pic1" />
 						<div id="write_level_form">
-							<h1 id="write_level">³­ÀÌµµ</h1>
-							<input type="radio" name="carping_level" value="»ó" checked />
-							<h1 class="write_level_check" for="carping_level">»ó</h1>
-							<input type="radio" name="carping_level" value="Áß" />
-							<h1 class="write_level_check" for="carping_level">Áß</h1>
-							<input type="radio" name="carping_level" value="ÇÏ" />
-							<h1 class="write_level_check" for="carping_level">ÇÏ</h1>
+							<h1 id="write_level">ë‚œì´ë„</h1>
+							<input type="radio" name="carping_level" value="ìƒ" checked /> <label
+								class="write_level_check" for="carping_level">ìƒ</label> <input
+								type="radio" name="carping_level" value="ì¤‘" /> <label
+								class="write_level_check" for="carping_level">ì¤‘</label> <input
+								type="radio" name="carping_level" value="í•˜" /> <label
+								class="write_level_check" for="carping_level">í•˜</label>
 							<div id="carping_level_explanation">
-								»ó : È­Àå½Ç ¾øÀ½, Àü±â ¾ÈµÊ <br /> Áß : È­Àå½Ç ÀÖÀ½ <br /> ÇÏ : À¯·á Â÷¹ÚÁö
+								ìƒ : í™”ì¥ì‹¤ ì—†ìŒ, ì „ê¸° ì•ˆë¨ <br /> ì¤‘ : í™”ì¥ì‹¤ ìˆìŒ <br /> í•˜ : ìœ ë£Œ ì°¨ë°•ì§€
 							</div>
 						</div>
 					</div>
 					<hr />
 
 					<div id="write_third">
-						<h1 id="write_location">À§Ä¡</h1>
+						<h1 id="write_location">ìœ„ì¹˜</h1>
 						<div id="map"
 							style="width: 1200px; height: 550px; margin: 0 auto;"></div>
-
-
-
-
-						<script type="text/javascript"
-							src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d98d9b2f0c4a6046323ef26fd36b2b16"></script>
-						<script>
-							var mapContainer = document.getElementById('map'), // Áöµµ¸¦ Ç¥½ÃÇÒ div 
-							mapOption = {
-								center : new kakao.maps.LatLng(33.450701,
-										126.570667), // ÁöµµÀÇ Áß½ÉÁÂÇ¥
-								level : 3
-							// ÁöµµÀÇ È®´ë ·¹º§
-							};
-
-							var map = new kakao.maps.Map(mapContainer,
-									mapOption); // Áöµµ¸¦ »ı¼ºÇÕ´Ï´Ù
-
-							// Áöµµ¸¦ Å¬¸¯ÇÑ À§Ä¡¿¡ Ç¥ÃâÇÒ ¸¶Ä¿ÀÔ´Ï´Ù
-							var marker = new kakao.maps.Marker({
-								// Áöµµ Áß½ÉÁÂÇ¥¿¡ ¸¶Ä¿¸¦ »ı¼ºÇÕ´Ï´Ù 
-								position : map.getCenter()
-							});
-							// Áöµµ¿¡ ¸¶Ä¿¸¦ Ç¥½ÃÇÕ´Ï´Ù
-							marker.setMap(map);
-
-							// Áöµµ¿¡ Å¬¸¯ ÀÌº¥Æ®¸¦ µî·ÏÇÕ´Ï´Ù
-							// Áöµµ¸¦ Å¬¸¯ÇÏ¸é ¸¶Áö¸· ÆÄ¶ó¹ÌÅÍ·Î ³Ñ¾î¿Â ÇÔ¼ö¸¦ È£ÃâÇÕ´Ï´Ù
-							kakao.maps.event
-									.addListener(
-											map,
-											'click',
-											function(mouseEvent) {
-
-												// Å¬¸¯ÇÑ À§µµ, °æµµ Á¤º¸¸¦ °¡Á®¿É´Ï´Ù 
-												var latlng = mouseEvent.latLng;
-
-												// ¸¶Ä¿ À§Ä¡¸¦ Å¬¸¯ÇÑ À§Ä¡·Î ¿Å±é´Ï´Ù
-												marker.setPosition(latlng);
-
-												var latitude = latlng.getLat();
-												var longitude = latlng.getLng();
-												document.frm.latitude.value = latitude;
-												document.frm.longitude.value = longitude;
-
-											});
-						</script>
-					</div>
+						</div>
 				</div>
 				<hr />
 				<div id="write_fourth">
 					<textarea name="article_content" id="wrtie_content" cols="135"
 						rows="50"></textarea>
-					<input type="submit" id="write_complete" value="±Û¾²±â ¿Ï·á" />
+					<input type="submit" id="write_complete" value="ê¸€ì“°ê¸° ì™„ë£Œ" />
 				</div>
 			</form>
 		</main>
@@ -253,5 +208,42 @@
 	<script src="../layout/scripts/jquery.min.js"></script>
 	<script src="../layout/scripts/jquery.backtotop.js"></script>
 	<script src="../layout/scripts/jquery.mobilemenu.js"></script>
+	<script type="text/javascript"
+		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d98d9b2f0c4a6046323ef26fd36b2b16"></script>
+	<script>
+		var mapContainer = document.getElementById('map'), // ì§€ë„ë¥¼ í‘œì‹œí•  div 
+		mapOption = {
+			center : new kakao.maps.LatLng(33.450701, 126.570667), // ì§€ë„ì˜ ì¤‘ì‹¬ì¢Œí‘œ
+			level : 3
+		// ì§€ë„ì˜ í™•ëŒ€ ë ˆë²¨
+		};
+
+		var map = new kakao.maps.Map(mapContainer, mapOption); // ì§€ë„ë¥¼ ìƒì„±í•©ë‹ˆë‹¤
+
+		// ì§€ë„ë¥¼ í´ë¦­í•œ ìœ„ì¹˜ì— í‘œì¶œí•  ë§ˆì»¤ì…ë‹ˆë‹¤
+		var marker = new kakao.maps.Marker({
+			// ì§€ë„ ì¤‘ì‹¬ì¢Œí‘œì— ë§ˆì»¤ë¥¼ ìƒì„±í•©ë‹ˆë‹¤ 
+			position : map.getCenter()
+		});
+		// ì§€ë„ì— ë§ˆì»¤ë¥¼ í‘œì‹œí•©ë‹ˆë‹¤
+		marker.setMap(map);
+
+		// ì§€ë„ì— í´ë¦­ ì´ë²¤íŠ¸ë¥¼ ë“±ë¡í•©ë‹ˆë‹¤
+		// ì§€ë„ë¥¼ í´ë¦­í•˜ë©´ ë§ˆì§€ë§‰ íŒŒë¼ë¯¸í„°ë¡œ ë„˜ì–´ì˜¨ í•¨ìˆ˜ë¥¼ í˜¸ì¶œí•©ë‹ˆë‹¤
+		kakao.maps.event.addListener(map, 'click', function(mouseEvent) {
+
+			// í´ë¦­í•œ ìœ„ë„, ê²½ë„ ì •ë³´ë¥¼ ê°€ì ¸ì˜µë‹ˆë‹¤ 
+			var latlng = mouseEvent.latLng;
+
+			// ë§ˆì»¤ ìœ„ì¹˜ë¥¼ í´ë¦­í•œ ìœ„ì¹˜ë¡œ ì˜®ê¹ë‹ˆë‹¤
+			marker.setPosition(latlng);
+
+			var latitude = latlng.getLat();
+			var longitude = latlng.getLng();
+			document.frm.latitude.value = latitude;
+			document.frm.longitude.value = longitude;
+
+		});
+	</script>
 </body>
 </html>

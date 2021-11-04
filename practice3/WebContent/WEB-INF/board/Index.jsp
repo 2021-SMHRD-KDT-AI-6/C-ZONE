@@ -6,8 +6,8 @@
 <% MbVO members=(MbVO)session.getAttribute("succ");%>
 <%
 	// Object Cating(객체형변환-제일중요)
-ArrayList<SuperVO> list = (ArrayList<SuperVO>) request.getAttribute("list");
-String cpath = request.getContextPath();
+ArrayList<SuperVO> list = (ArrayList<SuperVO>) request.getAttribute("list");%>
+<%String cpath = request.getContextPath();
 %>
 <script>      
 function outFn(){
@@ -84,7 +84,7 @@ Licence URI: https://www.os-templates.com/template-terms
 						<li><a href="login.do">마이페이지</a></li>
 						<% } else { %>
 						<li><a href="writeForm.do">글쓰기</a></li>
-						<li><a href="mypage.do">마이페이지</a></li>
+						<li><a href="mypage.do?mb_num=<%=members.getMb_num()%>">마이페이지</a></li>
 						<% }%>
 						<% if(members==null){ %>
 						<li><a href="login.do">로그인</a></li>
@@ -183,12 +183,12 @@ Licence URI: https://www.os-templates.com/template-terms
 					</a>
 					<div class="contents">
 						<header>
-							<a href="article.do"> <img class="profile_pic"
+							<a href="<%=cpath%>/memberpage.do?mb_num=<%=vo.getMb_num()%>"> <img class="profile_pic"
 								src="https://via.placeholder.com/70" alt="프로필사진" />
 							</a>
 							<div class="article_top">
 								<div class="article_top_up">
-									<strong class="mb_id"><a href="memberpage.do"><%=vo.getMb_num()%></a></strong>
+									<strong class="mb_id"><a href="<%=cpath%>/memberpage.do?mb_num=<%=vo.getMb_num()%>"><%=vo.getMb_nickname()%></a></strong>
 									<div class="reg_date"><%=vo.getReg_date()%></div>
 								</div>
 								<div class="article_top_down">
