@@ -19,6 +19,8 @@ public class BoardArticleController implements Controller{
 		
 		int article_num = Integer.parseInt(request.getParameter("article_num"));
 		ArticleDAO dao = new ArticleDAO();
+		//조회수1증가시키고 데이터 가져오기.
+		dao.updatecnt(article_num);
 		SuperVO vo = dao.article(article_num);
 		request.setAttribute("vo", vo);
 		
