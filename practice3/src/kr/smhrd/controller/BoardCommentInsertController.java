@@ -26,7 +26,11 @@ public class BoardCommentInsertController implements Controller{
 		CommentDAO dao = new CommentDAO();
 		dao.CommentInsert(vo);
 		
+<<<<<<< HEAD
 		return "redirect:/article.do?article_num=" + vo.getArticle_num();
+=======
+		return "redirect:/article.do?article_num=" + article_num;
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-6/C-ZONE.git
 	}
 
 }

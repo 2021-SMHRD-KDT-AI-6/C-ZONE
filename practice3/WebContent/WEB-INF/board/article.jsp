@@ -67,16 +67,16 @@
 					<ul class="clear">
 						<li class="active"><a href="Index.do">Home</a></li>
 						<% if(members==null){ %>
-						<li><a href="login.do">ê¸€ì“°ê¸°</a></li>
-						<li><a href="login.do">ë§ˆì´íŽ˜ì´ì§€</a></li>
+						<li><a href="login.do">±Û¾²±â</a></li>
+						<li><a href="login.do">¸¶ÀÌÆäÀÌÁö</a></li>
 						<% } else { %>
-						<li><a href="writeForm.do">ê¸€ì“°ê¸°</a></li>
-						<li><a href="mypage.do">ë§ˆì´íŽ˜ì´ì§€</a></li>
+						<li><a href="writeForm.do">±Û¾²±â</a></li>
+						<li><a href="mypage.do">¸¶ÀÌÆäÀÌÁö</a></li>
 						<% }%>
 						<% if(members==null){ %>
-						<li><a href="login.do">ë¡œê·¸ì¸</a></li>
+						<li><a href="login.do">·Î±×ÀÎ</a></li>
 						<% } else { %>
-						<li><a href="logout.do" onclick="outFn()">ë¡œê·¸ì•„ì›ƒ</a></li>
+						<li><a href="logout.do" onclick="outFn()">·Î±×¾Æ¿ô</a></li>
 						<% }%>
 					</ul>
 					<!-- ################################################################################################ -->
@@ -88,7 +88,8 @@
 		<!-- ################################################################################################ -->
 		<div id="breadcrumb" class="hoc clear">
 			<!-- ################################################################################################ -->
-			<h6 class="heading">ê²Œì‹œê¸€</h6>
+			
+			<h6 class="heading">°Ô½Ã±Û</h6>
 			<ul>
 				<li><a href="Index.do">Home</a></li>
 				<li><a href="Index.do">ARTICLE</a></li>
@@ -109,7 +110,8 @@
 						<div id="articlepage_title"><%=vo.getArticle_title()%></div>
 						<div id="articlepage_second">
 							<a href="memberpage.do"><img id="articlepage_profile_pic"
-								src="https://via.placeholder.com/70" alt="í”„ë¡œí•„ì‚¬ì§„" /></a>
+								
+								src="https://via.placeholder.com/70" alt="ÇÁ·ÎÇÊ»çÁø" /></a>
 							<div id="articlepage_profile">
 								<a href="memberpage.do"><div id="articlepage_mb_id"><%=vo.getMb_nickname() %></div></a>
 								<div id="articlepage_reg_date"><%=vo.getReg_date() %></div>
@@ -117,24 +119,24 @@
 						</div>
 						<div id="articlepage_third">
 							<div id="articlepage_level">
-								ë‚œì´ë„
+								³­ÀÌµµ
 								<%=vo.getCarping_level()%></div>
 							<div id="articlepage_like">
 								<div id="articlepage_like_num">
-									ì¢‹ì•„ìš”
+									ÁÁ¾Æ¿ä
 									<%=vo.getLikes()%></div>
 								<div id="articlepage_heart"></div>
 							</div>
 						</div>
 					</div>
-					<img src="https://via.placeholder.com/300x200" alt="ì§€ë„" />
+					<img src="https://via.placeholder.com/300x200" alt="Áöµµ" />
 				</div>
 				<hr />
 				<div id="articlepage_content">
 					<%=vo.getArticle_content()%>
 				</div>
 				<hr />
-				<div id="comment_title">ëŒ“ê¸€</div>
+				<div id="comment_title">´ñ±Û</div>
 				
 				<%
 					for (SuperVO comment : list) {
@@ -143,7 +145,8 @@
 				<div class="comment">
 					<div class="comment_first">
 						<a href="memberpage.do"> <img class="comment_profile_pic"
-							src="https://via.placeholder.com/70" alt="í”„ë¡œí•„ì‚¬ì§„" />
+							
+							src="https://via.placeholder.com/70" alt="ÇÁ·ÎÇÊ»çÁø" />
 						</a>
 						<div class="comment_profile">
 							<a href="memberpage.do"><div class="articlepage_mb_id"><%=comment.getMb_nickname() %></div></a>
@@ -162,7 +165,7 @@
 					<input type="hidden" name="article_num" value="<%=vo.getArticle_num() %>" />
 					<input type="hidden" name="mb_num" />
 					<textarea type="text" id="comment_content" name="comment_content"
-						placeholder="ëŒ“ê¸€ì„ ìž…ë ¥í•´ì£¼ì„¸ìš”.">
+						placeholder="´ñ±ÛÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä." value="default value">
           </textarea>
 					<input type="submit" id="comment_btn" />
 				</form>

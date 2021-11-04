@@ -142,7 +142,7 @@ Licence URI: https://www.os-templates.com/template-terms
       <div class="signup_id_3">name</div>
       <input class="name_text" type="text" id="mb_nickname" name="mb_nickname" maxlength="5" placeholder="닉네임"/>
       <input type="hidden" name="admin_yn" value="N"/>
-      <input type="hidden" name="mb_profile_pic" value="N"/>
+      <input type="hidden" name="mb_profile_pic" value="images/demo/signup_logos/profile_pic.jpg"/>
     </div>
   </div>
 

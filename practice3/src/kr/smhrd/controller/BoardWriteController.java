@@ -34,7 +34,8 @@ public class BoardWriteController implements Controller{
 			
 				 ArticleDAO dao = new ArticleDAO();
 				 dao.write(vo);
-				return "redirect:/article.do";
+				 return "Index";
+//				return "redirect:/article.do?article_num="+vo.getArticle_num();
 	}
 }
 

@@ -92,18 +92,12 @@
 	<!-- ################################################################################################ -->
 	<!-- ################################################################################################ -->
 	<div class="wrapper row3">
-
-
-
-
-
-
-
 		<main class="hoc container clear">
 			<form name="frm" id="write_" action="<%=cpath%>/write.do"
 				method="post">
 				<input type="hidden" name="latitude" id="latitude" value="">
 				<input type="hidden" name="longitude" id="longitude" value="">
+				<input type="hidden" name="mb_num" id="mb_num" value="<%=members.getMb_num()%>">
 				<div id="write_top">
 					<div id="write_first">
 						<h1 id="write_title">제목</h1>
@@ -116,13 +110,13 @@
 						<input id="write_pic_file" type="file" name="carping_pic1" />
 						<div id="write_level_form">
 							<h1 id="write_level">난이도</h1>
-							<input type="radio" name="carping_level" value="상" checked />
-							<h1 class="write_level_check" for="carping_level">상</h1>
+					<input type="radio" name="carping_level" value="상" checked />
+							<label class="write_level_check" for="carping_level">상</label>
 							<input type="radio" name="carping_level" value="중" />
-							<h1 class="write_level_check" for="carping_level">중</h1>
+							<label class="write_level_check" for="carping_level">중</label>
 							<input type="radio" name="carping_level" value="하" />
-							<h1 class="write_level_check" for="carping_level">하</h1>
-							<div id="carping_level_explanation">
+							<label class="write_level_check" for="carping_level">하</label> 
+							<div id="carping_level_explanation"> 
 								상 : 화장실 없음, 전기 안됨 <br /> 중 : 화장실 있음 <br /> 하 : 유료 차박지
 							</div>
 						</div>
