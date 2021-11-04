@@ -32,16 +32,30 @@ public class ArticleDAO {
 		return list;
 	}
 	
-	public SuperVO mypage(String mb_id) {
+	public List<SuperVO> mypage() {
 		SqlSession session = sqlSessionFactory.openSession();
-		SuperVO vo = session.selectOne("mypage",mb_id);
-		return vo;
+		List<SuperVO> list = session.selectList("mypage");
+		return list;
 	}
 	
-	public SuperVO memberpage(String mb_id) {
+	public List<SuperVO> memberpage() {
 		SqlSession session = sqlSessionFactory.openSession();
-		SuperVO vo = session.selectOne("memberpage",mb_id);
+		List<SuperVO> list = session.selectList("memberpage");
+		return list;
+	}
+	
+	public void write(SuperVO vo) {
+		SqlSession session=sqlSessionFactory.openSession(); // Connection 
+	      session.insert("write", vo); //insert SQL실행
+	      session.commit(); //완료
+	      session.close();  //반납(*)
+	}
+	
+	public SuperVO article(String mb_id) {
+		SqlSession session=sqlSessionFactory.openSession(); // Connection 
+		SuperVO vo = session.selectOne("article",mb_id);
 		return vo;
+	     
 	}
 	
 	public MbVO isLogin(MbVO vo) {

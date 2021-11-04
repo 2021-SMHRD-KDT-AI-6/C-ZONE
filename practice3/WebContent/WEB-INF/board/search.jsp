@@ -1,9 +1,9 @@
 <%@page import="kr.smhrd.util.SuperVO"%>
 <%@page import="java.util.ArrayList"%>
-<%@ page language="java" contentType="text/html; charset=utf-8"
-	pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+	pageEncoding="EUC-KR"%>
 <%
-	// Object Cating(ê°ì²´í˜•ë³€í™˜-ì œì¼ì¤‘ìš”)
+	// Object Cating(°´Ã¼Çüº¯È¯-Á¦ÀÏÁß¿ä)
 ArrayList<SuperVO> list = (ArrayList<SuperVO>) request.getAttribute("list");
 String cpath = request.getContextPath();
 %>
@@ -19,7 +19,7 @@ Licence URI: https://www.os-templates.com/template-terms
 <html lang="">
 <!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
 <head>
-<title>C-ZONE</title>
+<title>Search</title>
 <meta charset="utf-8" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -50,7 +50,7 @@ Licence URI: https://www.os-templates.com/template-terms
 					<!-- ################################################################################################ -->
 					<ul class="nospace">
 						<li><a href="Index.do"><i class="fas fa-home"></i></a></li>
-						<a href="#"><li id="searchform"></li></a>
+						<a href="search.do"><li id="searchform"></li></a>
 					</ul>
 					<!-- ################################################################################################ -->
 				</div>
@@ -72,9 +72,9 @@ Licence URI: https://www.os-templates.com/template-terms
 					<!-- ################################################################################################ -->
 					<ul class="clear">
 						<li class="active"><a href="Index.do">Home</a></li>
-						<li><a href="write.do">ê¸€ì“°ê¸°</a></li>
-						<li><a href="mypage.do">ë§ˆì´í˜ì´ì§€</a></li>
-						<li><a href="login.do">ë¡œê·¸ì¸</a></li>
+						<li><a href="write.do">±Û¾²±â</a></li>
+						<li><a href="mypage.do">¸¶ÀÌÆäÀÌÁö</a></li>
+						<li><a href="login.do">·Î±×ÀÎ</a></li>
 					</ul>
 					<!-- ################################################################################################ -->
 				</nav>
@@ -84,18 +84,12 @@ Licence URI: https://www.os-templates.com/template-terms
 		<!-- ################################################################################################ -->
 		<!-- ################################################################################################ -->
 		<div id="breadcrumb" class="hoc clear">
-			<div id="profile">
-				<img id="member_profile_pic" src="https://via.placeholder.com/180"
-					alt="í”„ë¡œí•„ì‚¬ì§„" /> <span id="member_name">ê¹€ë™ì„ </span>
-			</div>
 			<!-- ################################################################################################ -->
-			<div class="pushTop">
-				<h6 class="heading">ë§ˆì´í˜ì´ì§€</h6>
-				<ul>
-					<li><a href="Index.do">Home</a></li>
-					<li><a href="mypage.do">MY PAGE</a></li>
-				</ul>
-			</div>
+			<h6 class="heading">±Û¾²±â</h6>
+			<ul>
+				<li><a href="Index.do">Home</a></li>
+				<li><a href="search.do">Write</a></li>
+			</ul>
 			<!-- ################################################################################################ -->
 		</div>
 		<!-- ################################################################################################ -->
@@ -106,48 +100,72 @@ Licence URI: https://www.os-templates.com/template-terms
 	<!-- ################################################################################################ -->
 	<div class="wrapper row3">
 		<main class="hoc container clear">
-			<section id="overview">
-				<div class="sectiontitle">
-					<p class="heading underline font-x2">ì •ë³µì§€</p>
-				</div>
-				<img src="https://via.placeholder.com/1140x500" alt="íŠ¸ë Œë“œ" />
-				<hr class="btmspace-80" />
-
-				<div class="sectiontitle">
-					<p class="heading underline font-x2">ë‚´ê°€ ì“´ ê²Œì‹œë¬¼</p>
-				</div>
-				<%
-					for (SuperVO vo : list) {
-				%>
-				<div class="news_feed">
-					<a href="#"> <img class="thumbnail"
-						src="https://via.placeholder.com/300" alt="ì¸ë„¤ì¼" />
-					</a>
-					<div class="contents">
-						<header>
-							<a href="#"> <img class="profile_pic"
-								src="https://via.placeholder.com/70" alt="í”„ë¡œí•„ì‚¬ì§„" />
-							</a>
-							<div class="article_top">
-								<div class="article_top_up">
-									<strong class="mb_id"><a href="#"><%=vo.getMb_id() %></a></strong>
-									<div class="reg_date"><%=vo.getReg_date() %></div>
-								</div>
-								<div class="article_top_down">
-									<a href="#"><%=vo.getArticle_title() %> </a>
-									<div class="article_top_down_right">
-										<div class="likes">ì¢‹ì•„ìš” <%=vo.getLikes() %></div>
-										<div class="article_cnt">ì¡°íšŒìˆ˜ <%=vo.getArticle_cnt() %></div>
-										<div class="carpinglevel">ë‚œì´ë„<%=vo.getCarping_level() %></div>
-									</div>
-								</div>
-							</div>
-						</header>
-						<article><%=vo.getArticle_content() %></article>
+			<form action="#" method="post" id="search_form">
+				<select name="option">
+					<option value="title_content">Á¦¸ñ+³»¿ë</option>
+					<option value="nickname">´Ğ³×ÀÓ</option>
+					<input type="text" id="search_bar" />
+					<input type="submit" value="°Ë»ö" />
+				</select>
+			</form>
+			<hr />
+			<div id="search_first">
+				<h1>°Ë»ö°á°ú</h1>
+				<div id="search_first_right">
+					<div id="search_level">
+						<input type="checkbox" name="top" /><label for="top">»ó</label> <input
+							type="checkbox" name="middle" /><label for="middle"> Áß </label>
+						<input type="checkbox" name="bottom" /><label for="bottom">
+							ÇÏ </label>
+					</div>
+					<div id="search_button">
+						<button id="search_count">Á¶È¸¼ö</button>
+						<button id="search_like">ÁÁ¾Æ¿ä</button>
+						<button id="search_recent">ÃÖ½Å¼ø</button>
 					</div>
 				</div>
-				<%} %>
-			</section>
+			</div>
+			<hr />
+			<%
+					for (SuperVO vo : list) {
+				%>
+			<div class="news_feed">
+				<a href="#"> <img class="thumbnail"
+					src="https://via.placeholder.com/300" alt="½æ³×ÀÏ" />
+				</a>
+				<div class="contents">
+					<header>
+						<a href="#"> <img class="profile_pic"
+							src="https://via.placeholder.com/70" alt="ÇÁ·ÎÇÊ»çÁø" />
+						</a>
+						<div class="article_top">
+							<div class="article_top_up">
+								<strong class="mb_id"><a href="#"><%=vo.getMb_id()%></a></strong>
+								<div class="reg_date"><%=vo.getReg_date()%></div>
+							</div>
+							<div class="article_top_down">
+								<a href="#"> <%=vo.getArticle_title()%>
+								</a>
+								<div class="article_top_down_right">
+									<div class="likes">
+										ÁÁ¾Æ¿ä
+										<%=vo.getLikes()%></div>
+									<div class="article_cnt">
+										Á¶È¸¼ö
+										<%=vo.getArticle_cnt()%></div>
+									<div class="carpinglevel">
+										³­ÀÌµµ
+										<%=vo.getCarping_level()%></div>
+								</div>
+							</div>
+						</div>
+					</header>
+					<article>
+						<%=vo.getArticle_content()%>
+					</article>
+				</div>
+			</div>
+			<%} %>
 		</main>
 	</div>
 	<!-- ################################################################################################ -->
@@ -200,7 +218,7 @@ Licence URI: https://www.os-templates.com/template-terms
 			</p>
 			<p class="fl_right">
 				Template by <a target="_blank" href="https://www.os-templates.com/"
-					title="Free Website Templates"> OS Templates </a>
+					title="Free Website Templates">OS Templates</a>
 			</p>
 			<!-- ################################################################################################ -->
 		</div>
@@ -209,10 +227,9 @@ Licence URI: https://www.os-templates.com/template-terms
 	<!-- ################################################################################################ -->
 	<!-- ################################################################################################ -->
 	<a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
-
 	<!-- JAVASCRIPTS -->
-	<script src="layout/scripts/jquery.min.js"></script>
-	<script src="layout/scripts/jquery.backtotop.js"></script>
-	<script src="layout/scripts/jquery.mobilemenu.js"></script>
+	<script src="../layout/scripts/jquery.min.js"></script>
+	<script src="../layout/scripts/jquery.backtotop.js"></script>
+	<script src="../layout/scripts/jquery.mobilemenu.js"></script>
 </body>
 </html>

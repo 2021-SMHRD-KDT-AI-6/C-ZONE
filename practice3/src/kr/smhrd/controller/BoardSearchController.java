@@ -10,14 +10,13 @@ import javax.servlet.http.HttpServletResponse;
 import kr.smhrd.util.ArticleDAO;
 import kr.smhrd.util.SuperVO;
 
-public class BoardMemberpageController implements Controller{
+public class BoardSearchController implements Controller{
 	public String requestHandler(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		String mb_id = request.getParameter("mb_id");
 		ArticleDAO dao = new ArticleDAO();
-		List<SuperVO> list= dao.memberpage();
-		request.setAttribute("list",list);
-		return "memberpage";
+		List<SuperVO> list = dao.Index();
+		request.setAttribute("list", list);
+		return "search";
 	}
 }

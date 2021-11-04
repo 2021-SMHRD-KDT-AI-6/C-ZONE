@@ -50,7 +50,7 @@ Licence URI: https://www.os-templates.com/template-terms
 					<!-- ################################################################################################ -->
 					<ul class="nospace">
 						<li><a href="Index.do"><i class="fas fa-home"></i></a></li>
-						<a href="#"><li id="searchform"></li></a>
+						<a href="search.do"><li id="searchform"></li></a>
 					</ul>
 					<!-- ################################################################################################ -->
 				</div>
@@ -72,7 +72,7 @@ Licence URI: https://www.os-templates.com/template-terms
 					<!-- ################################################################################################ -->
 					<ul class="clear">
 						<li class="active"><a href="Index.do">Home</a></li>
-						<li><a href="write.do">글쓰기</a></li>
+						<li><a href="writeForm.do">글쓰기</a></li>
 						<li><a href="mypage.do">마이페이지</a></li>
 						<li><a href="login.do">로그인</a></li>
 					</ul>
@@ -160,12 +160,12 @@ Licence URI: https://www.os-templates.com/template-terms
 					for (SuperVO vo : list) {
 				%>
 				<div class="news_feed">
-					<a href="#"> <img class="thumbnail"
+					<a href="article.do"> <img class="thumbnail"
 						src="https://via.placeholder.com/300" alt="썸네일" />
 					</a>
 					<div class="contents">
 						<header>
-							<a href="#"> <img class="profile_pic"
+							<a href="article.do"> <img class="profile_pic"
 								src="https://via.placeholder.com/70" alt="프로필사진" />
 							</a>
 							<div class="article_top">
@@ -174,7 +174,7 @@ Licence URI: https://www.os-templates.com/template-terms
 									<div class="reg_date"><%=vo.getReg_date()%></div>
 								</div>
 								<div class="article_top_down">
-									<a href="#"> <%=vo.getArticle_title()%>
+									<a href="article.do"> <%=vo.getArticle_title()%>
 									</a>
 									<div class="article_top_down_right">
 										<div class="likes">
