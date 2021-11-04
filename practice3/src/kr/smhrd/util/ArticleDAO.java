@@ -53,9 +53,9 @@ public class ArticleDAO {
 	
 	public SuperVO article(int mb_num) {
 		SqlSession session=sqlSessionFactory.openSession(); // Connection 
-		SuperVO vo = session.selectOne("article",mb_num);
+		SuperVO vo = session.selectOne("article", mb_num);
+		session.close();
 		return vo;
-	     
 	}
 	
 	public MbVO isLogin(MbVO vo) {
