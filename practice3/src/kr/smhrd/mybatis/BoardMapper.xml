@@ -25,9 +25,9 @@
 	</select>
 
 	<select id="memberpage" resultType="kr.smhrd.util.SuperVO">
-		select m.mb_profile_pic, a.*
+		select m.mb_profile_pic, m.mb_nickname, a.*
 		from articles a, members m
-		where a.mb_num=m.mb_num and a.mb_num='#{mb_num}'
+		where a.mb_num=m.mb_num and a.mb_num=#{mb_num}
 		order by a.article_num desc
 	</select>
 	

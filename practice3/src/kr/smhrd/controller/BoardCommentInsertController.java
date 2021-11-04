@@ -14,6 +14,8 @@ public class BoardCommentInsertController implements Controller{
 	@Override
 	public String requestHandler(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
+		
 		int article_num = Integer.parseInt(request.getParameter("article_num"));
 		int mb_num = Integer.parseInt(request.getParameter("mb_num"));
 		String comment_content = request.getParameter("comment_content");
@@ -26,11 +28,7 @@ public class BoardCommentInsertController implements Controller{
 		CommentDAO dao = new CommentDAO();
 		dao.CommentInsert(vo);
 		
-<<<<<<< HEAD
 		return "redirect:/article.do?article_num=" + vo.getArticle_num();
-=======
-		return "redirect:/article.do?article_num=" + article_num;
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-6/C-ZONE.git
 	}
 
 }
