@@ -74,4 +74,12 @@ public class ArticleDAO {
 		session.close(); // ¹Ý³³(*)
 		return mb_num;
 	  }
+	public int updateCnt(int article_num) {
+		SqlSession session = sqlSessionFactory.openSession(); // Connection
+		// insert SQL Àü¼Û
+		int article_num = session.update("insert", vo);
+		session.commit(); // ¿Ï·á
+		session.close(); // ¹Ý³³(*)
+		return mb_num;
+	}
 }
