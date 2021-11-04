@@ -96,8 +96,9 @@ Licence URI: https://www.os-templates.com/template-terms
 		<!-- ################################################################################################ -->
 		<div id="breadcrumb" class="hoc clear">
 			<div id="profile">
+			<a class="profile_fix" src="#">
 				<img id="member_profile_pic" src="<%=members.getMb_profile_pic()%>"
-					alt="프로필사진" /> <span id="member_name">김동선</span>
+					alt="프로필사진" /></a> <span id="member_name">김동선</span>
 			</div>
 			<!-- ################################################################################################ -->
 			<div class="pushTop">

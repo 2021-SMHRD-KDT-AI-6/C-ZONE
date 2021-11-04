@@ -1741,7 +1741,7 @@ table a,
   border: 2px solid black;
 }
 
-/* ============ signup ============ */
+/* ====================== signup ======================= */
 
 #signup {
   margin: 100px 100px;
@@ -1810,7 +1810,60 @@ table a,
   background-color: springgreen;
 }
 
+/* ====================== profile ======================= */
 
+.profile {
+  background-color: whitesmoke;
+}
+
+#profile {
+  margin: 50px 50px;
+  text-align: center;
+  padding: 70px 0px;
+}
+
+.profile_hr {
+  width: 500px;
+  align: center;
+  border: 1px solid black;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.fix_menu {
+  margin-left: 35%;
+}
+
+.pic_fix {
+  margin-right: 35px;
+  margin-bottom: 10px;
+}
+
+.nickname_fix {
+  margin-right: 20px;
+}
+
+.fix_menu_1,
+.fix_menu_2 {
+  display: flex;
+  text-align: center;
+  color: black;
+}
+
+.fix_menu_1 {
+  margin-bottom: 15px;
+}
+
+.pic_fix_input {
+  cursor: pointer;
+}
+.fix_Btn {
+  border-radius: 3px;
+  background: transparent;
+  display: inline-block;
+  text-align: center;
+  
+}
 
 /* ======================== 마이페이지 ======================== */
 .pushTop {
@@ -1831,7 +1884,10 @@ table a,
   padding-top: 18px;
   font-size: 30px;
 }
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-6/C-ZONE.git
+
+.profile_fix {
+  cursor: pointer;	
+}
 /* ========================  ======================== */
 /* 글쓰기페이지 */
 #write_ h1 {

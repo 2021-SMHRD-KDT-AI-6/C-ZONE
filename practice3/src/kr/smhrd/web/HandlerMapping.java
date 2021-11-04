@@ -9,6 +9,7 @@ import kr.smhrd.controller.BoardLoginController;
 import kr.smhrd.controller.BoardLogoutController;
 import kr.smhrd.controller.BoardMemberpageController;
 import kr.smhrd.controller.BoardMypageController;
+import kr.smhrd.controller.BoardProfileController;
 import kr.smhrd.controller.BoardSLController;
 import kr.smhrd.controller.BoardSearchController;
 import kr.smhrd.controller.BoardSignupController;
@@ -37,6 +38,7 @@ public class HandlerMapping {
 		mappings.put("/commentInsert.do", new BoardCommentInsertController());
 		mappings.put("/logout.do", new BoardLogoutController());
 		mappings.put("/insert.do", new BoardSignupInsertController());
+		mappings.put("/profile.do", new BoardProfileController());
 		
 	}
 	public Controller getController(String key) {
