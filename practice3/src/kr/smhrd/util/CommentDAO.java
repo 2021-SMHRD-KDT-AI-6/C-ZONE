@@ -22,12 +22,17 @@ public class CommentDAO {
 		}
 	}
 	
-	public List<SuperVO> CommentList() {
+	public List<SuperVO> CommentList(int article_num) {
 		SqlSession session=sqlSessionFactory.openSession(); // Connection 
-		List<SuperVO> list = session.selectList("commentList");
+		List<SuperVO> list = session.selectList("commentList", article_num);
 		session.close();
 		return list;
 	}
-	
+	public void CommentInsert(SuperVO vo) {
+	      SqlSession session=sqlSessionFactory.openSession(); // Connection 
+	      session.insert("commentInsert", vo); //insert SQL실행
+	      session.commit(); //완료
+	      session.close();  //반납(*)
+	   }
 	
 }

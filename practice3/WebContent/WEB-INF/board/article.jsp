@@ -104,8 +104,8 @@
 							<a href="memberpage.do"><img id="articlepage_profile_pic"
 								src="https://via.placeholder.com/70" alt="프로필사진" /></a>
 							<div id="articlepage_profile">
-								<a href="memberpage.do"><div id="articlepage_mb_id">강성운</div></a>
-								<div id="articlepage_reg_date">2021-10-24</div>
+								<a href="memberpage.do"><div id="articlepage_mb_id"><%=vo.getMb_nickname() %></div></a>
+								<div id="articlepage_reg_date"><%=vo.getReg_date() %></div>
 							</div>
 						</div>
 						<div id="articlepage_third">
@@ -128,6 +128,7 @@
 				</div>
 				<hr />
 				<div id="comment_title">댓글</div>
+				
 				<%
 					for (SuperVO comment : list) {
 				%>
@@ -149,25 +150,10 @@
 				<%
 					}
 				%>
-				<div class="comment">
-					<div class="comment_first">
-						<a href="memberpage.do"><img class="comment_profile_pic"
-							src="https://via.placeholder.com/70" alt="프로필사진" /></a>
-						<div class="comment_profile">
-							<a href="memberpage.do"><div class="articlepage_mb_id">김동선</div></a>
-							<div class="articlepage_reg_date">2021-10-24</div>
-						</div>
-					</div>
-					<div class="comment_content">Lorem ipsum dolor, sit amet
-						consectetur adipisicing elit. Modi, beatae cum. Magnam, temporibus
-						laboriosam! Dolorum iure autem natus quia aspernatur in ex, sequi
-						labore laudantium, officiis impedit nemo ipsum vel.</div>
-				</div>
 
-				<hr />
-
-
-				<form action="#" id="comment_write">
+				<form action="commentInsert.do" id="comment_write">
+					<input type="hidden" name="article_num" value="<%=vo.getArticle_num() %>" />
+					<input type="hidden" name="mb_num" />
 					<textarea type="text" id="comment_content" name="comment_content"
 						placeholder="댓글을 입력해주세요.">
           </textarea>
