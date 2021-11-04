@@ -1,7 +1,9 @@
+<%@page import="kr.smhrd.util.MbVO"%>
 <%@page import="kr.smhrd.util.SuperVO"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+    <% MbVO members=(MbVO)session.getAttribute("succ");%>
 <%
 	// Object Cating(객체형변환-제일중요)
 	ArrayList<SuperVO> list = (ArrayList<SuperVO>)request.getAttribute("list");
@@ -76,17 +78,25 @@ Licence URI: https://www.os-templates.com/template-terms
         <header id="header" class="hoc clear">
           <div id="logo" class="fl_left">
             <!-- ################################################################################################ -->
-            <h1><a href="index.html">C-ZONE</a></h1>
+            <h1><a href="Index.do">C-ZONE</a></h1>
             <!-- ################################################################################################ -->
           </div>
           <nav id="mainav" class="fl_right">
             <!-- ################################################################################################ -->
             <ul class="clear">
-              <li class="active"><a href="index.html">Home</a></li>
-              <li><a href="#">정복지</a></li>
-              <li><a href="#">글쓰기</a></li>
-              <li><a href="#">마이페이지</a></li>
-              <li><a href="#">로그인</a></li>
+              <li class="active"><a href="Index.do">Home</a></li>
+						<% if(members==null){ %>
+						<li><a href="login.do">글쓰기</a></li>
+						<li><a href="login.do">마이페이지</a></li>
+						<% } else { %>
+						<li><a href="writeForm.do">글쓰기</a></li>
+						<li><a href="mypage.do">마이페이지</a></li>
+						<% }%>
+						<% if(members==null){ %>
+						<li><a href="login.do">로그인</a></li>
+						<% } else { %>
+						<li><a href="logout.do" onclick="outFn()">로그아웃</a></li>
+						<% }%>
             </ul>
             <!-- ################################################################################################ -->
           </nav>
@@ -112,6 +122,7 @@ Licence URI: https://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <div class="signupMain">
   <!-- signup -->
+  <form action="<%=cpath%>/insert.do" method = "post">
   <div id="signup">
   <hr class="signup_hr"/>
     <div class="signup_menu">
@@ -129,19 +140,14 @@ Licence URI: https://www.os-templates.com/template-terms
   <div class="signup_menu">
     <div class="signup_menu_3">
       <div class="signup_id_3">name</div>
-      <input class="name_text" type="text" id="mb_nickname" name="mb_nickname" maxlength="5" placeholder="닉네임"></input>
-    </div>
-  </div>
-    <div class="signup_menu">
-    <div class="signup_menu_3">
-      <div class="signup_id_3">name</div>
-      <input type="hidden" name="admin_yn" value="N"><div><img src=""></div>
-      <input type="hidden" name="mb_profile_pic"><div><img src=""></div>
+      <input class="name_text" type="text" id="mb_nickname" name="mb_nickname" maxlength="5" placeholder="닉네임"/>
+      <input type="hidden" name="admin_yn" value="N"/>
+      <input type="hidden" name="mb_profile_pic" value="N"/>
     </div>
   </div>
 
-    <div class="sign_up">회원가입</div>
-
+    <button type="submit" class="sign_up">회원가입</button>
+</form>
   <hr class="signup_hr"/>
   </div>
 </div>

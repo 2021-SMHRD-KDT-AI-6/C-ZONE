@@ -1,12 +1,19 @@
+<%@page import="kr.smhrd.util.MbVO"%>
 <%@page import="kr.smhrd.util.SuperVO"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
+<% MbVO members=(MbVO)session.getAttribute("succ");%>
 <%
 	// Object Cating(객체형변환-제일중요)
 ArrayList<SuperVO> list = (ArrayList<SuperVO>) request.getAttribute("list");
 String cpath = request.getContextPath();
 %>
+<script>      
+function outFn(){
+	  location.href="<%=cpath%>/logout.do";
+}
+</script>
 <!DOCTYPE html>
 <!--
 Template Name: Sislaf
@@ -72,9 +79,18 @@ Licence URI: https://www.os-templates.com/template-terms
 					<!-- ################################################################################################ -->
 					<ul class="clear">
 						<li class="active"><a href="Index.do">Home</a></li>
+						<% if(members==null){ %>
+						<li><a href="login.do">글쓰기</a></li>
+						<li><a href="login.do">마이페이지</a></li>
+						<% } else { %>
 						<li><a href="writeForm.do">글쓰기</a></li>
 						<li><a href="mypage.do">마이페이지</a></li>
+						<% }%>
+						<% if(members==null){ %>
 						<li><a href="login.do">로그인</a></li>
+						<% } else { %>
+						<li><a href="logout.do" onclick="outFn()">로그아웃</a></li>
+						<% }%>
 					</ul>
 					<!-- ################################################################################################ -->
 				</nav>

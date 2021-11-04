@@ -36,4 +36,9 @@
 		select * from articles
 		where mb_num = #{mb_num}
 	</select>
+	
+	<insert id="insert" parameterType="kr.smhrd.util.MbVO">
+		insert into members (mb_id, mb_pwd, admin_yn, mb_profile_pic, mb_nickname)
+		values (#{mb_id}, #{mb_pwd}, #{admin_yn}, #{mb_profile_pic}, #{mb_nickname})
+	</insert>
 </mapper>

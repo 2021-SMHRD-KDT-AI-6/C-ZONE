@@ -10,6 +10,7 @@
 ArrayList<SuperVO> list = (ArrayList<SuperVO>) request.getAttribute("list");
 String cpath = request.getContextPath();
 %>
+
 <!DOCTYPE html>
 <!--
 Template Name: Sislaf
@@ -35,6 +36,7 @@ Licence URI: https://www.os-templates.com/template-terms
       type="text/css"
       media="all"
     />
+
   </head>
   <body id="top">
     <!-- ################################################################################################ -->
@@ -79,18 +81,16 @@ Licence URI: https://www.os-templates.com/template-terms
         <header id="header" class="hoc clear">
           <div id="logo" class="fl_left">
             <!-- ################################################################################################ -->
-            <h1><a href="index.html">C-ZONE</a></h1>
+            <h1><a href="Index.do">C-ZONE</a></h1>
             <!-- ################################################################################################ -->
           </div>
           <nav id="mainav" class="fl_right">
             <!-- ################################################################################################ -->
             <ul class="clear">
-              <li class="active"><a href="index.html">Home</a></li>
-              <li><a href="#">정복지</a></li>
+              <li class="active"><a href="Index.do">Home</a></li>
               <li><a href="#">글쓰기</a></li>
               <li><a href="#">마이페이지</a></li>
               <li><a href="#">로그인</a></li>
-              <li><a href="#">회원가입</a></li>
             </ul>
             <!-- ################################################################################################ -->
           </nav>
@@ -137,8 +137,7 @@ Licence URI: https://www.os-templates.com/template-terms
         <div><button type="submit" class="log_in">로그인</button></div>
      </form>    <% }%>
       <div class="log_service">
-        <div class="log_service_menu">비밀번호 재설정</div>
-        <div class="log_service_menu">회원가입</div>
+        <a class="log_service_menu" href="signup.do">회원가입</a>
       </div>
       <hr class="signup_hr"/>
       </div>
