@@ -162,7 +162,7 @@
 					<input type="hidden" name="article_num" value="<%=vo.getArticle_num() %>" />
 					<input type="hidden" name="mb_num" />
 					<textarea type="text" id="comment_content" name="comment_content"
-						placeholder="댓글을 입력해주세요.">
+						placeholder="댓글을 입력해주세요." value="default value">
           </textarea>
 					<input type="submit" id="comment_btn" />
 				</form>
