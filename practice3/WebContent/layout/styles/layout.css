@@ -1643,118 +1643,175 @@ table a,
   margin-bottom: 30px;
 }
 
+img {
+  width: 30px;
+  height: 30px;
+}
+
 #log-in {
   margin: 100px 100px;
   text-align: center;
   padding: 120px 0px;
 }
 
+.log_menu_list {
+  margin: 10px auto;
+  padding: 8px;
+  border: 2px solid green;
+  border-radius: 5px;
+  background-color: yellowgreen;
+  width: 300px;
+  cursor: pointer;
+}
+
+.log_menu_list:hover {
+  background-color: lightgreen;
+}
+
 .log_in_menu {
   margin: 10px auto;
+  border: 2px solid green;
   border-radius: 5px;
   width: 300px;
 }
 
-.kakao {
+.e-mail {
   display: flex;
-  border: 2px solid darkgoldenrod;
-  background-color: gold;
   margin: 5px;
-  border-radius: 5px;
-  padding: 3px;
 }
 
-.kakao_i {
-  width: 28px;
-  height: 28px;
+.e-mail_i {
+  padding-right: 5px;
 }
 
-.kakao_text {
+.e-mail_text {
   width: 95%;
+}
+
+.password {
+  display: flex;
+  margin: 5px;
+}
+
+.password_i {
+  padding-right: 6px;
+  padding-left: 2px;
+}
+
+.password_text {
+  width: 95%;
+}
+
+.log_in {
+  height: 50px;
+  line-height: 40px;
+  font-weight: bold;
+  font-size: 20px;
+  box-sizing: border-box;
+  border: 4px solid green;
+  border-radius: 5px;
+  background-color: yellowgreen;
+  width: 300px;
+  margin: 20px auto;
+  cursor: pointer;
   text-align: center;
-  padding-right: 11px;
-  padding-top: 2px;
   color: black;
 }
 
-.kakao:hover {
-  background-color: peru;
-  cursor: pointer;
-}
-
-.facebook {
-  display: flex;
-  margin: 5px;
-  border: 2px solid blue;
-  background-color: mediumturquoise;
-  border-radius: 5px;
-  padding: 3px;
-}
-
-.facebook_i {
-  width: 30px;
-  height: 30px;
-}
-
-.facebook_text {
-  width: 95%;
-  text-align: center;
-  padding-right: 11px;
-  padding-top: 4px;
-  color: black;
-}
-
-.facebook:hover {
-  background-color: royalblue;
-  cursor: pointer;
-}
-
-.naver {
-  display: flex;
-  margin: 5px;
-  border: 2px solid green;
-  background-color: darkseagreen;
-  border-radius: 5px;
-  padding: 3px;
-}
-
-.naver_i {
-  width: 30px;
-  height: 30px;
-}
-
-.naver_text {
-  width: 95%;
-  text-align: center;
-  padding-right: 11px;
-  padding-top: 4px;
-  color: black;
-}
-
-.naver:hover {
-  background-color: darkcyan;
-  cursor: pointer;
-}
-
-<<<<<<< HEAD
-=======
-.sign_up:hover {
+.log_in:hover {
   background-color: springgreen;
 }
 
+.log_service {
+  text-align: center;
+}
+
 .log_service_menu {
-  color: black;
   display: inline;
   border: 1px solid black;
   border-radius: 5px;
   padding: 3px 7px;
   cursor: pointer;
+  text-align: center;
+  color: black;
 }
 
 .log_service_menu:hover {
   border: 2px solid black;
 }
-/* 마이페이지 */
+
+/* ============ signup ============ */
+
+#signup {
+  margin: 100px 100px;
+  text-align: center;
+  padding: 120px 0px;
+}
+
+.signup_menu {
+  margin: 10px auto;
+  border: 2px solid green;
+  border-radius: 5px;
+  width: 300px;
+}
+
+.signup_menu_1,
+.signup_menu_2,
+.signup_menu_3 {
+  display: flex;
+  margin: 5px;
+}
+
+.signup_id_1,
+.signup_id_2,
+.signup_id_3 {
+  margin-right: 7px;
+  text-align: center;
+  color: black;
+}
+
+.signup_id_1 {
+  margin-left: 4px;
+  margin-right: 24px;
+}
+.signup_id_2 {
+  margin-left: 4px;
+  margin-right: 20px;
+}
+
+.id_text {
+  width: 240px;
+}
+.pw_text {
+  width: 238px;
+}
+.name_text {
+  width: 85%;
+}
+
+.sign_up {
+  height: 50px;
+  line-height: 40px;
+  font-weight: bold;
+  font-size: 20px;
+  box-sizing: border-box;
+  border: 4px solid green;
+  border-radius: 5px;
+  background-color: yellowgreen;
+  width: 300px;
+  margin: 20px auto;
+  cursor: pointer;
+  text-align: center;
+  color: black;
+}
+
+.sign_up:hover {
+  background-color: springgreen;
+}
+
+
+
+/* ======================== 마이페이지 ======================== */
 .pushTop {
   margin-top: 190px;
 }

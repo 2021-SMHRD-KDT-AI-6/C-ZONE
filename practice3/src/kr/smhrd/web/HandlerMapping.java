@@ -24,6 +24,8 @@ public class HandlerMapping {
 		mappings.put("/mypage.do", new BoardMypageController());
 		mappings.put("/memberpage.do", new BoardMemberpageController());
 		mappings.put("/write.do", new BoardWriteController());
+		mappings.put("/login.do", new BoardLoginController());
+		
 	}
 	public Controller getController(String key) {
 		return mappings.get(key);

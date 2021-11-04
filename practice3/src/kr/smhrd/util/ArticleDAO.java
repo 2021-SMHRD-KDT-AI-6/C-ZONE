@@ -9,6 +9,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+import kr.smhrd.util.SuperVO;
+
 public class ArticleDAO {
 	// Session=Connection, Factory=공장 : Connection을 미리 만들어서 여러개를 가지고 있는 객체
 	private static SqlSessionFactory sqlSessionFactory;
@@ -41,4 +43,11 @@ public class ArticleDAO {
 		SuperVO vo = session.selectOne("memberpage",mb_id);
 		return vo;
 	}
+	
+	public MbVO isLogin(MbVO vo) {
+	     SqlSession session=sqlSessionFactory.openSession();
+	     vo=session.selectOne("isLogin", vo);
+	     session.close();// 반납(*)    
+	     return vo;
+	  }
 }
