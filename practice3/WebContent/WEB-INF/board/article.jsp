@@ -106,7 +106,7 @@ String cpath = request.getContextPath();
 			<h6 class="heading">게시글</h6>
 			<ul>
 				<li><a href="Index.do">Home</a></li>
-				<li><a href="Index.do">ARTICLE</a></li>
+				<li><a href="<%=cpath%>/article.do?article_num=<%=vo.getArticle_num()%>">ARTICLE</a></li>
 			</ul>
 			<!-- ################################################################################################ -->
 		</div>

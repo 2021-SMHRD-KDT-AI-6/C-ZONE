@@ -57,7 +57,7 @@
 		c.reg_date, c.comment_content, a.article_num, m.mb_nickname,
 		m.mb_profile_pic from comments c, articles a, members m
 		where
-		a.article_num = c.article_num and a.mb_num = m.mb_num and
+		a.article_num = c.article_num and c.mb_num = m.mb_num and
 		a.article_num = #{article_num}
 		order by c.comment_num desc
 	</select>
