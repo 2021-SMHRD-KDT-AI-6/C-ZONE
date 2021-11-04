@@ -10,6 +10,7 @@
 ArrayList<SuperVO> list = (ArrayList<SuperVO>) request.getAttribute("list");
 String cpath = request.getContextPath();
 %>
+
 <!DOCTYPE html>
 <!--
 Template Name: Sislaf
@@ -35,6 +36,7 @@ Licence URI: https://www.os-templates.com/template-terms
       type="text/css"
       media="all"
     />
+
   </head>
   <body id="top">
     <!-- ################################################################################################ -->
@@ -79,18 +81,16 @@ Licence URI: https://www.os-templates.com/template-terms
         <header id="header" class="hoc clear">
           <div id="logo" class="fl_left">
             <!-- ################################################################################################ -->
-            <h1><a href="index.html">C-ZONE</a></h1>
+            <h1><a href="Index.do">C-ZONE</a></h1>
             <!-- ################################################################################################ -->
           </div>
           <nav id="mainav" class="fl_right">
             <!-- ################################################################################################ -->
             <ul class="clear">
-              <li class="active"><a href="index.html">Home</a></li>
-              <li><a href="#">정복지</a></li>
+              <li class="active"><a href="Index.do">Home</a></li>
               <li><a href="#">글쓰기</a></li>
               <li><a href="#">마이페이지</a></li>
               <li><a href="#">로그인</a></li>
-              <li><a href="#">회원가입</a></li>
             </ul>
             <!-- ################################################################################################ -->
           </nav>
@@ -116,31 +116,32 @@ Licence URI: https://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <div class="signupMain">
       <!-- log-in -->
+      
+      <div id="log-in">
       <% if(members==null){ %>
       <form class="form-inline" action="<%=cpath%>/login.do" method="post">
-      <div id="log-in">
       <hr class="signup_hr"/>
         <div class="log_in_menu">
         <div class="e-mail">
           <img class=e-mail_i src="images/demo/signup_logos/mail.png"></img>
-          <input class="e-mail_text" type="text" placeholder="ID를 입력해주세요."></input>
+          <input class="e-mail_text" type="text" id="mb_id" name="mb_id" placeholder="ID를 입력해주세요."></input>
         </div>
       </div>
       <div class="log_in_menu">
         <div class="password">
           <img class=password_i src="images/demo/signup_logos/password.png"></img>
-          <input class="password_text" type="password" maxlength="5" placeholder="비밀번호"></input>
+          <input class="password_text" type="password" id="mb_pwd" name="mb_pwd" maxlength="15" placeholder="비밀번호"></input>
         </div>
       </div>
 
         <div><button type="submit" class="log_in">로그인</button></div>
      </form>    <% }%>
       <div class="log_service">
-        <div class="log_service_menu">비밀번호 재설정</div>
-        <div class="log_service_menu">회원가입</div>
+        <a class="log_service_menu" href="signup.do">회원가입</a>
       </div>
       <hr class="signup_hr"/>
       </div>
+</div>
 </div>
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
@@ -187,35 +188,6 @@ Licence URI: https://www.os-templates.com/template-terms
     <script src="layout/scripts/jquery.min.js"></script>
     <script src="layout/scripts/jquery.backtotop.js"></script>
     <script src="layout/scripts/jquery.mobilemenu.js"></script>
- 
-	<!-- JAVASCRIPTS -->
-		<!-- kakao log-in -->
-
-<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-  <script>
-    // 	60c5862d446a5921c13cb5f4cf5c1216
-
-    // 윈도우가 열리자마자 띄우기
-    window.Kakao.init("60c5862d446a5921c13cb5f4cf5c1216");
-    // SDK 초기화 여부를 판단합니다.
-    console.log(Kakao.isInitialized());
-
-    function kakaoLogin() {
-      window.Kakao.Auth.login({
-        scope:'profile_nickname , profile_image',
-        success : function(authObj) {
-          console.log(authObj);
-          window.Kakao.API.request({
-            url : '/v2/user/me',
-            success: function(res){ 
-              const kakao_account = res.kakao_account;
-              console.log(kakao_account);
-            }
-          });
-        }
-      });
-    };
-  </script>
 	
 </body>
 </html>

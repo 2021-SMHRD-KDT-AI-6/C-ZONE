@@ -6,11 +6,13 @@ import kr.smhrd.controller.BoardArticleController;
 import kr.smhrd.controller.BoardCommentInsertController;
 import kr.smhrd.controller.BoardIndexController;
 import kr.smhrd.controller.BoardLoginController;
+import kr.smhrd.controller.BoardLogoutController;
 import kr.smhrd.controller.BoardMemberpageController;
 import kr.smhrd.controller.BoardMypageController;
 import kr.smhrd.controller.BoardSLController;
 import kr.smhrd.controller.BoardSearchController;
 import kr.smhrd.controller.BoardSignupController;
+import kr.smhrd.controller.BoardSignupInsertController;
 import kr.smhrd.controller.BoardWriteController;
 import kr.smhrd.controller.BoardWriteFormController;
 import kr.smhrd.controller.Controller;
@@ -32,7 +34,12 @@ public class HandlerMapping {
 		mappings.put("/write.do", new BoardWriteController());
 		mappings.put("/sl.do", new BoardSLController());
 		mappings.put("/article.do", new BoardArticleController());
+<<<<<<< HEAD
 		mappings.put("/commentInsert.do", new BoardCommentInsertController());
+=======
+		mappings.put("/logout.do", new BoardLogoutController());
+		mappings.put("/insert.do", new BoardSignupInsertController());
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-6/C-ZONE.git
 		
 	}
 	public Controller getController(String key) {
