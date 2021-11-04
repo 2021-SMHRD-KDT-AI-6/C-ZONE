@@ -1,12 +1,14 @@
 <%@page import="kr.smhrd.util.MbVO"%>
 <%@page import="kr.smhrd.util.SuperVO"%>
 <%@page import="java.util.ArrayList"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
 
-<% MbVO members=(MbVO)session.getAttribute("succ");%>
 <%
-	// Object Cating(°´Ã¼Çüº¯È¯-Á¦ÀÏÁß¿ä)
+	MbVO members = (MbVO) session.getAttribute("succ");
+%>
+<%
+	// Object Cating(ê°ì²´í˜•ë³€í™˜-ì œì¼ì¤‘ìš”)
 ArrayList<SuperVO> list = (ArrayList<SuperVO>) request.getAttribute("list");
 String cpath = request.getContextPath();
 %>
@@ -75,18 +77,30 @@ Licence URI: https://www.os-templates.com/template-terms
 					<!-- ################################################################################################ -->
 					<ul class="clear">
 						<li class="active"><a href="Index.do">Home</a></li>
-						<% if(members==null){ %>
-						<li><a href="login.do">±Û¾²±â</a></li>
-						<li><a href="login.do">¸¶ÀÌÆäÀÌÁö</a></li>
-						<% } else { %>
-						<li><a href="writeForm.do">±Û¾²±â</a></li>
-						<li><a href="mypage.do">¸¶ÀÌÆäÀÌÁö</a></li>
-						<% }%>
-						<% if(members==null){ %>
-						<li><a href="login.do">·Î±×ÀÎ</a></li>
-						<% } else { %>
-						<li><a href="logout.do" onclick="outFn()">·Î±×¾Æ¿ô</a></li>
-						<% }%>
+						<%
+							if (members == null) {
+						%>
+						<li><a href="login.do">ê¸€ì“°ê¸°</a></li>
+						<li><a href="login.do">ë§ˆì´í˜ì´ì§€</a></li>
+						<%
+							} else {
+						%>
+						<li><a href="writeForm.do">ê¸€ì“°ê¸°</a></li>
+						<li><a href="mypage.do?mb_num=<%=members.getMb_num()%>">ë§ˆì´í˜ì´ì§€</a></li>
+						<%
+							}
+						%>
+						<%
+							if (members == null) {
+						%>
+						<li><a href="login.do">ë¡œê·¸ì¸</a></li>
+						<%
+							} else {
+						%>
+						<li><a href="logout.do" onclick="outFn()">ë¡œê·¸ì•„ì›ƒ</a></li>
+						<%
+							}
+						%>
 					</ul>
 					<!-- ################################################################################################ -->
 				</nav>
@@ -97,10 +111,10 @@ Licence URI: https://www.os-templates.com/template-terms
 		<!-- ################################################################################################ -->
 		<div id="breadcrumb" class="hoc clear">
 			<!-- ################################################################################################ -->
-			<h6 class="heading">±Û¾²±â</h6>
+			<h6 class="heading">ê²€ìƒ‰</h6>
 			<ul>
 				<li><a href="Index.do">Home</a></li>
-				<li><a href="search.do">Write</a></li>
+				<li><a href="search.do">SEARCH</a></li>
 			</ul>
 			<!-- ################################################################################################ -->
 		</div>
@@ -114,70 +128,79 @@ Licence URI: https://www.os-templates.com/template-terms
 		<main class="hoc container clear">
 			<form action="#" method="post" id="search_form">
 				<select name="option">
-					<option value="title_content">Á¦¸ñ+³»¿ë</option>
-					<option value="nickname">´Ğ³×ÀÓ</option>
+					<option value="title_content">ì œëª©+ë‚´ìš©</option>
+					<option value="nickname">ë‹‰ë„¤ì„</option>
 					<input type="text" id="search_bar" />
-					<input type="submit" value="°Ë»ö" />
+					<input type="submit" value="ê²€ìƒ‰" />
 				</select>
 			</form>
 			<hr />
 			<div id="search_first">
-				<h1>°Ë»ö°á°ú</h1>
+				<h1>ê²€ìƒ‰ê²°ê³¼</h1>
 				<div id="search_first_right">
 					<div id="search_level">
-						<input type="checkbox" name="top" /><label for="top">»ó</label> <input
-							type="checkbox" name="middle" /><label for="middle"> Áß </label>
+						<input type="checkbox" name="top" /><label for="top">ìƒ</label> <input
+							type="checkbox" name="middle" /><label for="middle"> ì¤‘ </label>
 						<input type="checkbox" name="bottom" /><label for="bottom">
-							ÇÏ </label>
+							í•˜ </label>
 					</div>
 					<div id="search_button">
-						<button id="search_count">Á¶È¸¼ö</button>
-						<button id="search_like">ÁÁ¾Æ¿ä</button>
-						<button id="search_recent">ÃÖ½Å¼ø</button>
+						<button id="search_count">ì¡°íšŒìˆ˜</button>
+						<button id="search_like">ì¢‹ì•„ìš”</button>
+						<button id="search_recent">ìµœì‹ ìˆœ</button>
 					</div>
 				</div>
 			</div>
 			<hr />
 			<%
-					for (SuperVO vo : list) {
-				%>
+				for (SuperVO vo : list) {
+			%>
 			<div class="news_feed">
-				<a href="#"> <img class="thumbnail"
-					src="https://via.placeholder.com/300" alt="½æ³×ÀÏ" />
+				<a href="<%=cpath%>/article.do?article_num=<%=vo.getArticle_num()%>">
+					<img class="thumbnail" src="https://via.placeholder.com/300"
+					alt="ì¸ë„¤ì¼" />
 				</a>
 				<div class="contents">
 					<header>
-						<a href="#"> <img class="profile_pic"
-							src="https://via.placeholder.com/70" alt="ÇÁ·ÎÇÊ»çÁø" />
+						<a href="<%=cpath%>/memberpage.do?mb_num=<%=vo.getMb_num()%>">
+							<img class="profile_pic" src="https://via.placeholder.com/70"
+							alt="í”„ë¡œí•„ì‚¬ì§„" />
 						</a>
 						<div class="article_top">
 							<div class="article_top_up">
-								<strong class="mb_num"><a href="#"><%=vo.getMb_num()%></a></strong>
+								<strong class="mb_num"><a href="<%=cpath%>/memberpage.do?mb_num=<%=vo.getMb_num()%>"><%=vo.getMb_nickname()%></a></strong>
 								<div class="reg_date"><%=vo.getReg_date()%></div>
 							</div>
 							<div class="article_top_down">
-								<a href="#"> <%=vo.getArticle_title()%>
+								<a
+									href="<%=cpath%>/article.do?article_num=<%=vo.getArticle_num()%>">
+									<%=vo.getArticle_title()%>
 								</a>
 								<div class="article_top_down_right">
 									<div class="likes">
-										ÁÁ¾Æ¿ä
+										ì¢‹ì•„ìš”
 										<%=vo.getLikes()%></div>
 									<div class="article_cnt">
-										Á¶È¸¼ö
+										ì¡°íšŒìˆ˜
 										<%=vo.getArticle_cnt()%></div>
 									<div class="carpinglevel">
-										³­ÀÌµµ
+										ë‚œì´ë„
 										<%=vo.getCarping_level()%></div>
 								</div>
 							</div>
 						</div>
 					</header>
 					<article>
-						<%=vo.getArticle_content()%>
+						<a
+							href="<%=cpath%>/article.do?article_num=<%=vo.getArticle_num()%>">
+							<%=vo.getArticle_content()%>
+						</a>
 					</article>
 				</div>
 			</div>
-			<%} %>
+			<%
+				}
+			%>
 		</main>
 	</div>
 	<!-- ################################################################################################ -->

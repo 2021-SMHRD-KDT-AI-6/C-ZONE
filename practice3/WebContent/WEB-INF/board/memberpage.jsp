@@ -1,11 +1,12 @@
+<%@page import="kr.smhrd.util.SuperVO"%>
 <%@page import="kr.smhrd.util.MbVO"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
-<% MbVO members=(MbVO)session.getAttribute("succ");%>
 <%
-	// Object Cating(객체형변환-제일중요)
-ArrayList<SuperVO> list = (ArrayList<SuperVO>)request.getAttribute("list");
+MbVO members = (MbVO) session.getAttribute("succ");
+SuperVO vo = (SuperVO) request.getAttribute("vo");
+ArrayList<SuperVO> list = (ArrayList<SuperVO>) request.getAttribute("list");
 String cpath = request.getContextPath();
 %>
 <!DOCTYPE html>
@@ -27,7 +28,6 @@ Licence URI: https://www.os-templates.com/template-terms
 <link href="layout/styles/layout.css" rel="stylesheet" type="text/css"
 	media="all" />
 </head>
-<%@page import="kr.smhrd.util.SuperVO"%>
 <body id="top">
 	<!-- ################################################################################################ -->
 	<!-- ################################################################################################ -->
@@ -51,8 +51,8 @@ Licence URI: https://www.os-templates.com/template-terms
 				<div class="fl_right">
 					<!-- ################################################################################################ -->
 					<ul class="nospace">
-						<li><a href="index.html"><i class="fas fa-home"></i></a></li>
-						<a href="#"><li id="searchform"></li></a>
+						<li><a href="Index.do"><i class="fas fa-home"></i></a></li>
+						<a href="search.do"><li id="searchform"></li></a>
 					</ul>
 					<!-- ################################################################################################ -->
 				</div>
@@ -66,7 +66,7 @@ Licence URI: https://www.os-templates.com/template-terms
 				<div id="logo" class="fl_left">
 					<!-- ################################################################################################ -->
 					<h1>
-						<a href="Index.jsp">C-ZONE</a>
+						<a href="Index.do">C-ZONE</a>
 					</h1>
 					<!-- ################################################################################################ -->
 				</div>
@@ -74,18 +74,30 @@ Licence URI: https://www.os-templates.com/template-terms
 					<!-- ################################################################################################ -->
 					<ul class="clear">
 						<li class="active"><a href="Index.jsp">Home</a></li>
-						<% if(members==null){ %>
+						<%
+							if (members == null) {
+						%>
 						<li><a href="login.do">글쓰기</a></li>
 						<li><a href="login.do">마이페이지</a></li>
-						<% } else { %>
+						<%
+							} else {
+						%>
 						<li><a href="writeForm.do">글쓰기</a></li>
-						<li><a href="mypage.do">마이페이지</a></li>
-						<% }%>
-						<% if(members==null){ %>
+						<li><a href="mypage.do?mb_num=<%=members.getMb_num()%>">마이페이지</a></li>
+						<%
+							}
+						%>
+						<%
+							if (members == null) {
+						%>
 						<li><a href="login.do">로그인</a></li>
-						<% } else { %>
+						<%
+							} else {
+						%>
 						<li><a href="logout.do" onclick="outFn()">로그아웃</a></li>
-						<% }%>
+						<%
+							}
+						%>
 					</ul>
 					<!-- ################################################################################################ -->
 				</nav>
@@ -97,14 +109,14 @@ Licence URI: https://www.os-templates.com/template-terms
 		<div id="breadcrumb" class="hoc clear">
 			<div id="profile">
 				<img id="member_profile_pic" src="https://via.placeholder.com/180"
-					alt="프로필사진" /> <span id="member_name">강성운</span>
+					alt="프로필사진" /> <span id="member_name"><%=vo.getMb_nickname()%></span>
 			</div>
 			<!-- ################################################################################################ -->
 			<div class="pushTop">
 				<h6 class="heading">멤버페이지</h6>
 				<ul>
-					<li><a href="Index.jsp">Home</a></li>
-					<li><a href="MyPage.jsp">MEMBER PAGE</a></li>
+					<li><a href="Index.do">Home</a></li>
+					<li><a href="<%=cpath%>/memberpage.do?mb_num=<%=vo.getMb_num()%>">MEMBER PAGE</a></li>
 				</ul>
 			</div>
 			<!-- ################################################################################################ -->
@@ -125,46 +137,58 @@ Licence URI: https://www.os-templates.com/template-terms
 				<hr class="btmspace-80" />
 
 				<div class="sectiontitle">
-					<p class="heading underline font-x2">강성운님이 쓴 게시물</p>
+					<p class="heading underline font-x2"><%=vo.getMb_nickname() %>님이 쓴 게시물</p>
 				</div>
 				<%
-			for (SuperVO vo : list) {
-			%>
+					for (SuperVO vo2 : list) {
+				%>
+				<input type="hidden" name="mb_num" value="<%=vo2.getMb_num()%>" />
 				<div class="news_feed">
-					<a href="#"> <img class="thumbnail"
-						src="https://via.placeholder.com/300" alt="썸네일" />
+					<a
+						href="<%=cpath%>/article.do?article_num=<%=vo2.getArticle_num()%>">
+						<img class="thumbnail" src="https://via.placeholder.com/300"
+						alt="썸네일" />
 					</a>
 					<div class="contents">
 						<header>
-							<a href="#"> <img class="profile_pic"
-								src="https://via.placeholder.com/70" alt="프로필사진" />
+							<a href="<%=cpath%>/memberpage.do?mb_num=<%=vo2.getMb_num()%>">
+								<img class="profile_pic" src="https://via.placeholder.com/70"
+								alt="프로필사진" />
 							</a>
 							<div class="article_top">
 								<div class="article_top_up">
-									<strong class="mb_num"><a href="#"><%=vo.getMb_num() %></a></strong>
-									<div class="reg_date"><%=vo.getReg_date() %></div>
+									<strong class="mb_num"><a
+										href="<%=cpath%>/memberpage.do?mb_num=<%=vo2.getMb_num()%>"><%=vo2.getMb_nickname()%></a></strong>
+									<div class="reg_date"><%=vo2.getReg_date()%></div>
 								</div>
 								<div class="article_top_down">
-									<a href="#"><%=vo.getArticle_title() %> </a>
+									<a
+										href="<%=cpath%>/article.do?article_num=<%=vo2.getArticle_num()%>"><%=vo2.getArticle_title()%>
+									</a>
 									<div class="article_top_down_right">
 										<div class="likes">
 											좋아요
-											<%=vo.getLikes() %></div>
+											<%=vo2.getLikes()%></div>
 										<div class="article_cnt">
-											조회수<%=vo.getArticle_cnt() %></div>
+											조회수<%=vo2.getArticle_cnt()%></div>
 										<div class="carpinglevel">
 											난이도
-											<%=vo.getCarping_level() %></div>
+											<%=vo2.getCarping_level()%></div>
 									</div>
 								</div>
 							</div>
 						</header>
 						<article>
-							<%=vo.getArticle_content() %>
+							<a
+								href="<%=cpath%>/article.do?article_num=<%=vo2.getArticle_num()%>">
+								<%=vo2.getArticle_content()%>
+							</a>
 						</article>
 					</div>
 				</div>
-				<%} %>
+				<%
+					}
+				%>
 				<div class="news_feed">
 					<img class="thumbnail" src="https://via.placeholder.com/300"
 						alt="썸네일" />
