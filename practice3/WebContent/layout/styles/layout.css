@@ -1643,7 +1643,8 @@ table a,
   margin-bottom: 30px;
 }
 
-img {
+.e-mail_i,
+.password_i {
   width: 30px;
   height: 30px;
 }

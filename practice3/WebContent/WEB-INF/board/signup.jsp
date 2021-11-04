@@ -117,19 +117,19 @@ Licence URI: https://www.os-templates.com/template-terms
     <div class="signup_menu">
     <div class="signup_menu_1">
       <div class="signup_id_1">ID  </div>
-      <input class="id_text" type="text" name="mb_id" placeholder="ID를 입력해주세요."></input>
+      <input class="id_text" type="text" id="mb_id" name="mb_id" placeholder="ID를 입력해주세요."></input>
     </div>
   </div>
   <div class="signup_menu">
     <div class="signup_menu_2">
       <div class="signup_id_2">PW  </div>
-      <input class="pw_text" type="password" name="mb_pwd" maxlength="5" placeholder="비밀번호"></input>
+      <input class="pw_text" type="password" id="mb_pwd" name="mb_pwd" maxlength="5" placeholder="비밀번호"></input>
     </div>
   </div>
   <div class="signup_menu">
     <div class="signup_menu_3">
       <div class="signup_id_3">name</div>
-      <input class="name_text" type="text" name="mb_nickname" maxlength="5" placeholder="닉네임"></input>
+      <input class="name_text" type="text" id="mb_nickname" name="mb_nickname" maxlength="5" placeholder="닉네임"></input>
     </div>
   </div>
     <div class="signup_menu">

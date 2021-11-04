@@ -61,6 +61,7 @@ public class ArticleDAO {
 	public MbVO isLogin(MbVO vo) {
 	     SqlSession session=sqlSessionFactory.openSession();
 	     vo=session.selectOne("isLogin", vo);
+	     System.out.println("vo »Æ¿Œ :" + vo);
 	     session.close();// π›≥≥(*)    
 	     return vo;
 	  }
