@@ -8,8 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import kr.smhrd.util.ArticleDAO;
-import kr.smhrd.util.SuperVO;
+import kr.smhrd.util.*;
 
 // POJO
 public class BoardIndexController implements Controller{

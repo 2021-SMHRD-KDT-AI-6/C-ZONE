@@ -1,7 +1,6 @@
 <%@page import="kr.smhrd.util.SuperVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
-<%SuperVO user = (SuperVO) session.getAttribute("succ");%>
 <!DOCTYPE html>
 <html lang="">
 <head>
@@ -36,7 +35,7 @@
 					<!-- ################################################################################################ -->
 					<ul class="nospace">
 						<li><a href="Index.do"><i class="fas fa-home"></i></a></li>
-						<a href="#"><li id="searchform"></li></a>
+						<a href="search.do"><li id="searchform"></li></a>
 					</ul>
 					<!-- ################################################################################################ -->
 				</div>
@@ -74,7 +73,7 @@
 			<h6 class="heading">°Ô½Ã±Û</h6>
 			<ul>
 				<li><a href="Index.do">Home</a></li>
-				<li><a href="articlepage.do">ARTICLE</a></li>
+				<li><a href="Index.do">ARTICLE</a></li>
 			</ul>
 			<!-- ################################################################################################ -->
 		</div>
