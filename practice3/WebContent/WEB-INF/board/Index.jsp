@@ -158,6 +158,7 @@ Licence URI: https://www.os-templates.com/template-terms
 				</div>
 				<%
 					for (SuperVO vo : list) {
+						
 				%>
 				<div class="news_feed">
 					<a href="<%=cpath%>/article.do?article_num=<%=vo.getArticle_num()%>"> <img class="thumbnail"
