@@ -30,6 +30,7 @@ public class HandlerMapping {
 		mappings.put("/writeForm.do", new BoardWriteFormController());
 		mappings.put("/write.do", new BoardWriteController());
 		mappings.put("/sl.do", new BoardSLController());
+		mappings.put("/article.do", new BoardArticleController());
 		
 	}
 	public Controller getController(String key) {

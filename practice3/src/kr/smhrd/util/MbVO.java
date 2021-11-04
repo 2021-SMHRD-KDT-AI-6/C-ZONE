@@ -17,6 +17,4 @@ public class MbVO {
     private String mb_profile_pic;
     private String mb_nickname;
     private String mb_num;
-    
-    
 }
