@@ -82,6 +82,7 @@ public class ArticleDAO {
 		session.close(); // ¹Ý³³(*)
 		return mb_num;
 	  }
+<<<<<<< HEAD
 	public int updatecnt(int article_num) {
 		SqlSession session = sqlSessionFactory.openSession(); // Connection
 		// insert SQL Àü¼Û
@@ -90,5 +91,12 @@ public class ArticleDAO {
 		session.close(); // ¹Ý³³(*)
 		return article_cnt;
 		
+=======
+	public int writeView() {
+		SqlSession session = sqlSessionFactory.openSession();
+		int article_num = session.selectOne("writeview");
+		session.close();
+		return article_num;
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-6/C-ZONE.git
 	}
 }
