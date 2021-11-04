@@ -52,4 +52,8 @@
 		insert into members (mb_id, mb_pwd, admin_yn, mb_profile_pic, mb_nickname)
 		values (#{mb_id}, #{mb_pwd}, #{admin_yn}, #{mb_profile_pic}, #{mb_nickname})
 	</insert>
+	
+	<update id="updateCnt" parameterType="kr.smhrd.util.SuperVO">
+	update articles set article_cnt=article_cnt+1 where article_num=#{article_num}
+</update>
 </mapper>
