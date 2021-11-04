@@ -1,8 +1,10 @@
+<%@page import="kr.smhrd.util.MbVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 <%
 	String cpath = request.getContextPath();
 %>
+<% MbVO members=(MbVO)session.getAttribute("succ");%>
 <!DOCTYPE html>
 <html lang="">
 <head>
@@ -61,7 +63,11 @@
 						<li class="active"><a href="Index.do">Home</a></li>
 						<li><a href="writeForm.do">글쓰기</a></li>
 						<li><a href="mypage.do">마이페이지</a></li>
+						<% if(members==null){ %>
 						<li><a href="login.do">로그인</a></li>
+						<% } else { %>
+						<li><a href="logout.do" onclick="outFn()">로그아웃</a></li>
+						<% }%>
 					</ul>
 					<!-- ################################################################################################ -->
 				</nav>

@@ -34,6 +34,18 @@
 	
 	<select id="article" resultType="kr.smhrd.util.SuperVO">
 		select * from articles
-		where mb_num = #{mb_num}
+		where article_num = #{article_num}
 	</select>
+	
+
+		<select id="commentList" resultType="kr.smhrd.util.SuperVO">
+		select c.comment_num, c.reg_date, c.comment_content, c.article_num from comments c, articles a
+		where a.article_num = c.article_num and c.article_num = #{article_num}
+		order by c.comment_num desc
+	</select>
+	
+	<insert id="insert" parameterType="kr.smhrd.util.MbVO">
+		insert into members (mb_id, mb_pwd, admin_yn, mb_profile_pic, mb_nickname)
+		values (#{mb_id}, #{mb_pwd}, #{admin_yn}, #{mb_profile_pic}, #{mb_nickname})
+	</insert>
 </mapper>

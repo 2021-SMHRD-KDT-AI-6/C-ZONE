@@ -1,7 +1,9 @@
+<%@page import="kr.smhrd.util.MbVO"%>
 <%@page import="kr.smhrd.util.SuperVO"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
+<% MbVO members=(MbVO)session.getAttribute("succ");%>
 <%
 	// Object Cating(객체형변환-제일중요)
 ArrayList<SuperVO> list = (ArrayList<SuperVO>) request.getAttribute("list");
@@ -72,9 +74,18 @@ Licence URI: https://www.os-templates.com/template-terms
 					<!-- ################################################################################################ -->
 					<ul class="clear">
 						<li class="active"><a href="Index.do">Home</a></li>
-						<li><a href="write.do">글쓰기</a></li>
+						<% if(members==null){ %>
+						<li><a href="login.do">글쓰기</a></li>
+						<li><a href="login.do">마이페이지</a></li>
+						<% } else { %>
+						<li><a href="writeForm.do">글쓰기</a></li>
 						<li><a href="mypage.do">마이페이지</a></li>
+						<% }%>
+						<% if(members==null){ %>
 						<li><a href="login.do">로그인</a></li>
+						<% } else { %>
+						<li><a href="logout.do" onclick="outFn()">로그아웃</a></li>
+						<% }%>
 					</ul>
 					<!-- ################################################################################################ -->
 				</nav>
@@ -140,7 +151,7 @@ Licence URI: https://www.os-templates.com/template-terms
 						</a>
 						<div class="article_top">
 							<div class="article_top_up">
-								<strong class="mb_id"><a href="#"><%=vo.getMb_id()%></a></strong>
+								<strong class="mb_num"><a href="#"><%=vo.getMb_num()%></a></strong>
 								<div class="reg_date"><%=vo.getReg_date()%></div>
 							</div>
 							<div class="article_top_down">

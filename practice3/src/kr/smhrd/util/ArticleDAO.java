@@ -53,15 +53,25 @@ public class ArticleDAO {
 	
 	public SuperVO article(int mb_num) {
 		SqlSession session=sqlSessionFactory.openSession(); // Connection 
-		SuperVO vo = session.selectOne("article",mb_num);
+		SuperVO vo = session.selectOne("article", mb_num);
+		session.close();
 		return vo;
-	     
 	}
 	
 	public MbVO isLogin(MbVO vo) {
 	     SqlSession session=sqlSessionFactory.openSession();
 	     vo=session.selectOne("isLogin", vo);
+	     System.out.println("vo È®ÀÎ :" + vo);
 	     session.close();// ¹Ý³³(*)    
 	     return vo;
+	  }
+	
+	public int boardSignupInsert(MbVO vo) {
+		SqlSession session = sqlSessionFactory.openSession(); // Connection
+		// insert SQL Àü¼Û
+		int mb_num = session.insert("insert", vo);
+		session.commit(); // ¿Ï·á
+		session.close(); // ¹Ý³³(*)
+		return mb_num;
 	  }
 }
