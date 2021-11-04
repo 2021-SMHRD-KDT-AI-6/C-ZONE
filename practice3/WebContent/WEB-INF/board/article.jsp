@@ -1,24 +1,15 @@
-<<<<<<< HEAD
-=======
 <%@page import="java.util.ArrayList"%>
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-6/C-ZONE.git
 <%@page import="kr.smhrd.util.MbVO"%>
 <%@page import="kr.smhrd.util.SuperVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
-<<<<<<< HEAD
-	<% MbVO members=(MbVO)session.getAttribute("succ");%>
-=======
-<%
-	MbVO members = (MbVO) session.getAttribute("succ");
-%>
+<% MbVO members=(MbVO)session.getAttribute("succ");%>
 <%
 	SuperVO vo = (SuperVO) request.getAttribute("vo");
 %>
 <%
 	ArrayList<SuperVO> list = (ArrayList<SuperVO>) request.getAttribute("list");
 %>
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-6/C-ZONE.git
 <!DOCTYPE html>
 <html lang="">
 <head>
