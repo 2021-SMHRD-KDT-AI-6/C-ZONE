@@ -61,7 +61,17 @@ public class ArticleDAO {
 	public MbVO isLogin(MbVO vo) {
 	     SqlSession session=sqlSessionFactory.openSession();
 	     vo=session.selectOne("isLogin", vo);
+	     System.out.println("vo È®ÀÎ :" + vo);
 	     session.close();// ¹Ý³³(*)    
 	     return vo;
+	  }
+	
+	public int boardSignupInsert(MbVO vo) {
+		SqlSession session = sqlSessionFactory.openSession(); // Connection
+		// insert SQL Àü¼Û
+		int mb_num = session.insert("insert", vo);
+		session.commit(); // ¿Ï·á
+		session.close(); // ¹Ý³³(*)
+		return mb_num;
 	  }
 }

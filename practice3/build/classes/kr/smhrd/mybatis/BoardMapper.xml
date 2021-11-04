@@ -33,14 +33,23 @@
 </select> 
 	
 	<select id="article" resultType="kr.smhrd.util.SuperVO">
-		select * from articles
-		where article_num = #{article_num}
+		select a.*, m.mb_nickname, m.mb_profile_pic from articles a, members m
+		where a.mb_num = m.mb_num and article_num = #{article_num}
 	</select>
 	
-
 		<select id="commentList" resultType="kr.smhrd.util.SuperVO">
-		select c.comment_num, c.reg_date, c.comment_content, c.article_num from comments c, articles a
-		where a.article_num = c.article_num and c.article_num = #{article_num}
+		select c.comment_num, c.reg_date, c.comment_content, a.article_num, m.mb_nickname, m.mb_profile_pic  from comments c, articles a, members m
+		where a.article_num = c.article_num and a.mb_num = m.mb_num and a.article_num = #{article_num}
 		order by c.comment_num desc
 	</select>
+	
+	<insert id="commentInsert" parameterType="kr.smhrd.util.SuperVO">
+		insert into comments (mb_num, article_num, comment_content) 
+		values (#{mb_num}, #{article_num}, #{comment_content})
+	</insert>
+	
+	<insert id="insert" parameterType="kr.smhrd.util.MbVO">
+		insert into members (mb_id, mb_pwd, admin_yn, mb_profile_pic, mb_nickname)
+		values (#{mb_id}, #{mb_pwd}, #{admin_yn}, #{mb_profile_pic}, #{mb_nickname})
+	</insert>
 </mapper>

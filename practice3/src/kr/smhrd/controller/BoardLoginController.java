@@ -22,15 +22,21 @@ public class BoardLoginController implements Controller{
 				
 				// 프로젝트 할때는 밑에 UserDAO를 만들면된다 
 				
+				String page = null;
 				ArticleDAO dao = new ArticleDAO();
 				MbVO succ = dao.isLogin(vo);
+				
+				System.out.println(succ);
+				
 				//-----------------------------------------------
 				if(succ!=null) { // 회원인증성공
 					// 회원인증에 성공했다는 표시를 메모리에 해두어야한다.
 		            HttpSession session=request.getSession();
 		            session.setAttribute("succ", succ);
-				}//회원인증실패
-				return "redirect:/Index.do";
-	
+		            page = "redirect:/Index.do";
+				}else{//회원인증실패
+				page= "redirect:/sl.do";
+				}
+				return page;
 	}
 }
