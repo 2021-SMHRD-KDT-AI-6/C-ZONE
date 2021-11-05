@@ -38,9 +38,17 @@ public class ArticleDAO {
 		return list;
 	}
 	
-	public List<SuperVO> memberpage() {
+	public SuperVO memberprofile(int mb_num) {
+		SqlSession session=sqlSessionFactory.openSession(); // Connection 
+		SuperVO vo = session.selectOne("memberprofile", mb_num);
+		session.close();
+		return vo;
+	}
+	
+	public List<SuperVO> memberpage(int mb_num) {
 		SqlSession session = sqlSessionFactory.openSession();
-		List<SuperVO> list = session.selectList("memberpage");
+		List<SuperVO> list = session.selectList("memberpage", mb_num);
+	
 		return list;
 	}
 	
@@ -51,9 +59,9 @@ public class ArticleDAO {
 	      session.close();  //¹Ý³³(*)
 	}
 	
-	public SuperVO article(int mb_num) {
+	public SuperVO article(int article_num) {
 		SqlSession session=sqlSessionFactory.openSession(); // Connection 
-		SuperVO vo = session.selectOne("article", mb_num);
+		SuperVO vo = session.selectOne("article", article_num);
 		session.close();
 		return vo;
 	}
@@ -74,4 +82,20 @@ public class ArticleDAO {
 		session.close(); // ¹Ý³³(*)
 		return mb_num;
 	  }
+
+	public int updatecnt(int article_num) {
+		SqlSession session = sqlSessionFactory.openSession(); // Connection
+		// insert SQL Àü¼Û
+		int article_cnt = session.update("updatecnt", article_num);
+		session.commit(); // ¿Ï·á
+		session.close(); // ¹Ý³³(*)
+		return article_cnt;
+	}
+	
+	public int writeView() {
+		SqlSession session = sqlSessionFactory.openSession();
+		int article_num = session.selectOne("writeview");
+		session.close();
+		return article_num;
+	}
 }

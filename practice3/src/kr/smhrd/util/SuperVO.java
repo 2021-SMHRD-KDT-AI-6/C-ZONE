@@ -21,8 +21,8 @@ public class SuperVO {
 	private int article_cnt;
 	private int likes;
 	//write
-	private String latitude;
-	private String longitude;
+	private double latitude;
+	private double longitude;
 	private String carping_level;
 	private String carping_pic1;
 	private String carping_pic2;

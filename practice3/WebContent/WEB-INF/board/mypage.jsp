@@ -29,6 +29,7 @@ Licence URI: https://www.os-templates.com/template-terms
 	media="all" />
 </head>
 <body id="top">
+<input type="hidden" name="mb_num" value="<%=members.getMb_num()%>" />
 	<!-- ################################################################################################ -->
 	<!-- ################################################################################################ -->
 	<!-- ################################################################################################ -->
@@ -52,7 +53,7 @@ Licence URI: https://www.os-templates.com/template-terms
 					<!-- ################################################################################################ -->
 					<ul class="nospace">
 						<li><a href="Index.do"><i class="fas fa-home"></i></a></li>
-						<a href="#"><li id="searchform"></li></a>
+						<a href="search.do"><li id="searchform"></li></a>
 					</ul>
 					<!-- ################################################################################################ -->
 				</div>
@@ -79,7 +80,7 @@ Licence URI: https://www.os-templates.com/template-terms
 						<li><a href="login.do">마이페이지</a></li>
 						<% } else { %>
 						<li><a href="writeForm.do">글쓰기</a></li>
-						<li><a href="mypage.do">마이페이지</a></li>
+						<li><a href="mypage.do?mb_num=<%=members.getMb_num()%>">마이페이지</a></li>
 						<% }%>
 						<% if(members==null){ %>
 						<li><a href="login.do">로그인</a></li>
@@ -99,13 +100,14 @@ Licence URI: https://www.os-templates.com/template-terms
 			<a class="profile_fix" src="#">
 				<img id="member_profile_pic" src="<%=members.getMb_profile_pic()%>"
 					alt="프로필사진" /></a> <span id="member_name">김동선</span>
+					alt="프로필사진" /> <span id="member_name"><%=members.getMb_nickname()%></span>
 			</div>
 			<!-- ################################################################################################ -->
 			<div class="pushTop">
 				<h6 class="heading">마이페이지</h6>
 				<ul>
 					<li><a href="Index.do">Home</a></li>
-					<li><a href="mypage.do">MY PAGE</a></li>
+					<li><a href="mypage.do?mb_num=<%=members.getMb_num()%>">MY PAGE</a></li>
 				</ul>
 			</div>
 			<!-- ################################################################################################ -->
@@ -132,21 +134,21 @@ Licence URI: https://www.os-templates.com/template-terms
 					for (SuperVO vo : list) {
 				%>
 				<div class="news_feed">
-					<a href="#"> <img class="thumbnail"
+					<a href="<%=cpath%>/article.do?article_num=<%=vo.getArticle_num()%>"> <img class="thumbnail"
 						src="https://via.placeholder.com/300" alt="썸네일" />
 					</a>
 					<div class="contents">
 						<header>
-							<a href="#"> <img class="profile_pic"
+							<a href="<%=cpath%>/memberpage.do?mb_num=<%=vo.getMb_num()%>"> <img class="profile_pic"
 								src="https://via.placeholder.com/70" alt="프로필사진" />
 							</a>
 							<div class="article_top">
 								<div class="article_top_up">
-									<strong class="mb_num"><a href="#"><%=vo.getMb_num() %></a></strong>
+									<strong class="mb_num"><a href="<%=cpath%>/memberpage.do?mb_num=<%=vo.getMb_num()%>"><%=vo.getMb_nickname() %></a></strong>
 									<div class="reg_date"><%=vo.getReg_date() %></div>
 								</div>
 								<div class="article_top_down">
-									<a href="#"><%=vo.getArticle_title() %> </a>
+									<a href="<%=cpath%>/article.do?article_num=<%=vo.getArticle_num()%>"><%=vo.getArticle_title() %> </a>
 									<div class="article_top_down_right">
 										<div class="likes">좋아요 <%=vo.getLikes() %></div>
 										<div class="article_cnt">조회수 <%=vo.getArticle_cnt() %></div>
@@ -155,7 +157,11 @@ Licence URI: https://www.os-templates.com/template-terms
 								</div>
 							</div>
 						</header>
-						<article><%=vo.getArticle_content() %></article>
+						<article>
+						<a href="<%=cpath%>/article.do?article_num=<%=vo.getArticle_num()%>">
+						<%=vo.getArticle_content() %>
+						</a>
+						</article>
 					</div>
 				</div>
 				<%} %>
