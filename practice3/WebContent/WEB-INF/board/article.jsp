@@ -47,7 +47,7 @@ String cpath = request.getContextPath();
 					<!-- ################################################################################################ -->
 					<ul class="nospace">
 						<li><a href="Index.do"><i class="fas fa-home"></i></a></li>
-						<a href="search.do"><li id="searchform"></li></a>
+						<a href="searchpage.do"><li id="searchform"></li></a>
 					</ul>
 					<!-- ################################################################################################ -->
 				</div>

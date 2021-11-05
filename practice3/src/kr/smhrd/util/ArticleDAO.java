@@ -92,6 +92,13 @@ public class ArticleDAO {
 		return article_cnt;
 	}
 	
+	public List<SuperVO> search(String search){
+		SqlSession session = sqlSessionFactory.openSession();
+		List<SuperVO> list = session.selectList("search", search);
+		session.close();
+		return list;
+	}
+	
 	public int writeView() {
 		SqlSession session = sqlSessionFactory.openSession();
 		int article_num = session.selectOne("writeview");

@@ -11,11 +11,11 @@ import kr.smhrd.controller.BoardMemberpageController;
 import kr.smhrd.controller.BoardMypageController;
 import kr.smhrd.controller.BoardProfileController;
 import kr.smhrd.controller.BoardSLController;
-import kr.smhrd.controller.BoardSearchController;
+import kr.smhrd.controller.BoardSearchPageController;
 import kr.smhrd.controller.BoardSignupController;
 import kr.smhrd.controller.BoardSignupInsertController;
-import kr.smhrd.controller.BoardUpdateprofileController;
 import kr.smhrd.controller.BoardUpdateprofile1Controller;
+import kr.smhrd.controller.BoardUpdateprofileController;
 import kr.smhrd.controller.BoardWriteController;
 import kr.smhrd.controller.BoardWriteFormController;
 import kr.smhrd.controller.Controller;
@@ -41,7 +41,7 @@ public class HandlerMapping {
 		mappings.put("/logout.do", new BoardLogoutController());
 		mappings.put("/insert.do", new BoardSignupInsertController());
 		mappings.put("/profile.do", new BoardProfileController());
-		mappings.put("/search.do", new BoardSearchController());
+		mappings.put("/searchpage.do", new BoardSearchPageController());
 		mappings.put("/updateprofile1.do", new BoardUpdateprofileController());
 		mappings.put("/updateprofile2.do", new BoardUpdateprofile1Controller());
 		

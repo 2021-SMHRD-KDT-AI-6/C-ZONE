@@ -99,6 +99,12 @@
 		order by a.likes desc
 	</select>
 	
+	<select id="search" resultType="kr.smhrd.util.SuperVO">
+		select a.*, m.*
+		from articles a, members m
+		where a.mb_num = m.mb_num and article_title like concat('%',#{search},'%')
+	</select>
+	
 </mapper>
 
 
