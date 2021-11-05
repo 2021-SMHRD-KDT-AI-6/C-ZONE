@@ -111,8 +111,9 @@ Licence URI: https://www.os-templates.com/template-terms
 		<!-- ################################################################################################ -->
 		<div id="breadcrumb" class="hoc clear">
 			<div id="profile">
-				<img id="member_profile_pic" src="<%=members.getMb_profile_pic()%>"
-					alt="프로필사진" /> <span id="member_name"><%=members.getMb_nickname()%></span>
+				<a href="profile.do"><img id="member_profile_pic" src="<%=members.getMb_profile_pic()%>"
+					alt="프로필사진" /></a>
+					<a ><span id="member_name"><%=members.getMb_nickname()%></span></a>
 			</div>
 			<!-- ################################################################################################ -->
 			<div class="pushTop">
