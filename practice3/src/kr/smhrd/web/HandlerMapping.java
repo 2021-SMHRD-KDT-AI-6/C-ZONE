@@ -42,8 +42,8 @@ public class HandlerMapping {
 		mappings.put("/insert.do", new BoardSignupInsertController());
 		mappings.put("/profile.do", new BoardProfileController());
 		mappings.put("/search.do", new BoardSearchController());
-		mappings.put("/updateprofile1.do", new BoardUpdateprofileController());
-		mappings.put("/updateprofile2.do", new BoardUpdateprofile1Controller());
+		mappings.put("/updateprofile.do", new BoardUpdateprofileController());
+		mappings.put("/updateprofile1.do", new BoardUpdateprofile1Controller());
 		
 	}
 	public Controller getController(String key) {
