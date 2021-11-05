@@ -126,14 +126,14 @@ Licence URI: https://www.os-templates.com/template-terms
 	<!-- ################################################################################################ -->
 	<div class="wrapper row3">
 		<main class="hoc container clear">
-			<form action="#" method="post" id="search_form">
+			<form action="searchpage.do" method="post" id="search_form">
+					<input type="text" name="search" id="search_bar" />
+					<input type="submit" value="검색" />
+			</form>
 				<select name="option">
 					<option value="title_content">제목+내용</option>
 					<option value="nickname">닉네임</option>
-					<input type="text" id="search_bar" />
-					<input type="submit" value="검색" />
 				</select>
-			</form>
 			<hr />
 			<div id="search_first">
 				<h1>검색결과</h1>

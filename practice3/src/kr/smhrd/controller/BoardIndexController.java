@@ -15,8 +15,11 @@ public class BoardIndexController implements Controller{
 	public String requestHandler(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		ArticleDAO dao = new ArticleDAO();
+		List<SuperVO> like = dao.Indexlike();
+		request.setAttribute("like", like);
 		List<SuperVO> list = dao.Index();
 		request.setAttribute("list", list);
+		
 		// View의 경로를 만들어서 문자열로 리턴해주는 역할
 		return "Index";
 	}
