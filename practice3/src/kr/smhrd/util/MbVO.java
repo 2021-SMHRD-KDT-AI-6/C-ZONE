@@ -16,5 +16,5 @@ public class MbVO {
     private String mb_nickname;
     private Date mb_joindate;
     private String admin_yn;
-    private String mb_num;
+    private int mb_num;
 }

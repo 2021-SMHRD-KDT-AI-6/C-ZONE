@@ -24,6 +24,7 @@ public class BoardLoginController implements Controller{
 				
 				String page = null;
 				ArticleDAO dao = new ArticleDAO();
+				
 				MbVO succ = dao.isLogin(vo);
 				
 				System.out.println(succ);

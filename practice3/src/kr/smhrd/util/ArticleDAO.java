@@ -48,7 +48,7 @@ public class ArticleDAO {
 	public List<SuperVO> memberpage(int mb_num) {
 		SqlSession session = sqlSessionFactory.openSession();
 		List<SuperVO> list = session.selectList("memberpage", mb_num);
-	
+	    session.close();  //¹Ý³³(*)
 		return list;
 	}
 	
