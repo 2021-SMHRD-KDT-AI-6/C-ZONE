@@ -1816,7 +1816,7 @@ table a,
   background-color: whitesmoke;
 }
 
-#profile {
+#profile_ {
   margin: 50px 50px;
   text-align: center;
   padding: 70px 0px;
@@ -1852,17 +1852,33 @@ table a,
 
 .fix_menu_1 {
   margin-bottom: 15px;
+  height: 30px;
 }
 
 .pic_fix_input {
   cursor: pointer;
+  width: 150px;
+  height: auto;
 }
+
+.pic_fix_button {
+  margin-left: 75px;
+  height: 27px;
+  cursor: pointer;
+}
+
+.nickname_fix_button {
+  margin-left: 31px;
+  cursor: pointer;
+}
+
 .fix_Btn {
   border-radius: 3px;
   background: transparent;
   display: inline-block;
   text-align: center;
-  
+  cursor: pointer;
+  color: black;
 }
 
 /* ======================== 마이페이지 ======================== */
@@ -1874,6 +1890,7 @@ table a,
   height: 250px;
   display: flex;
   flex-direction: column;
+  text-align: center;
   float: right;
 }
 #member_profile_pic {
