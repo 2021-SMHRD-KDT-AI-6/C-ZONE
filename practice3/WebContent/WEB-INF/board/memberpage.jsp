@@ -52,7 +52,7 @@ Licence URI: https://www.os-templates.com/template-terms
 					<!-- ################################################################################################ -->
 					<ul class="nospace">
 						<li><a href="Index.do"><i class="fas fa-home"></i></a></li>
-						<a href="search.do"><li id="searchform"></li></a>
+						<a href="searchpage.do"><li id="searchform"></li></a>
 					</ul>
 					<!-- ################################################################################################ -->
 				</div>
@@ -73,7 +73,7 @@ Licence URI: https://www.os-templates.com/template-terms
 				<nav id="mainav" class="fl_right">
 					<!-- ################################################################################################ -->
 					<ul class="clear">
-						<li class="active"><a href="Index.jsp">Home</a></li>
+						<li class="active"><a href="Index.do">Home</a></li>
 						<%
 							if (members == null) {
 						%>
@@ -83,7 +83,7 @@ Licence URI: https://www.os-templates.com/template-terms
 							} else {
 						%>
 						<li><a href="writeForm.do">글쓰기</a></li>
-						<li><a href="mypage.do?mb_num=<%=members.getMb_num()%>">마이페이지</a></li>
+						<li><a href="mypage.do">마이페이지</a></li>
 						<%
 							}
 						%>

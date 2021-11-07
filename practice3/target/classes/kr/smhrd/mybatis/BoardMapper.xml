@@ -59,7 +59,7 @@
 	<select id="commentList" resultType="kr.smhrd.util.SuperVO">
 		select c.comment_num,
 		c.reg_date, c.comment_content, a.article_num, m.mb_nickname,
-		m.mb_profile_pic from comments c, articles a, members m
+		m.mb_profile_pic, m.mb_num from comments c, articles a, members m
 		where
 		a.article_num = c.article_num and c.mb_num = m.mb_num and
 		a.article_num = #{article_num}
@@ -71,6 +71,11 @@
 		(mb_num, article_num, comment_content)
 		values (#{mb_num}, #{article_num}, #{comment_content})
 	</insert>
+	
+	<delete id="commentDelete" parameterType="string">
+		delete from comments
+		where comment_num = #{comment_num}
+	</delete>
 
 	<insert id="insert" parameterType="kr.smhrd.util.MbVO">
 		insert into members (mb_id,
@@ -78,6 +83,7 @@
 		values (#{mb_id},
 		#{mb_pwd}, #{admin_yn}, #{mb_profile_pic}, #{mb_nickname})
 	</insert>
+	
 	<update id="updatecnt" parameterType="int">
 	update articles set article_cnt=article_cnt +1 where article_num=#{article_num}
 	</update>

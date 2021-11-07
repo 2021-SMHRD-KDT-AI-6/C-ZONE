@@ -3,6 +3,7 @@ package kr.smhrd.web;
 import java.util.HashMap;
 
 import kr.smhrd.controller.BoardArticleController;
+import kr.smhrd.controller.BoardCommentDeleteController;
 import kr.smhrd.controller.BoardCommentInsertController;
 import kr.smhrd.controller.BoardIndexController;
 import kr.smhrd.controller.BoardLoginController;
@@ -38,13 +39,13 @@ public class HandlerMapping {
 		mappings.put("/sl.do", new BoardSLController());
 		mappings.put("/article.do", new BoardArticleController());
 		mappings.put("/commentInsert.do", new BoardCommentInsertController());
+		mappings.put("/commentDelete.do", new BoardCommentDeleteController());
 		mappings.put("/logout.do", new BoardLogoutController());
 		mappings.put("/insert.do", new BoardSignupInsertController());
 		mappings.put("/profile.do", new BoardProfileController());
 		mappings.put("/searchpage.do", new BoardSearchPageController());
 		mappings.put("/updateprofile1.do", new BoardUpdateprofileController());
 		mappings.put("/updateprofile2.do", new BoardUpdateprofile1Controller());
-		
 	}
 	public Controller getController(String key) {
 		return mappings.get(key);

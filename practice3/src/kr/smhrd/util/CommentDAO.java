@@ -29,11 +29,17 @@ public class CommentDAO {
 		return list;
 	}
 	public void CommentInsert(SuperVO vo) {
-	      SqlSession session=sqlSessionFactory.openSession(); // Connection 
-	      session.insert("commentInsert", vo); //insert SQL실행
-	      session.commit(); //완료
-	      session.close();  //반납(*)
-	   }
+	    SqlSession session=sqlSessionFactory.openSession(); // Connection 
+	    session.insert("commentInsert", vo); //insert SQL실행
+	    session.commit(); //완료
+	    session.close();  //반납(*)
+	}
+	public void CommentDelete(String comment_num) {
+		SqlSession session=sqlSessionFactory.openSession(); // Connection 
+	    session.delete("commentDelete", comment_num); //insert SQL실행
+	    session.commit(); //완료
+	    session.close();  //반납(*)
+	}
 	
 	public MbVO Updateprofile(int mb_num) {
 		SqlSession session = sqlSessionFactory.openSession();

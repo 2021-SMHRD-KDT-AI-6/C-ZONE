@@ -20,6 +20,8 @@ public class BoardCommentInsertController implements Controller{
 		int mb_num = Integer.parseInt(request.getParameter("mb_num"));
 		String comment_content = request.getParameter("comment_content");
 		
+		comment_content = comment_content.replace("\r\n", "<br>");
+		
 		SuperVO vo = new SuperVO();
 		vo.setMb_num(mb_num);
 		vo.setComment_content(comment_content);

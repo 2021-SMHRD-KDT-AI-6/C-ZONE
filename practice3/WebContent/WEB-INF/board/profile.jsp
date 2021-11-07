@@ -57,8 +57,8 @@ Licence URI: https://www.os-templates.com/template-terms
 				<div class="fl_right">
 					<!-- ################################################################################################ -->
 					<ul class="nospace">
-						<li><a href="index.html"><i class="fas fa-home"></i></a></li>
-						<a href="#"><li id="searchform"></li></a>
+						<li><a href="Index.do"><i class="fas fa-home"></i></a></li>
+						<a href="searchpage.do"><li id="searchform"></li></a>
 					</ul>
 					<!-- ################################################################################################ -->
 				</div>
@@ -103,8 +103,8 @@ Licence URI: https://www.os-templates.com/template-terms
 			<!-- ################################################################################################ -->
 			<h6 class="heading">마이페이지 수정</h6>
 			<ul>
-				<li><a href="#">Home</a></li>
-				<li><a href="#">My-page</a></li>
+				<li><a href="Index.do">Home</a></li>
+				<li><a href="mypage.do">My-page</a></li>
 			</ul>
 			<!-- ################################################################################################ -->
 		</div>

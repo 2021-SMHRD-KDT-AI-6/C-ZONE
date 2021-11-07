@@ -55,7 +55,7 @@ Licence URI: https://www.os-templates.com/template-terms
 					<!-- ################################################################################################ -->
 					<ul class="nospace">
 						<li><a href="Index.do"><i class="fas fa-home"></i></a></li>
-						<a href="search.do"><li id="searchform"></li></a>
+						<a href="searchpage.do"><li id="searchform"></li></a>
 					</ul>
 					<!-- ################################################################################################ -->
 				</div>
@@ -114,7 +114,7 @@ Licence URI: https://www.os-templates.com/template-terms
 			<h6 class="heading">검색</h6>
 			<ul>
 				<li><a href="Index.do">Home</a></li>
-				<li><a href="search.do">SEARCH</a></li>
+				<li><a href="searchpage.do">SEARCH</a></li>
 			</ul>
 			<!-- ################################################################################################ -->
 		</div>

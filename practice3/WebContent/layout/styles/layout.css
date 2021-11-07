@@ -574,6 +574,21 @@ File: Layout CSS
   margin-top: 10px;
   padding: 5px;
 }
+.article_title{
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: 400px;
+	height: 30px;
+}
+.article_content{
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	width: 820px;
+	height: 210px;
+}
 /* Footer
 --------------------------------------------------------------------------------------------------------------- */
 #footer {
@@ -2107,4 +2122,9 @@ table a,
 }
 #comment_btn {
   width: 10%;
+}
+#comment_delete{
+	float: right;
+	display: flex;
+	justify-content: end;
 }
