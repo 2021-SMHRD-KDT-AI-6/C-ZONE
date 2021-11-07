@@ -3,9 +3,11 @@ package kr.smhrd.web;
 import java.util.HashMap;
 
 import kr.smhrd.controller.BoardArticleController;
+import kr.smhrd.controller.BoardCntSearchController;
 import kr.smhrd.controller.BoardCommentDeleteController;
 import kr.smhrd.controller.BoardCommentInsertController;
 import kr.smhrd.controller.BoardIndexController;
+import kr.smhrd.controller.BoardLikeSearchController;
 import kr.smhrd.controller.BoardLoginController;
 import kr.smhrd.controller.BoardLogoutController;
 import kr.smhrd.controller.BoardMemberpageController;
@@ -46,6 +48,8 @@ public class HandlerMapping {
 		mappings.put("/searchpage.do", new BoardSearchPageController());
 		mappings.put("/updateprofile1.do", new BoardUpdateprofileController());
 		mappings.put("/updateprofile2.do", new BoardUpdateprofile1Controller());
+		mappings.put("/likesearch.do", new BoardLikeSearchController());
+		mappings.put("/cntsearch.do", new BoardCntSearchController());
 	}
 	public Controller getController(String key) {
 		return mappings.get(key);

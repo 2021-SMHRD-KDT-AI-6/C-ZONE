@@ -8,7 +8,7 @@
 		select a.*, m.* from articles a,
 		members m
 		where a.mb_num = m.mb_num
-		order by a.article_num desc
+		order by a.reg_date desc
 	</select>
 
 	<select id="mypage" resultType="kr.smhrd.util.SuperVO">
@@ -109,6 +109,18 @@
 		select a.*, m.*
 		from articles a, members m
 		where a.mb_num = m.mb_num and article_title like concat('%',#{search},'%')
+	</select>
+	
+	<select id="likesearch" resultType="kr.smhrd.util.SuperVO">
+		select a.*, m.* from articles a, members m
+		where a.mb_num = m.mb_num
+		order by a.likes desc
+	</select>
+	
+		<select id="cntsearch" resultType="kr.smhrd.util.SuperVO">
+		select a.*, m.* from articles a, members m
+		where a.mb_num = m.mb_num
+		order by a.article_cnt desc
 	</select>
 	
 </mapper>

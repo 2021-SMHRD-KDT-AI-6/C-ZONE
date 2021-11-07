@@ -112,4 +112,18 @@ public class ArticleDAO {
 		session.close(); // ¹Ý³³(*)
 		return list;
 	}
+	
+	public List<SuperVO> likesearch() {
+		SqlSession session = sqlSessionFactory.openSession();
+		List<SuperVO> list = session.selectList("likesearch");
+		session.close(); // ¹Ý³³(*)
+		return list;
+	}
+	
+	public List<SuperVO> cntsearch() {
+		SqlSession session = sqlSessionFactory.openSession();
+		List<SuperVO> list = session.selectList("cntsearch");
+		session.close(); // ¹Ý³³(*)
+		return list;
+	}
 }
