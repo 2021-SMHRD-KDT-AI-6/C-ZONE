@@ -51,7 +51,6 @@ public class CommentDAO {
 	public int Updateprofile1(MbVO vo) {
 		SqlSession session = sqlSessionFactory.openSession(); // Connection
 		int num = session.update("updateprofile1", vo);
-		
 		System.out.println(num);
 		session.commit(); // ¿Ï·á
 		session.close(); // ¹Ý³³(*)

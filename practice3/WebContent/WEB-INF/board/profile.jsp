@@ -31,7 +31,11 @@ Licence URI: https://www.os-templates.com/template-terms
 	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <link href="layout/styles/layout.css" rel="stylesheet" type="text/css"
 	media="all" />
-
+<script>
+function gomypage(){
+	 location.href="<%=cpath%>/mypage.do";
+}
+</script>
 </head>
 <body id="top">
 <input type="hidden" name="mb_num" value="<%=members.getMb_num()%>" />
@@ -120,24 +124,28 @@ Licence URI: https://www.os-templates.com/template-terms
 		<div id="profile_">
 			<hr class="profile_hr" />
 			<div class="fix_menu">
+			<form action="<%=cpath%>/updateprofile1.do" method="post" enctype="multipart/form-data">
 				<div class="fix_menu_1">
 					<div class="pic_fix">사진 수정</div>
 					<input class="pic_fix_input" type="file" name="pic_fix_input" value="<%=members.getMb_profile_pic()%>"></input>
-					<button class="pic_fix_button" onclick="#">적용</button>
+					<button type="submit" class="pic_fix_button">적용</button>
+					</form>
 				</div>
 			</div>
 			<div class="fix_menu">
+			<form action="<%=cpath%>/updateprofile1.do" method="post" enctype="multipart/form-data">
 				<div class="fix_menu_2">
 					<div class="nickname_fix">닉네임 수정</div>
 					<input class="nickname_fix_input" type="text"
 						name="nickname_fix_input" maxlength="10" placeholder="nickname" value="<%=members.getMb_nickname()%>"></input>
-				    <button class="nickname_fix_button">적용</button>
+				    <button type="submit" class="nickname_fix_button">적용</button>
+				    </form>
 				</div>
 			</div>
 
 			<!-- </form> -->
 			<hr class="profile_hr" />
-			<button class="fix_Btn">확인</button>
+			<button class="fix_Btn" onclick="gomypage()">확인</button>
 		</div>
 	</div>
 	<!-- ################################################################################################ -->
