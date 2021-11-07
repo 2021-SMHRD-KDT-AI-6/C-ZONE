@@ -135,15 +135,14 @@ Licence URI: https://www.os-templates.com/template-terms
 				<h1>검색결과</h1>
 				<div id="search_first_right">
 					<div id="search_level">
-						<input type="checkbox" name="top" /><label for="top">상</label> <input
-							type="checkbox" name="middle" /><label for="middle"> 중 </label>
-						<input type="checkbox" name="bottom" /><label for="bottom">
-							하 </label>
+						<input type="checkbox" name="top" /><label for="top">상</label>
+						<input type="checkbox" name="middle" /><label for="middle">중 </label>
+						<input type="checkbox" name="bottom" /><label for="bottom">하 </label>
 					</div>
 					<div id="search_button">
-						<button id="search_count">조회수</button>
-						<button id="search_like">좋아요</button>
-						<button id="search_recent">최신순</button>
+						<button id="search_count" onclick="location.href='cntsearch.do'">조회수</button>
+						<button id="search_like" onclick="location.href='likesearch.do'">좋아요</button>
+						<button id="search_recent" onclick="location.href='searchpage.do'">최신순</button>
 					</div>
 				</div>
 			</div>
