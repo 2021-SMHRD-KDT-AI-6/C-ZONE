@@ -100,6 +100,12 @@ public class ArticleDAO {
 		session.close();
 		return list;
 	}
+	public List<SuperVO> Indexlike() {
+		SqlSession session = sqlSessionFactory.openSession();
+		List<SuperVO> list = session.selectList("likesearch");
+		session.close(); // ¹Ý³³(*)
+		return list;
+	}
 	
 	public int writeView() {
 		SqlSession session = sqlSessionFactory.openSession();
