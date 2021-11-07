@@ -108,13 +108,6 @@ public class ArticleDAO {
 		return article_num;
 	}
 	
-	public List<SuperVO> Indexlike() {
-		SqlSession session = sqlSessionFactory.openSession();
-		List<SuperVO> list = session.selectList("Indexlike");
-		session.close(); // ¹Ý³³(*)
-		return list;
-	}
-	
 	public List<SuperVO> likesearch() {
 		SqlSession session = sqlSessionFactory.openSession();
 		List<SuperVO> list = session.selectList("likesearch");
