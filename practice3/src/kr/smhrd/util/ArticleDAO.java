@@ -94,7 +94,9 @@ public class ArticleDAO {
 	
 	public List<SuperVO> search(String search){
 		SqlSession session = sqlSessionFactory.openSession();
+		System.out.println("검색어"+search);
 		List<SuperVO> list = session.selectList("search", search);
+		System.out.println("검색리스트"+list);
 		session.close();
 		return list;
 	}

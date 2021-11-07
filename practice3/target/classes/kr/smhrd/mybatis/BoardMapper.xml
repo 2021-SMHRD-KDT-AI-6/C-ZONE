@@ -108,7 +108,10 @@
 	<select id="search" resultType="kr.smhrd.util.SuperVO">
 		select a.*, m.*
 		from articles a, members m
-		where a.mb_num = m.mb_num and article_title like concat('%',#{search},'%')
+		where a.mb_num = m.mb_num
+		and (article_content like concat('%',#{search},'%')
+		or article_title like concat('%',#{search},'%')
+		or mb_nickname like concat('%',#{search},'%'))
 	</select>
 	
 </mapper>

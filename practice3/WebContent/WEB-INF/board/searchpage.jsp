@@ -130,10 +130,6 @@ Licence URI: https://www.os-templates.com/template-terms
 					<input type="text" name="search" id="search_bar" />
 					<input type="submit" value="검색" />
 			</form>
-				<select name="option">
-					<option value="title_content">제목+내용</option>
-					<option value="nickname">닉네임</option>
-				</select>
 			<hr />
 			<div id="search_first">
 				<h1>검색결과</h1>
