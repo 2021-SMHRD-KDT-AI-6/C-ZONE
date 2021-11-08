@@ -146,7 +146,7 @@ String cpath = request.getContextPath();
 							</div>
 						</div>
 					</div>
-					<img src="https://via.placeholder.com/300x200" alt="지도" />
+					<div id="map" style="width: 500px; height: 200px; float: right;"></div>
 				</div>
 				<hr />
 				<div id="articlepage_content">
@@ -169,7 +169,16 @@ String cpath = request.getContextPath();
 							<div class="articlepage_reg_date"><%=comment.getReg_date()%></div>
 						</div>
 					</div>
-					<div class="comment_content"><%=comment.getComment_content()%></div>
+					<div class="comment_content"><%=comment.getComment_content()%>
+					<% if (members == null) {%> 
+					<% }else if ( comment.getMb_num() == members.getMb_num()){%>
+					<form action="commentDelete.do" id="comment_delete">
+						<input type="hidden" name="article_num" value="<%=vo.getArticle_num() %>" />
+						<input type="hidden" name="comment_num" value="<%=comment.getComment_num() %>" />
+						<input type="submit" value="삭제" />
+					</form>
+					<% } %>
+					</div>
 				</div>
 
 				<hr />
@@ -180,9 +189,7 @@ String cpath = request.getContextPath();
 					if (members == null) {
 				%>
 				<form action="commentInsert.do" id="comment_write">
-					<textarea type="text" id="comment_content" name="comment_content"
-						placeholder="댓글을 입력해주세요." value="default value">
-          </textarea>
+					<textarea type="text" id="comment_content" name="comment_content" placeholder="댓글을 입력해주세요."></textarea>
 					<input type="button" id="comment_btn" onclick="location.href='sl.do'" value="입력"/>
 				</form>
 				<%
@@ -193,8 +200,7 @@ String cpath = request.getContextPath();
 					<input type="hidden" name="article_num"
 						value="<%=vo.getArticle_num()%>" />
 					<textarea type="text" id="comment_content" name="comment_content"
-						placeholder="댓글을 입력해주세요." value="default value">
-          </textarea>
+						placeholder="댓글을 입력해주세요." value="default value"></textarea>
 					<input type="submit" id="comment_btn" />
 				</form>
 				<%
@@ -265,5 +271,27 @@ String cpath = request.getContextPath();
 	<script src="../layout/scripts/jquery.min.js"></script>
 	<script src="../layout/scripts/jquery.backtotop.js"></script>
 	<script src="../layout/scripts/jquery.mobilemenu.js"></script>
+	<script type="text/javascript"
+		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d98d9b2f0c4a6046323ef26fd36b2b16"></script>
+	<script>
+		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+		mapOption = {
+			center : new kakao.maps.LatLng(<%=vo.getLatitude()%>, <%=vo.getLongitude()%>), // 지도의 중심좌표
+			level : 10
+		// 지도의 확대 레벨
+		};
+
+		var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+		// 마커가 표시될 위치입니다
+		var markerPosition = new kakao.maps.LatLng(<%=vo.getLatitude()%>, <%=vo.getLongitude()%>);
+
+		// 마커를 생성합니다
+		var marker = new kakao.maps.Marker({
+			position : markerPosition,
+		});
+		// 마커가 지도 위에 표시되도록 설정합니다
+		marker.setMap(map);
+	</script>
 </body>
 </html>

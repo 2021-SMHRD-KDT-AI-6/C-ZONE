@@ -189,7 +189,7 @@ Licence URI: https://www.os-templates.com/template-terms
 									<div class="reg_date"><%=vo.getReg_date()%></div>
 								</div>
 								<div class="article_top_down">
-									<a href="article.do"> <%=vo.getArticle_title()%>
+									<a href="article.do" class="article_title"> <%=vo.getArticle_title()%>
 									</a>
 									<div class="article_top_down_right">
 										<div class="likes">
@@ -205,7 +205,7 @@ Licence URI: https://www.os-templates.com/template-terms
 								</div>
 							</div>
 						</header>
-						<article>
+						<article class="article_content">
 							<%=vo.getArticle_content()%>
 						</article>
 					</div>

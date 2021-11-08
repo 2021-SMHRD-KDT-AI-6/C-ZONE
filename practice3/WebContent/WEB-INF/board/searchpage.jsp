@@ -55,7 +55,7 @@ Licence URI: https://www.os-templates.com/template-terms
 					<!-- ################################################################################################ -->
 					<ul class="nospace">
 						<li><a href="Index.do"><i class="fas fa-home"></i></a></li>
-						<a href="search.do"><li id="searchform"></li></a>
+						<a href="searchpage.do"><li id="searchform"></li></a>
 					</ul>
 					<!-- ################################################################################################ -->
 				</div>
@@ -114,7 +114,7 @@ Licence URI: https://www.os-templates.com/template-terms
 			<h6 class="heading">검색</h6>
 			<ul>
 				<li><a href="Index.do">Home</a></li>
-				<li><a href="search.do">SEARCH</a></li>
+				<li><a href="searchpage.do">SEARCH</a></li>
 			</ul>
 			<!-- ################################################################################################ -->
 		</div>
@@ -130,24 +130,19 @@ Licence URI: https://www.os-templates.com/template-terms
 					<input type="text" name="search" id="search_bar" />
 					<input type="submit" value="검색" />
 			</form>
-				<select name="option">
-					<option value="title_content">제목+내용</option>
-					<option value="nickname">닉네임</option>
-				</select>
 			<hr />
 			<div id="search_first">
 				<h1>검색결과</h1>
 				<div id="search_first_right">
 					<div id="search_level">
-						<input type="checkbox" name="top" /><label for="top">상</label> <input
-							type="checkbox" name="middle" /><label for="middle"> 중 </label>
-						<input type="checkbox" name="bottom" /><label for="bottom">
-							하 </label>
+						<input type="checkbox" name="top" /><label for="top">상</label>
+						<input type="checkbox" name="middle" /><label for="middle">중 </label>
+						<input type="checkbox" name="bottom" /><label for="bottom">하 </label>
 					</div>
 					<div id="search_button">
-						<button id="search_count">조회수</button>
-						<button id="search_like">좋아요</button>
-						<button id="search_recent">최신순</button>
+						<button id="search_count" onclick="location.href='cntsearch.do'">조회수</button>
+						<button id="search_like" onclick="location.href='likesearch.do'">좋아요</button>
+						<button id="search_recent" onclick="location.href='searchpage.do'">최신순</button>
 					</div>
 				</div>
 			</div>

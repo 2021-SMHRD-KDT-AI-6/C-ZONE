@@ -54,8 +54,8 @@ Licence URI: https://www.os-templates.com/template-terms
 				<div class="fl_right">
 					<!-- ################################################################################################ -->
 					<ul class="nospace">
-						<li><a href="index.html"><i class="fas fa-home"></i></a></li>
-						<a href="#"><li id="searchform"></li></a>
+						<li><a href="Index.do"><i class="fas fa-home"></i></a></li>
+						<a href="searchpage.do"><li id="searchform"></li></a>
 					</ul>
 					<!-- ################################################################################################ -->
 				</div>

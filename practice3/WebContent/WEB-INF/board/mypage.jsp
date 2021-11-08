@@ -55,7 +55,7 @@ Licence URI: https://www.os-templates.com/template-terms
 					<!-- ################################################################################################ -->
 					<ul class="nospace">
 						<li><a href="Index.do"><i class="fas fa-home"></i></a></li>
-						<a href="search.do"><li id="searchform"></li></a>
+						<a href="searchpage.do"><li id="searchform"></li></a>
 					</ul>
 					<!-- ################################################################################################ -->
 				</div>
@@ -86,7 +86,7 @@ Licence URI: https://www.os-templates.com/template-terms
 							} else {
 						%>
 						<li><a href="writeForm.do">글쓰기</a></li>
-						<li><a href="mypage.do?mb_num=<%=members.getMb_num()%>">마이페이지</a></li>
+						<li><a href="mypage.do">마이페이지</a></li>
 						<%
 							}
 						%>
@@ -120,7 +120,7 @@ Licence URI: https://www.os-templates.com/template-terms
 				<h6 class="heading">마이페이지</h6>
 				<ul>
 					<li><a href="Index.do">Home</a></li>
-					<li><a href="mypage.do%>">MY
+					<li><a href="mypage.do">MY
 							PAGE</a></li>
 				</ul>
 			</div>
@@ -180,7 +180,7 @@ Licence URI: https://www.os-templates.com/template-terms
 											조회수
 											<%=vo.getArticle_cnt()%></div>
 										<div class="carpinglevel">
-											난이도<%=vo.getCarping_level()%></div>
+											난이도 <%=vo.getCarping_level()%></div>
 									</div>
 								</div>
 							</div>
