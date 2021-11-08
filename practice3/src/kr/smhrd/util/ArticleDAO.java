@@ -127,4 +127,13 @@ public class ArticleDAO {
 		session.close(); // 반납(*)
 		return list;
 	}
+	
+	public void likeaddU(int article_num) {
+	      System.out.println("출력2:"+article_num);
+	      SqlSession session = sqlSessionFactory.openSession();
+	      int result = session.update("likeaddU", article_num);
+	      System.out.println("업데이트결과:" + result);
+	      session.commit();
+	      session.close();
+	   }
 }

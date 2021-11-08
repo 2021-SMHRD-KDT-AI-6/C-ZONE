@@ -164,8 +164,9 @@ Licence URI: https://www.os-templates.com/template-terms
 							</a>
 							<div class="article_top">
 								<div class="article_top_up">
-									<strong class="mb_num"><a
-										href="<%=cpath%>/memberpage.do?mb_num=<%=vo.getMb_num()%>"><%=vo.getMb_nickname()%></a></strong>
+									<strong class="mb_num">
+									<a href="mypage.do"><%=vo.getMb_nickname()%></a>
+									</strong>
 									<div class="reg_date"><%=vo.getReg_date()%></div>
 								</div>
 								<div class="article_top_down">
@@ -185,12 +186,13 @@ Licence URI: https://www.os-templates.com/template-terms
 								</div>
 							</div>
 						</header>
-						<article>
-							<a
+						<article class="article_content_mypage">
+							<a 
 								href="<%=cpath%>/article.do?article_num=<%=vo.getArticle_num()%>">
 								<%=vo.getArticle_content()%>
 							</a>
 						</article>
+							<button class="article_content_del">삭제</button>
 					</div>
 				</div>
 				<%

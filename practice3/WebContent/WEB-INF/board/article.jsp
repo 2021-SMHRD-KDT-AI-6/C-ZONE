@@ -139,7 +139,11 @@ String cpath = request.getContextPath();
 								<div id="articlepage_like_num">
 									좋아요
 									<%=vo.getLikes()%></div>
-								<div id="articlepage_heart"></div>
+								<form action='likeadd.do' method='post'>
+                        <input type="hidden" name="article_num" value="<%=vo.getArticle_num() %>" />
+                        <input type="hidden" name="mb_num" value="<%=vo.getMb_num() %>" />
+                        <div id="articlepage_heart"><input type="submit" /></div>
+                </form>
 								<div id="articlepage_cnt">
 									조회수
 								<%=vo.getArticle_cnt()%></div>

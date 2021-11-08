@@ -8,6 +8,7 @@ import kr.smhrd.controller.BoardCommentDeleteController;
 import kr.smhrd.controller.BoardCommentInsertController;
 import kr.smhrd.controller.BoardIndexController;
 import kr.smhrd.controller.BoardLikeSearchController;
+import kr.smhrd.controller.BoardLikeaddController;
 import kr.smhrd.controller.BoardLoginController;
 import kr.smhrd.controller.BoardLogoutController;
 import kr.smhrd.controller.BoardMemberpageController;
@@ -17,7 +18,6 @@ import kr.smhrd.controller.BoardSLController;
 import kr.smhrd.controller.BoardSearchPageController;
 import kr.smhrd.controller.BoardSignupController;
 import kr.smhrd.controller.BoardSignupInsertController;
-import kr.smhrd.controller.BoardUpdateprofile1Controller;
 import kr.smhrd.controller.BoardUpdateprofileController;
 import kr.smhrd.controller.BoardWriteController;
 import kr.smhrd.controller.BoardWriteFormController;
@@ -46,10 +46,10 @@ public class HandlerMapping {
 		mappings.put("/insert.do", new BoardSignupInsertController());
 		mappings.put("/profile.do", new BoardProfileController());
 		mappings.put("/searchpage.do", new BoardSearchPageController());
-		mappings.put("/updateprofile1.do", new BoardUpdateprofileController());
-		mappings.put("/updateprofile2.do", new BoardUpdateprofile1Controller());
+		mappings.put("/updateprofile.do", new BoardUpdateprofileController());
 		mappings.put("/likesearch.do", new BoardLikeSearchController());
 		mappings.put("/cntsearch.do", new BoardCntSearchController());
+		mappings.put("/likeadd.do", new BoardLikeaddController());
 	}
 	public Controller getController(String key) {
 		return mappings.get(key);
