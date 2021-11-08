@@ -108,7 +108,7 @@ Licence URI: https://www.os-templates.com/template-terms
 		<!-- ################################################################################################ -->
 		<div id="breadcrumb" class="hoc clear">
 			<div id="profile">
-				<img id="member_profile_pic" src="https://via.placeholder.com/180"
+				<img id="member_profile_pic" src="<%=members.getMb_profile_pic() %>"
 					alt="프로필사진" /> <span id="member_name"><%=vo.getMb_nickname()%></span>
 			</div>
 			<!-- ################################################################################################ -->

@@ -136,4 +136,34 @@ public class ArticleDAO {
 	      session.commit();
 	      session.close();
 	   }
+	
+	public void likeadd(SuperVO vo) {
+	      SqlSession session = sqlSessionFactory.openSession();
+	      session.insert("likeadd",vo);
+	      session.commit();
+	      session.close();
+	}
+	
+	public SuperVO heart(SuperVO Lvo) {
+	      SqlSession session = sqlSessionFactory.openSession();
+	      SuperVO vo = session.selectOne("heart", Lvo);
+	      session.close();
+	      return vo;
+	}
+	
+	public void likedeleteU(int article_num) {
+	      SqlSession session = sqlSessionFactory.openSession();
+	      int result = session.update("likedeleteU", article_num);
+	      session.commit();
+	      session.close();
+	   }
+	
+	public void likedelete(SuperVO vo) {
+	      SqlSession session = sqlSessionFactory.openSession();
+	      session.delete("likedelete",vo);
+	      session.commit();
+	      session.close();
+	}
+	
+	
 }
