@@ -127,4 +127,11 @@ public class ArticleDAO {
 		session.close(); // ¹Ý³³(*)
 		return list;
 	}
+	
+	public List<SuperVO> levelsearch(String carping_level) {
+		SqlSession session = sqlSessionFactory.openSession();
+		List<SuperVO> list = session.selectList("levelsearch", carping_level);
+		session.close(); // ¹Ý³³(*)
+		return list;
+	}
 }

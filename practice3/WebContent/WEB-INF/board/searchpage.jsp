@@ -130,14 +130,14 @@ Licence URI: https://www.os-templates.com/template-terms
 					<input type="text" name="search" id="search_bar" />
 					<input type="submit" value="검색" />
 			</form>
-			<hr />
+			<hr/>
 			<div id="search_first">
 				<h1>검색결과</h1>
 				<div id="search_first_right">
-					<div id="search_level">
-						<input type="checkbox" name="top" /><label for="top">상</label>
-						<input type="checkbox" name="middle" /><label for="middle">중 </label>
-						<input type="checkbox" name="bottom" /><label for="bottom">하 </label>
+					<div id="level_button">
+						<button onclick="location.href='levelsearch.do?carping_level=상'">상</button>
+						<button onclick="location.href='levelsearch.do?carping_level=중'">중</button>
+						<button onclick="location.href='levelsearch.do?carping_level=하'">하</button>
 					</div>
 					<div id="search_button">
 						<button id="search_count" onclick="location.href='cntsearch.do'">조회수</button>
@@ -146,7 +146,7 @@ Licence URI: https://www.os-templates.com/template-terms
 					</div>
 				</div>
 			</div>
-			<hr />
+			<hr/>
 			<%
 				for (SuperVO vo : list) {
 			%>

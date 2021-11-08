@@ -7,6 +7,7 @@ import kr.smhrd.controller.BoardCntSearchController;
 import kr.smhrd.controller.BoardCommentDeleteController;
 import kr.smhrd.controller.BoardCommentInsertController;
 import kr.smhrd.controller.BoardIndexController;
+import kr.smhrd.controller.BoardLevelSearchController;
 import kr.smhrd.controller.BoardLikeSearchController;
 import kr.smhrd.controller.BoardLoginController;
 import kr.smhrd.controller.BoardLogoutController;
@@ -50,6 +51,7 @@ public class HandlerMapping {
 		mappings.put("/updateprofile2.do", new BoardUpdateprofile1Controller());
 		mappings.put("/likesearch.do", new BoardLikeSearchController());
 		mappings.put("/cntsearch.do", new BoardCntSearchController());
+		mappings.put("/levelsearch.do", new BoardLevelSearchController());
 	}
 	public Controller getController(String key) {
 		return mappings.get(key);
