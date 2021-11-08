@@ -128,14 +128,12 @@ public class ArticleDAO {
 		return list;
 	}
 	
-<<<<<<< HEAD
 	public List<SuperVO> levelsearch(String carping_level) {
 		SqlSession session = sqlSessionFactory.openSession();
 		List<SuperVO> list = session.selectList("levelsearch", carping_level);
 		session.close(); // ¹Ý³³(*)
 		return list;
 	}
-=======
 	public void likeaddU(int article_num) {
 	      System.out.println("Ãâ·Â2:"+article_num);
 	      SqlSession session = sqlSessionFactory.openSession();
@@ -144,5 +142,4 @@ public class ArticleDAO {
 	      session.commit();
 	      session.close();
 	   }
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-6/C-ZONE.git
 }

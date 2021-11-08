@@ -50,11 +50,8 @@ public class HandlerMapping {
 		mappings.put("/updateprofile.do", new BoardUpdateprofileController());
 		mappings.put("/likesearch.do", new BoardLikeSearchController());
 		mappings.put("/cntsearch.do", new BoardCntSearchController());
-<<<<<<< HEAD
 		mappings.put("/levelsearch.do", new BoardLevelSearchController());
-=======
 		mappings.put("/likeadd.do", new BoardLikeaddController());
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-6/C-ZONE.git
 	}
 	public Controller getController(String key) {
 		return mappings.get(key);

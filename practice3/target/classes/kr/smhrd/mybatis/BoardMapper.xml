@@ -121,19 +121,16 @@
 		order by a.article_cnt desc
 	</select>
 	
-<<<<<<< HEAD
 	<select id="levelsearch" resultType="kr.smhrd.util.SuperVO">
 		select a.*, m.* from articles a, members m
 		where a.mb_num = m.mb_num
 		and a.carping_level = #{carping_level}
 	</select>
 	
-=======
 	<update id="likeaddU" parameterType="int">
       update articles set likes=likes+1 where article_num=#{article_num}
    </update>
    
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-6/C-ZONE.git
 </mapper>
 
 
