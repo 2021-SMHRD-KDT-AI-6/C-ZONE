@@ -7,6 +7,31 @@
 <%
 	MbVO members = (MbVO) session.getAttribute("succ");
 %>
+
+
+
+
+
+
+
+<%@ page import="org.apache.commons.fileupload.DiskFileUpload"%>
+<%@ page import="org.apache.commons.fileupload.FileItem"%>
+<%@ page import="org.apache.commons.fileupload.FileUpload"%>
+<%@ page import="java.util.*"%>
+<%@ page import="java.io.File"%>
+<%@ page import="java.io.FileOutputStream"%>
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="">
 <head>
@@ -101,7 +126,7 @@
 	<!-- ################################################################################################ -->
 	<div class="wrapper row3">
 		<main class="hoc container clear">
-			<form name="frm" id="write_" action="write.do" method="post">
+			<form name="frm" id="write_" action="write.do" method="post" enctype="multipart/form-data">
 				<input type="hidden" name="latitude" id="latitude" value="">
 				<input type="hidden" name="longitude" id="longitude" value="">
 				<input type="hidden" name="mb_num" id="mb_num"
