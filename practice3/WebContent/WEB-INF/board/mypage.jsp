@@ -192,7 +192,17 @@ Licence URI: https://www.os-templates.com/template-terms
 								<%=vo.getArticle_content()%>
 							</a>
 						</article>
-							<button class="article_content_del">삭제</button>
+						
+						
+							<div class="article_content"><%=vo.getArticle_content()%>
+					<% if (members == null) {%> 
+					<% }else if (vo.getArticle_num() == vo.getArticle_num()){%>
+					<form action="ArticleDelete.do" id="article_delete">
+						<input type="hidden" name="article_num" value="<%=vo.getArticle_num() %>" />
+						<input type="submit" value="삭제" />
+					</form>
+					<% } %>
+					</div>
 					</div>
 				</div>
 				<%

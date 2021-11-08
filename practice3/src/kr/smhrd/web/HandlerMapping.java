@@ -3,6 +3,7 @@ package kr.smhrd.web;
 import java.util.HashMap;
 
 import kr.smhrd.controller.BoardArticleController;
+import kr.smhrd.controller.BoardArticleDeleteController;
 import kr.smhrd.controller.BoardCntSearchController;
 import kr.smhrd.controller.BoardCommentDeleteController;
 import kr.smhrd.controller.BoardCommentInsertController;
@@ -50,6 +51,7 @@ public class HandlerMapping {
 		mappings.put("/likesearch.do", new BoardLikeSearchController());
 		mappings.put("/cntsearch.do", new BoardCntSearchController());
 		mappings.put("/likeadd.do", new BoardLikeaddController());
+		mappings.put("/ArticleDelete.do", new BoardArticleDeleteController());
 	}
 	public Controller getController(String key) {
 		return mappings.get(key);

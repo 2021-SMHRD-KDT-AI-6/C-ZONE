@@ -136,4 +136,10 @@ public class ArticleDAO {
 	      session.commit();
 	      session.close();
 	   }
+	public void ArticleDelete(int article_num) {
+	SqlSession session=sqlSessionFactory.openSession(); // Connection 
+    session.delete("articledelete", article_num); //insert SQL실행
+    session.commit(); //완료
+    session.close();  //반납(*)
+}
 }
