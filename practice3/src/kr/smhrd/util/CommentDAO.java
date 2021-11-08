@@ -1,6 +1,8 @@
 package kr.smhrd.util;
 
 import java.io.InputStream;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.util.List;
 
 import org.apache.ibatis.io.Resources;
@@ -28,6 +30,7 @@ public class CommentDAO {
 		session.close();
 		return list;
 	}
+	
 	public void CommentInsert(SuperVO vo) {
 	      SqlSession session=sqlSessionFactory.openSession(); // Connection 
 	      session.insert("commentInsert", vo); //insert SQL½ÇÇà
@@ -35,16 +38,10 @@ public class CommentDAO {
 	      session.close();  //¹Ý³³(*)
 	   }
 	
-	public MbVO Updateprofile(int mb_num) {
-		SqlSession session = sqlSessionFactory.openSession();
-		MbVO vo = session.selectOne("updateprofile", mb_num);
-		session.close();  //¹Ý³³(*)
-		return vo;
-	}
 	
-	public int Updateprofile1(MbVO vo) {
+	public int Updateprofile(MbVO vo) {
 		SqlSession session = sqlSessionFactory.openSession(); // Connection
-		int num = session.update("updateprofile1", vo);
+		int num = session.update("updateprofile", vo);
 		System.out.println(num);
 		session.commit(); // ¿Ï·á
 		session.close(); // ¹Ý³³(*)

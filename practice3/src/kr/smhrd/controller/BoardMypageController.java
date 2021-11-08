@@ -20,9 +20,16 @@ public class BoardMypageController implements Controller{
 		
 		MbVO vo = (MbVO)session.getAttribute("succ");
 		
+		int mb_num = vo.getMb_num();
+		
 		ArticleDAO dao = new ArticleDAO();
-		List<SuperVO> list = dao.memberpage(vo.getMb_num());
+		List<SuperVO> list = dao.memberpage(mb_num);
 		request.setAttribute("list", list);
+		
+		MbVO succ = dao.isLogin(vo);
+		System.out.println(succ);
+        session.setAttribute("succ", succ);
+		
 		return "mypage";
 	}
 }
