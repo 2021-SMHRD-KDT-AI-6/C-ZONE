@@ -120,32 +120,31 @@ function gomypage(){
 	<!-- ################################################################################################ -->
 	<div class="profile">
 		<!-- profile -->
-		<!--   <form action="씨패스/수정.do" method = "post">  -->
+		<!--   <form action="씨패스/수정.do" method = "post">       -->   
 		<div id="profile_">
 			<hr class="profile_hr" />
 			<div class="fix_menu">
-			<form action="<%=cpath%>/updateprofile1.do" method="post" enctype="multipart/form-data">
+			<form action="updateprofile.do" method="post" enctype="multipart/form-data">
+			<input type="hidden" name="mb_num" value="<%=members.getMb_num() %>" />
 				<div class="fix_menu_1">
 					<div class="pic_fix">사진 수정</div>
-					<input class="pic_fix_input" type="file" name="pic_fix_input" value="<%=members.getMb_profile_pic()%>"></input>
-					<button type="submit" class="pic_fix_button">적용</button>
-					</form>
+					<input class="pic_fix_input" type="file" name="pic_fix_input" />					
 				</div>
+			
 			</div>
 			<div class="fix_menu">
-			<form action="<%=cpath%>/updateprofile1.do" method="post" enctype="multipart/form-data">
 				<div class="fix_menu_2">
 					<div class="nickname_fix">닉네임 수정</div>
 					<input class="nickname_fix_input" type="text"
 						name="nickname_fix_input" maxlength="10" placeholder="nickname" value="<%=members.getMb_nickname()%>"></input>
-				    <button type="submit" class="nickname_fix_button">적용</button>
-				    </form>
 				</div>
+		    
 			</div>
 
 			<!-- </form> -->
 			<hr class="profile_hr" />
-			<button class="fix_Btn" onclick="gomypage()">확인</button>
+			<input type="submit" class="fix_Btn" value="확인" />
+		</form>
 		</div>
 	</div>
 	<!-- ################################################################################################ -->
