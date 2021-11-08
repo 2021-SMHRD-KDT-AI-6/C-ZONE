@@ -128,6 +128,12 @@ public class ArticleDAO {
 		return list;
 	}
 	
+	public List<SuperVO> levelsearch(String carping_level) {
+		SqlSession session = sqlSessionFactory.openSession();
+		List<SuperVO> list = session.selectList("levelsearch", carping_level);
+		session.close(); // ¹Ý³³(*)
+		return list;
+	}
 	public void likeaddU(int article_num) {
 	      System.out.println("Ãâ·Â2:"+article_num);
 	      SqlSession session = sqlSessionFactory.openSession();
@@ -166,4 +172,10 @@ public class ArticleDAO {
 	}
 	
 	
+	public void ArticleDelete(int article_num) {
+	SqlSession session=sqlSessionFactory.openSession(); // Connection 
+    session.delete("articledelete", article_num); //insert SQL½ÇÇà
+    session.commit(); //¿Ï·á
+    session.close();  //¹Ý³³(*)
+}
 }
