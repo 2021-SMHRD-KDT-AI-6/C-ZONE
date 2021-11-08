@@ -6,9 +6,10 @@
 <% MbVO members=(MbVO)session.getAttribute("succ");%>
 <%
 	// Object Cating(객체형변환-제일중요)
-ArrayList<SuperVO> list = (ArrayList<SuperVO>) request.getAttribute("list");%>
-<%String cpath = request.getContextPath();
+ArrayList<SuperVO> list = (ArrayList<SuperVO>) request.getAttribute("list");
+ArrayList<SuperVO> like = (ArrayList<SuperVO>) request.getAttribute("like");
 %>
+<%String cpath = request.getContextPath();%>
 <script>      
 function outFn(){
 	  location.href="<%=cpath%>/logout.do";
@@ -57,7 +58,7 @@ Licence URI: https://www.os-templates.com/template-terms
 					<!-- ################################################################################################ -->
 					<ul class="nospace">
 						<li><a href="Index.do"><i class="fas fa-home"></i></a></li>
-						<a href="search.do"><li id="searchform"></li></a>
+						<a href="searchpage.do"><li id="searchform"></li></a>
 					</ul>
 					<!-- ################################################################################################ -->
 				</div>
@@ -84,7 +85,7 @@ Licence URI: https://www.os-templates.com/template-terms
 						<li><a href="login.do">마이페이지</a></li>
 						<% } else { %>
 						<li><a href="writeForm.do">글쓰기</a></li>
-						<li><a href="mypage.do?mb_num=<%=members.getMb_num()%>">마이페이지</a></li>
+						<li><a href="mypage.do">마이페이지</a></li>
 						<% }%>
 						<% if(members==null){ %>
 						<li><a href="login.do">로그인</a></li>
@@ -130,8 +131,7 @@ Licence URI: https://www.os-templates.com/template-terms
 								src="images/demo/348x261.png" alt="" /></a>
 							<figcaption>
 								<h6 class="heading">좋아요 2등</h6>
-								<p>Aenean metus purus consectetur ac sagittis in malesuada
-									quis nunc ut sed risus nulla etiam gravida velit.</p>
+								<p><%=like.get(1).getLikes()%></p>
 							</figcaption>
 						</figure>
 					</li>
@@ -141,8 +141,7 @@ Licence URI: https://www.os-templates.com/template-terms
 								src="images/demo/348x261.png" alt="" /></a>
 							<figcaption>
 								<h6 class="heading">좋아요1등</h6>
-								<p>Nec tincidunt maximus ex orci sollicitudin metus ut
-									lacinia ligula nisi vel neque sed non quam eleifend.</p>
+								<p><%=like.get(0).getLikes()%></p>
 							</figcaption>
 						</figure>
 					</li>
@@ -152,8 +151,7 @@ Licence URI: https://www.os-templates.com/template-terms
 								src="images/demo/348x261.png" alt="" /></a>
 							<figcaption>
 								<h6 class="heading">좋아요 3등</h6>
-								<p>Pharetra etiam ut nisi non mi scelerisque consectetur
-									maecenas vel elementum lectus cras maximus finibus.</p>
+								<p><%=like.get(2).getLikes()%></p>
 							</figcaption>
 						</figure>
 					</li>
@@ -192,7 +190,7 @@ Licence URI: https://www.os-templates.com/template-terms
 									<div class="reg_date"><%=vo.getReg_date()%></div>
 								</div>
 								<div class="article_top_down">
-									<a href="article.do"> <%=vo.getArticle_title()%>
+									<a href="article.do" class="article_title"> <%=vo.getArticle_title()%>
 									</a>
 									<div class="article_top_down_right">
 										<div class="likes">
@@ -208,7 +206,7 @@ Licence URI: https://www.os-templates.com/template-terms
 								</div>
 							</div>
 						</header>
-						<article>
+						<article class="article_content">
 							<%=vo.getArticle_content()%>
 						</article>
 					</div>

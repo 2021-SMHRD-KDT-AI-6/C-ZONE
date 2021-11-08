@@ -48,7 +48,7 @@ public class ArticleDAO {
 	public List<SuperVO> memberpage(int mb_num) {
 		SqlSession session = sqlSessionFactory.openSession();
 		List<SuperVO> list = session.selectList("memberpage", mb_num);
-	
+	    session.close();  //¹Ý³³(*)
 		return list;
 	}
 	
@@ -92,10 +92,39 @@ public class ArticleDAO {
 		return article_cnt;
 	}
 	
+	public List<SuperVO> search(String search){
+		SqlSession session = sqlSessionFactory.openSession();
+		System.out.println("°Ë»ö¾î"+search);
+		List<SuperVO> list = session.selectList("search", search);
+		System.out.println("°Ë»ö¸®½ºÆ®"+list);
+		session.close();
+		return list;
+	}
+	public List<SuperVO> Indexlike() {
+		SqlSession session = sqlSessionFactory.openSession();
+		List<SuperVO> list = session.selectList("likesearch");
+		session.close(); // ¹Ý³³(*)
+		return list;
+	}
+	
 	public int writeView() {
 		SqlSession session = sqlSessionFactory.openSession();
 		int article_num = session.selectOne("writeview");
 		session.close();
 		return article_num;
+	}
+	
+	public List<SuperVO> likesearch() {
+		SqlSession session = sqlSessionFactory.openSession();
+		List<SuperVO> list = session.selectList("likesearch");
+		session.close(); // ¹Ý³³(*)
+		return list;
+	}
+	
+	public List<SuperVO> cntsearch() {
+		SqlSession session = sqlSessionFactory.openSession();
+		List<SuperVO> list = session.selectList("cntsearch");
+		session.close(); // ¹Ý³³(*)
+		return list;
 	}
 }

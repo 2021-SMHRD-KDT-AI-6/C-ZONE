@@ -41,6 +41,7 @@
 	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <link href="layout/styles/layout.css" rel="stylesheet" type="text/css"
 	media="all" />
+<script type="text/javascript" src="ckeditor/ckeditor.js"></script>
 </head>
 <body id="top">
 	<!-- ################################################################################################ -->
@@ -66,7 +67,7 @@
 					<!-- ################################################################################################ -->
 					<ul class="nospace">
 						<li><a href="Index.do"><i class="fas fa-home"></i></a></li>
-						<a href="search.do"><li id="searchform"></li></a>
+						<a href="searchpage.do"><li id="searchform"></li></a>
 					</ul>
 					<!-- ################################################################################################ -->
 				</div>
@@ -89,7 +90,7 @@
 					<ul class="clear">
 						<li class="active"><a href="Index.do">Home</a></li>
 						<li><a href="writeForm.do">글쓰기</a></li>
-						<li><a href="mypage.do?mb_num=<%=members.getMb_num()%>">마이페이지</a></li>
+						<li><a href="mypage.do">마이페이지</a></li>
 						<%
 							if (members == null) {
 						%>
@@ -164,7 +165,7 @@
 				</div>
 				<hr />
 				<div id="write_fourth">
-					<textarea name="article_content" id="wrtie_content" cols="135"
+					<textarea class="form-control" name="article_content" id="write_content" cols="135"
 						rows="50"></textarea>
 					<input type="submit" id="write_complete" value="글쓰기 완료" />
 				</div>
@@ -239,7 +240,7 @@
 		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 		mapOption = {
 			center : new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
-			level : 3
+			level : 10
 		// 지도의 확대 레벨
 		};
 
@@ -268,6 +269,12 @@
 			document.frm.latitude.value = latitude;
 			document.frm.longitude.value = longitude;
 
+		});
+	</script>
+	<script>
+		CKEDITOR.replace('write_content', {
+			height: 500,
+			enterMode: '2',
 		});
 	</script>
 </body>

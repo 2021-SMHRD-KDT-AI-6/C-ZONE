@@ -37,4 +37,6 @@ public class SuperVO {
     private String mb_pwd;
     private String mb_profile_pic;
     private String mb_nickname;
+    //like
+    private int like_num;
 }
