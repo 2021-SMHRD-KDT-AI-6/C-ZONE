@@ -1958,6 +1958,9 @@ table a,
 }
 #member_profile_pic {
   border-radius: 100%;
+  width: 200px;
+  height: 200px;
+  background-color: white;
 }
 #member_name {
   text-align: center;

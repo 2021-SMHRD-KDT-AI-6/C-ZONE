@@ -88,12 +88,8 @@
 	update articles set article_cnt=article_cnt +1 where article_num=#{article_num}
 	</update>
 	
-	<select id="updateproifle"  resultType="kr.smhrd.util.MbVO">
-		select mb_num, mb_profile_pic, mb_nickname from members
-		where mb_num = #{mb_num} 
-	</select>
 	
-	<update id="updateproifle1" parameterType="kr.smhrd.util.MbVO">
+	<update id="updateprofile" parameterType="kr.smhrd.util.MbVO">
 	    update members set mb_profile_pic=#{mb_profile_pic}, mb_nickname=#{mb_nickname}
 	    where mb_num=#{mb_num};
 	</update>
