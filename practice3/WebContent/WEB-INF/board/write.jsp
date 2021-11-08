@@ -127,7 +127,7 @@
 	<!-- ################################################################################################ -->
 	<div class="wrapper row3">
 		<main class="hoc container clear">
-			<form name="frm" id="write_" action="write.do" method="post" enctype="multipart/form-data">
+			<form name="frm" id="write_" action="write.do" method="post" enctype = "multipart/form-data">
 				<input type="hidden" name="latitude" id="latitude" value="">
 				<input type="hidden" name="longitude" id="longitude" value="">
 				<input type="hidden" name="mb_num" id="mb_num"

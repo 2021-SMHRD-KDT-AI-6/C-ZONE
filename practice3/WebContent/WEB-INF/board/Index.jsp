@@ -176,13 +176,14 @@ Licence URI: https://www.os-templates.com/template-terms
 				%>
 				<input type="hidden" name="article_num" value="<%=vo.getArticle_num()%>">
 				<div class="news_feed">
-					<a href="<%=cpath%>/article.do?article_num=<%=vo.getArticle_num()%>"> <img class="thumbnail"
-						src="<%=vo.getCarping_pic1() %>" alt="썸네일" />
+					<a href="<%=cpath%>/article.do?article_num=<%=vo.getArticle_num()%>">
+						<img class="thumbnail" src="<%=vo.getCarping_pic1()%>" alt="썸네일" />
+	
 					</a>
 					<div class="contents">
 						<header>
 							<a href="<%=cpath%>/memberpage.do?mb_num=<%=vo.getMb_num()%>"> <img class="profile_pic"
-								src="https://via.placeholder.com/70" alt="프로필사진" />
+								src="<%=vo.getMb_profile_pic() %>" alt="프로필사진" />
 							</a>
 							<div class="article_top">
 								<div class="article_top_up">
