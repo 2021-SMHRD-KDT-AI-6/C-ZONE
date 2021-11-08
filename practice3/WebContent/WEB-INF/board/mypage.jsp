@@ -120,8 +120,7 @@ Licence URI: https://www.os-templates.com/template-terms
 				<h6 class="heading">마이페이지</h6>
 				<ul>
 					<li><a href="Index.do">Home</a></li>
-					<li><a href="mypage.do">MY
-							PAGE</a></li>
+					<li><a href="mypage.do">MYPAGE</a></li>
 				</ul>
 			</div>
 			<!-- ################################################################################################ -->

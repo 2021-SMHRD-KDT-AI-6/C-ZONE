@@ -123,40 +123,52 @@ Licence URI: https://www.os-templates.com/template-terms
 		<main class="hoc container clear">
 			<!-- main body -->
 			<!-- ################################################################################################ -->
-			<section id="introblocks">
-				<ul class="nospace group btmspace-80">
-					<li class="one_third first">
-						<figure>
-							<a class="imgover" href="#"><img
-								src="images/demo/348x261.png" alt="" /></a>
-							<figcaption>
-								<h6 class="heading">좋아요 2등</h6>
-								<p><%=like.get(1).getLikes()%></p>
-							</figcaption>
-						</figure>
-					</li>
-					<li class="one_third" id="first">
-						<figure>
-							<a class="imgover" href="#"><img
-								src="images/demo/348x261.png" alt="" /></a>
-							<figcaption>
-								<h6 class="heading">좋아요1등</h6>
-								<p><%=like.get(0).getLikes()%></p>
-							</figcaption>
-						</figure>
-					</li>
-					<li class="one_third">
-						<figure>
-							<a class="imgover" href="#"><img
-								src="images/demo/348x261.png" alt="" /></a>
-							<figcaption>
-								<h6 class="heading">좋아요 3등</h6>
-								<p><%=like.get(2).getLikes()%></p>
-							</figcaption>
-						</figure>
-					</li>
-				</ul>
-			</section>
+          <section id="introblocks">
+            <ul class="nospace group btmspace-80">
+              
+              <div class="rank">
+              <li class="one_third first">
+                <figure>
+                  <a class="imgover imgover2" href="#"><img
+                    src="images/demo/348x261.png" alt="" /></a>
+                    <div class="rank_2">
+                  <figcaption>
+                    <h6 class="heading">좋아요 2등</h6>
+                    <p><%=like.get(1).getLikes()%></p>
+                  </figcaption>
+                </div>
+                </figure>
+              </li>
+            
+            
+              <li class="one_third" id="first">
+                <figure>
+                  <a class="imgover imgover1" href="#"><img
+                    src="images/demo/348x261.png" alt="" /></a>
+                  <div class="rank_1">
+                  <figcaption>
+                    <h6 class="heading">좋아요1등</h6>
+                    <p><%=like.get(0).getLikes()%></p>
+                  </figcaption>
+                </div>
+                </figure>
+              </li>
+            
+              <li class="one_third">
+                <figure>
+                  <a class="imgover imgover3" href="#"><img
+                    src="images/demo/348x261.png" alt="" /></a>
+                  <div class="rank_3">
+                  <figcaption>
+                    <h6 class="heading">좋아요 3등</h6>
+                    <p><%=like.get(2).getLikes()%></p>
+                  </figcaption>
+                </div>
+                </figure>
+              </li>
+            </ul>
+          </div>
+          </section>
 			<!-- ################################################################################################ -->
 			<hr class="btmspace-80" />
 			<!-- ################################################################################################ -->
