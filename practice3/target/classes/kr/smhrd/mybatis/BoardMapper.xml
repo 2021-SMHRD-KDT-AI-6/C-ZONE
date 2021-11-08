@@ -125,6 +125,10 @@
 		order by a.article_cnt desc
 	</select>
 	
+	<update id="likeaddU" parameterType="int">
+      update articles set likes=likes+1 where article_num=#{article_num}
+   </update>
+   
 </mapper>
 
 
