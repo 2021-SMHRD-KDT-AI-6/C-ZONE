@@ -158,7 +158,7 @@ Licence URI: https://www.os-templates.com/template-terms
 					<div class="contents">
 						<header>
 							<a href="<%=cpath%>/memberpage.do?mb_num=<%=vo.getMb_num()%>">
-								<img class="profile_pic" src="https://via.placeholder.com/70"
+								<img class="profile_pic" src="<%=vo.getMb_profile_pic() %>"
 								alt="프로필사진" />
 							</a>
 							<div class="article_top">
@@ -192,14 +192,27 @@ Licence URI: https://www.os-templates.com/template-terms
 							</a>
 						</article>
 						
-						
-							<div class="article_content"><%=vo.getArticle_content()%>
 					<% if (members == null) {%> 
 					<% }else if (vo.getArticle_num() == vo.getArticle_num()){%>
 					<form action="ArticleDelete.do" id="article_delete">
 						<input type="hidden" name="article_num" value="<%=vo.getArticle_num() %>" />
 						<input type="submit" value="삭제" />
 					</form>
+					
+					
+					
+					
+					
+					<form action="ArticleFix.do" id="article_fix">
+						<input type="hidden" name="article_num" value="<%=vo.getArticle_num() %>" />
+						<input type="submit" value="수정" />
+					</form>
+					
+					
+					
+					
+					
+					
 					<% } %>
 					</div>
 					</div>
