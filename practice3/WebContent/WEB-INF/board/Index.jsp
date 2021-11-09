@@ -105,15 +105,14 @@ Licence URI: https://www.os-templates.com/template-terms
 		<!-- ################################################################################################ -->
 		<div id="pageintro" class="hoc clear">
 			<!-- ################################################################################################ -->
-			<article>
-				<h3 class="heading">Finibus dictum lobortis</h3>
-				<p>Libero sed ullamcorper nibh dignissim et curabitur cursus
-					scelerisque metus sit amet sodales justo auctor sit amet proin quis
-					lacus non nisi.</p>
-				<footer>
-					<ul class="nospace inline pushright"></ul>
-				</footer>
-			</article>
+			
+          <h3 class="mainText">Finibus dictum lobortis</h3>
+            <p class="mainText_p">Libero sed ullamcorper nibh dignissim et curabitur cursus
+              scelerisque metus sit amet sodales justo auctor sit amet proin quis
+              lacus non nisi.</p>
+              <footer class="mainFooter">
+                <ul class="nospace inline pushright"></ul>
+              </footer>
 			<!-- ################################################################################################ -->
 		</div>
 		<!-- ################################################################################################ -->
