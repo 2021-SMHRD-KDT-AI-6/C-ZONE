@@ -1,37 +1,49 @@
 <%@page import="kr.smhrd.util.MbVO"%>
-<%@page import="kr.smhrd.util.SuperVO"%>
-<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 <%
-	MbVO members = (MbVO) session.getAttribute("succ");
+	String cpath = request.getContextPath();
 %>
 <%
-	// Object Cating(객체형변환-제일중요)
-ArrayList<SuperVO> list = (ArrayList<SuperVO>) request.getAttribute("list");
-String cpath = request.getContextPath();
+	MbVO members = (MbVO) session.getAttribute("succ");
 %>
+
+
+
+
+
+
+
+<%@ page import="org.apache.commons.fileupload.DiskFileUpload"%>
+<%@ page import="org.apache.commons.fileupload.FileItem"%>
+<%@ page import="org.apache.commons.fileupload.FileUpload"%>
+<%@ page import="java.util.*"%>
+<%@ page import="java.io.File"%>
+<%@ page import="java.io.FileOutputStream"%>
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
-<!--
-Template Name: Sislaf
-Author: <a href="https://www.os-templates.com/">OS Templates</a>
-Author URI: https://www.os-templates.com/
-Copyright: OS-Templates.com
-Licence: Free to use under our free template licence terms
-Licence URI: https://www.os-templates.com/template-terms
--->
 <html lang="">
-<!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
 <head>
-<title>C-ZONE</title>
+<title>WRITE</title>
 <meta charset="utf-8" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <link href="layout/styles/layout.css" rel="stylesheet" type="text/css"
 	media="all" />
+<script type="text/javascript" src="ckeditor/ckeditor.js"></script>
 </head>
 <body id="top">
-	<input type="hidden" name="mb_num" value="<%=members.getMb_num()%>" />
 	<!-- ################################################################################################ -->
 	<!-- ################################################################################################ -->
 	<!-- ################################################################################################ -->
@@ -77,19 +89,8 @@ Licence URI: https://www.os-templates.com/template-terms
 					<!-- ################################################################################################ -->
 					<ul class="clear">
 						<li class="active"><a href="Index.do">Home</a></li>
-						<%
-							if (members == null) {
-						%>
-						<li><a href="login.do">글쓰기</a></li>
-						<li><a href="login.do">마이페이지</a></li>
-						<%
-							} else {
-						%>
 						<li><a href="writeForm.do">글쓰기</a></li>
 						<li><a href="mypage.do">마이페이지</a></li>
-						<%
-							}
-						%>
 						<%
 							if (members == null) {
 						%>
@@ -110,20 +111,12 @@ Licence URI: https://www.os-templates.com/template-terms
 		<!-- ################################################################################################ -->
 		<!-- ################################################################################################ -->
 		<div id="breadcrumb" class="hoc clear">
-			<div id="profile">
-				<a href="profile.do"><img id="member_profile_pic" src="<%=members.getMb_profile_pic()%>"
-					alt="프로필사진" /></a>
-					<a ><span id="member_name"><%=members.getMb_nickname()%></span></a>
-			</div>
 			<!-- ################################################################################################ -->
-			<div class="pushTop">
-				<h6 class="heading">마이페이지</h6>
-				<ul>
-					<li><a href="Index.do">Home</a></li>
-					<li><a href="mypage.do">MY
-							PAGE</a></li>
-				</ul>
-			</div>
+			<h6 class="heading">글쓰기</h6>
+			<ul>
+				<li><a href="Index.do">Home</a></li>
+				<li><a href="writeForm.do">Write</a></li>
+			</ul>
 			<!-- ################################################################################################ -->
 		</div>
 		<!-- ################################################################################################ -->
@@ -134,94 +127,49 @@ Licence URI: https://www.os-templates.com/template-terms
 	<!-- ################################################################################################ -->
 	<div class="wrapper row3">
 		<main class="hoc container clear">
-			<section id="overview">
-				<div class="sectiontitle">
-					<p class="heading underline font-x2">정복지</p>
-				</div>
-				<div id="map" style="width: 1200px; height: 550px; margin: 0 auto"></div>
-				<hr class="btmspace-80" />
+			<form name="frm" id="write_" action="write.do" method="post" enctype = "multipart/form-data">
+				<input type="hidden" name="latitude" id="latitude" value="">
+				<input type="hidden" name="longitude" id="longitude" value="">
+				<input type="hidden" name="mb_num" id="mb_num"
+					value="<%=members.getMb_num()%>">
+				<div id="write_top">
+					<div id="write_first">
+						<h1 id="write_title">제목</h1>
+						<input type="text" placeholder="제목" name="article_title" />
+					</div>
+					<hr />
 
-				<div class="sectiontitle">
-					<p class="heading underline font-x2">내가 쓴 게시물</p>
-				</div>
-				<%
-					for (SuperVO vo : list) {
-				%>
-				<input type="hidden" id="members_latitude"
-					value="<%=vo.getLatitude()%>" /> <input type="hidden"
-					id="members_longitude" value="<%=vo.getLongitude()%>" />
-				<div class="news_feed">
-					<a
-						href="<%=cpath%>/article.do?article_num=<%=vo.getArticle_num()%>">
-						<img class="thumbnail" src="<%=vo.getCarping_pic1()%>"
-						alt="썸네일" />
-					</a>
-					<div class="contents">
-						<header>
-							<a href="<%=cpath%>/memberpage.do?mb_num=<%=vo.getMb_num()%>">
-								<img class="profile_pic" src="<%=vo.getMb_profile_pic() %>"
-								alt="프로필사진" />
-							</a>
-							<div class="article_top">
-								<div class="article_top_up">
-									<strong class="mb_num">
-									<a href="mypage.do"><%=vo.getMb_nickname()%></a>
-									</strong>
-									<div class="reg_date"><%=vo.getReg_date()%></div>
-								</div>
-								<div class="article_top_down">
-									<a
-										href="<%=cpath%>/article.do?article_num=<%=vo.getArticle_num()%>"><%=vo.getArticle_title()%>
-									</a>
-									<div class="article_top_down_right">
-										<div class="likes">
-											좋아요
-											<%=vo.getLikes()%></div>
-										<div class="article_cnt">
-											조회수
-											<%=vo.getArticle_cnt()%></div>
-										<div class="carpinglevel">
-											난이도 <%=vo.getCarping_level()%></div>
-									</div>
-								</div>
+					<div id="write_second">
+						<h1 id="write_pic">사진 첨부</h1>
+						<input id="write_pic_file" type="file" name="carping_pic1" />
+						<div id="write_level_form">
+							<h1 id="write_level">난이도</h1>
+							<input type="radio" name="carping_level" value="상" checked /> <label
+								class="write_level_check" for="carping_level">상</label> <input
+								type="radio" name="carping_level" value="중" /> <label
+								class="write_level_check" for="carping_level">중</label> <input
+								type="radio" name="carping_level" value="하" /> <label
+								class="write_level_check" for="carping_level">하</label>
+							<div id="carping_level_explanation">
+								상 : 화장실 없음, 전기 안됨 <br /> 중 : 화장실 있음 <br /> 하 : 유료 차박지
 							</div>
-						</header>
-						<article class="article_content_mypage">
-							<a 
-								href="<%=cpath%>/article.do?article_num=<%=vo.getArticle_num()%>">
-								<%=vo.getArticle_content()%>
-							</a>
-						</article>
-						
-					<% if (members == null) {%> 
-					<% }else if (vo.getArticle_num() == vo.getArticle_num()){%>
-					<form action="ArticleDelete.do" id="article_delete">
-						<input type="hidden" name="article_num" value="<%=vo.getArticle_num() %>" />
-						<input type="submit" value="삭제" />
-					</form>
-					
-					
-					
-					
-					
-					<form action="ArticleFix.do" id="article_fix">
-						<input type="hidden" name="article_num" value="<%=vo.getArticle_num() %>" />
-						<input type="submit" value="수정" />
-					</form>
-					
-					
-					
-					
-					
-					
-					<% } %>
+						</div>
 					</div>
-					</div>
+					<hr />
+
+					<div id="write_third">
+						<h1 id="write_location">위치</h1>
+						<div id="map"
+							style="width: 1200px; height: 550px; margin: 0 auto;"></div>
+						</div>
 				</div>
-				<%
-					}
-				%>
-			</section>
+				<hr />
+				<div id="write_fourth">
+					<textarea class="form-control" name="article_content" id="write_content" cols="135"
+						rows="50"></textarea>
+					<input type="submit" id="write_complete" value="글쓰기 완료" />
+				</div>
+			</form>
 		</main>
 	</div>
 	<!-- ################################################################################################ -->
@@ -230,7 +178,6 @@ Licence URI: https://www.os-templates.com/template-terms
 	<div class="bgded overlay row4"
 		style="background-image: url('../images/demo/backgrounds/05.png')">
 		<footer id="footer" class="hoc clear">
-			<!-- ################################################################################################ -->
 			<div id="ctdetails" class="clear">
 				<ul class="nospace clear">
 					<li class="one_quarter first">
@@ -274,7 +221,7 @@ Licence URI: https://www.os-templates.com/template-terms
 			</p>
 			<p class="fl_right">
 				Template by <a target="_blank" href="https://www.os-templates.com/"
-					title="Free Website Templates"> OS Templates </a>
+					title="Free Website Templates">OS Templates</a>
 			</p>
 			<!-- ################################################################################################ -->
 		</div>
@@ -284,32 +231,51 @@ Licence URI: https://www.os-templates.com/template-terms
 	<!-- ################################################################################################ -->
 	<a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
 	<!-- JAVASCRIPTS -->
-	<script src="layout/scripts/jquery.min.js"></script>
-	<script src="layout/scripts/jquery.backtotop.js"></script>
-	<script src="layout/scripts/jquery.mobilemenu.js"></script>
+	<script src="../layout/scripts/jquery.min.js"></script>
+	<script src="../layout/scripts/jquery.backtotop.js"></script>
+	<script src="../layout/scripts/jquery.mobilemenu.js"></script>
 	<script type="text/javascript"
 		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d98d9b2f0c4a6046323ef26fd36b2b16"></script>
 	<script>
-		var mapContainer = document.getElementById("map"), // 지도를 표시할 div
+		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 		mapOption = {
 			center : new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
-			level : 13, // 지도의 확대 레벨
+			level : 10
+		// 지도의 확대 레벨
 		};
 
 		var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
-		
-	<%for (SuperVO vo : list) {%>
-		// 마커가 표시될 위치입니다
-		var markerPosition = new kakao.maps.LatLng(<%=vo.getLatitude()%>, <%=vo.getLongitude()%>);
 
-		// 마커를 생성합니다
+		// 지도를 클릭한 위치에 표출할 마커입니다
 		var marker = new kakao.maps.Marker({
-			position : markerPosition,
+			// 지도 중심좌표에 마커를 생성합니다 
+			position : map.getCenter()
 		});
-		// 마커가 지도 위에 표시되도록 설정합니다
+		// 지도에 마커를 표시합니다
 		marker.setMap(map);
-	<%}%>
-		
+
+		// 지도에 클릭 이벤트를 등록합니다
+		// 지도를 클릭하면 마지막 파라미터로 넘어온 함수를 호출합니다
+		kakao.maps.event.addListener(map, 'click', function(mouseEvent) {
+
+			// 클릭한 위도, 경도 정보를 가져옵니다 
+			var latlng = mouseEvent.latLng;
+
+			// 마커 위치를 클릭한 위치로 옮깁니다
+			marker.setPosition(latlng);
+
+			var latitude = latlng.getLat();
+			var longitude = latlng.getLng();
+			document.frm.latitude.value = latitude;
+			document.frm.longitude.value = longitude;
+
+		});
+	</script>
+	<script>
+		CKEDITOR.replace('write_content', {
+			height: 500,
+			enterMode: '2',
+		});
 	</script>
 </body>
 </html>
