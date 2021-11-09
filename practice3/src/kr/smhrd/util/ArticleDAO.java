@@ -127,4 +127,25 @@ public class ArticleDAO {
 		session.close(); // 반납(*)
 		return list;
 	}
+	
+	public List<SuperVO> levelsearch(String carping_level) {
+		SqlSession session = sqlSessionFactory.openSession();
+		List<SuperVO> list = session.selectList("levelsearch", carping_level);
+		session.close(); // 반납(*)
+		return list;
+	}
+	public void likeaddU(int article_num) {
+	      System.out.println("출력2:"+article_num);
+	      SqlSession session = sqlSessionFactory.openSession();
+	      int result = session.update("likeaddU", article_num);
+	      System.out.println("업데이트결과:" + result);
+	      session.commit();
+	      session.close();
+	   }
+	public void ArticleDelete(int article_num) {
+	SqlSession session=sqlSessionFactory.openSession(); // Connection 
+    session.delete("articledelete", article_num); //insert SQL실행
+    session.commit(); //완료
+    session.close();  //반납(*)
+}
 }

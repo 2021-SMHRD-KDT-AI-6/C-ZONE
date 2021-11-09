@@ -115,11 +115,26 @@
 		order by a.likes desc
 	</select>
 	
-		<select id="cntsearch" resultType="kr.smhrd.util.SuperVO">
+	<select id="cntsearch" resultType="kr.smhrd.util.SuperVO">
 		select a.*, m.* from articles a, members m
 		where a.mb_num = m.mb_num
 		order by a.article_cnt desc
 	</select>
+	
+	<select id="levelsearch" resultType="kr.smhrd.util.SuperVO">
+		select a.*, m.* from articles a, members m
+		where a.mb_num = m.mb_num
+		and a.carping_level = #{carping_level}
+	</select>
+	
+	<update id="likeaddU" parameterType="int">
+      update articles set likes=likes+1 where article_num=#{article_num}
+   </update>
+   
+   <delete id="articledelete" parameterType="int">
+		delete from articles
+		where article_num = #{article_num}
+	</delete>
 	
 </mapper>
 

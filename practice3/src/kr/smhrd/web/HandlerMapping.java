@@ -3,11 +3,14 @@ package kr.smhrd.web;
 import java.util.HashMap;
 
 import kr.smhrd.controller.BoardArticleController;
+import kr.smhrd.controller.BoardArticleDeleteController;
 import kr.smhrd.controller.BoardCntSearchController;
 import kr.smhrd.controller.BoardCommentDeleteController;
 import kr.smhrd.controller.BoardCommentInsertController;
 import kr.smhrd.controller.BoardIndexController;
+import kr.smhrd.controller.BoardLevelSearchController;
 import kr.smhrd.controller.BoardLikeSearchController;
+import kr.smhrd.controller.BoardLikeaddController;
 import kr.smhrd.controller.BoardLoginController;
 import kr.smhrd.controller.BoardLogoutController;
 import kr.smhrd.controller.BoardMemberpageController;
@@ -46,11 +49,15 @@ public class HandlerMapping {
 		mappings.put("/profile.do", new BoardProfileController());
 		mappings.put("/updateprofile.do", new BoardUpdateprofileController());
 		mappings.put("/searchpage.do", new BoardSearchPageController());
+		mappings.put("/profile.do", new BoardProfileController());
 		mappings.put("/searchpage.do", new BoardSearchPageController());
 		mappings.put("/updateprofile1.do", new BoardUpdateprofileController());
+		mappings.put("/updateprofile.do", new BoardUpdateprofileController());
 		mappings.put("/likesearch.do", new BoardLikeSearchController());
 		mappings.put("/cntsearch.do", new BoardCntSearchController());
-
+		mappings.put("/levelsearch.do", new BoardLevelSearchController());
+		mappings.put("/likeadd.do", new BoardLikeaddController());
+		mappings.put("/ArticleDelete.do", new BoardArticleDeleteController());
 	}
 	public Controller getController(String key) {
 		return mappings.get(key);
