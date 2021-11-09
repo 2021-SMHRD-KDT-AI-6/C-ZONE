@@ -157,6 +157,11 @@
 		where article_num = #{article_num}
 	</delete>
 	
+	<select id="checkid" resultType="String">
+		select mb_id from members where mb_id=#{mb_id}
+	</select>
+	
+	<select id = "articlefix" 
 </mapper>
 
 

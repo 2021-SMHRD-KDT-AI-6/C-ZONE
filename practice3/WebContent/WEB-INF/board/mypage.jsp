@@ -199,6 +199,21 @@ Licence URI: https://www.os-templates.com/template-terms
 						<input type="hidden" name="article_num" value="<%=vo.getArticle_num() %>" />
 						<input type="submit" value="삭제" />
 					</form>
+					
+					
+					
+					
+					
+					<form action="ArticleFix.do" id="article_fix">
+						<input type="hidden" name="article_num" value="<%=vo.getArticle_num() %>" />
+						<input type="submit" value="수정" />
+					</form>
+					
+					
+					
+					
+					
+					
 					<% } %>
 					</div>
 					</div>

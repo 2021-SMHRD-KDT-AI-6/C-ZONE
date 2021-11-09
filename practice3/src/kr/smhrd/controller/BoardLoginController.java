@@ -36,7 +36,7 @@ public class BoardLoginController implements Controller{
 		            session.setAttribute("succ", succ);
 		            page = "redirect:/Index.do";
 				}else{//회원인증실패
-				page= "redirect:/sl.do";
+				page= "loginalert";
 				}
 				return page;
 	}
