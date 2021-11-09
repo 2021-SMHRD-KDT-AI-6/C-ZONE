@@ -164,6 +164,8 @@ String cpath = request.getContextPath();
 					<div id="map" style="width: 350px; height: 230px; float: right;"></div>
 				</div>
 				<hr />
+				<img id="article_thumbnail" src="<%=vo.getCarping_pic1()%>" />
+				<hr />
 				<div id="articlepage_content">
 					<%=vo.getArticle_content()%>
 				</div>
@@ -176,7 +178,7 @@ String cpath = request.getContextPath();
 				<div class="comment">
 					<div class="comment_first">
 						<a href="<%=cpath%>/memberpage.do?mb_num=<%=comment.getMb_num()%>"> <img class="comment_profile_pic"
-							src="https://via.placeholder.com/70" alt="프로필사진" />
+							src="<%=comment.getMb_profile_pic() %>" alt="프로필사진" />
 						</a>
 						<div class="comment_profile">
 							<a href="<%=cpath%>/memberpage.do?mb_num=<%=comment.getMb_num()%>"><div

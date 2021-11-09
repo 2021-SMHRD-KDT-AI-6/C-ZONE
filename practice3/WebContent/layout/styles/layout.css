@@ -1971,6 +1971,10 @@ table a,
 .profile_fix {
   cursor: pointer;	
 }
+#article_delete{
+	display: flex;
+	justify-content: end;
+}
 /* ========================  ======================== */
 /* 글쓰기페이지 */
 #write_ h1 {
@@ -2121,6 +2125,13 @@ table a,
 	color: red;
 	cursor: pointer;
 }
+#article_thumbnail{
+	width: 1000px;
+	heith: 300px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
 #comment_title {
   margin-top: 30px;
   font-size: 30px;
@@ -2140,6 +2151,8 @@ table a,
   line-height: 25px;
 }
 .comment_profile_pic {
+	width: 70px;
+	height: 70px;
   border-radius: 100%;
   margin-right: 15px;
 }
