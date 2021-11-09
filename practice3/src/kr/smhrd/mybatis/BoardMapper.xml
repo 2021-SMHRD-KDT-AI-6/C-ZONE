@@ -160,6 +160,17 @@
 	<select id="checkid" resultType="String">
 		select mb_id from members where mb_id=#{mb_id}
 	</select>
+     
+     <select id="articlefix" resultType="kr.smhrd.util.SuperVO">
+     	select * from articles where article_num=#{article_num}
+     </select>
+     
+     <update id = "articlefixcomplete" parameterType = "kr.smhrd.util.SuperVO">
+     	update articles set article_title=#{article_title}, article_content=#{article_content},
+     			carping_level=#{carping_level}, latitude = #{latitude}, longitude=#{longitude},
+     			carping_pic1=#{carping_pic1}
+     			where article_num=#{article_num}
+     </update>
 	
 </mapper>
 

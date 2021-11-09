@@ -1,3 +1,4 @@
+<%@page import="kr.smhrd.util.SuperVO"%>
 <%@page import="kr.smhrd.util.MbVO"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
@@ -7,7 +8,9 @@
 <%
 	MbVO members = (MbVO) session.getAttribute("succ");
 %>
-
+<%
+	SuperVO vo =  (SuperVO)request.getAttribute("vo");
+%>
 
 
 
@@ -127,32 +130,59 @@
 	<!-- ################################################################################################ -->
 	<div class="wrapper row3">
 		<main class="hoc container clear">
-			<form name="frm" id="write_" action="write.do" method="post" enctype = "multipart/form-data">
-				<input type="hidden" name="latitude" id="latitude" value="">
-				<input type="hidden" name="longitude" id="longitude" value="">
-				<input type="hidden" name="mb_num" id="mb_num"
-					value="<%=members.getMb_num()%>">
+			<form name="frm" id="write_" action="ArticleFixComplete.do" method="post" enctype = "multipart/form-data"/>
+				<input type="hidden" name="latitude" id="latitude" value="" />
+				<input type="hidden" name="longitude" id="longitude" value="" />
+				<input type="hidden" name="mb_num" id="mb_num" value="<%=members.getMb_num()%>" />
+				<input type="hidden" name="article_num" value="<%=vo.getArticle_num()%>" />
+				<%System.out.print("article_num"+vo.getArticle_num()); %>
 				<div id="write_top">
 					<div id="write_first">
 						<h1 id="write_title">제목</h1>
-						<input type="text" placeholder="제목" name="article_title" />
+						<input type="text" placeholder="제목" name="article_title" value = "<%=vo.getArticle_title()%>"/>
 					</div>
 					<hr />
 
 					<div id="write_second">
+						
 						<h1 id="write_pic">사진 첨부</h1>
 						<input id="write_pic_file" type="file" name="carping_pic1" />
 						<div id="write_level_form">
 							<h1 id="write_level">난이도</h1>
-							<input type="radio" name="carping_level" value="상" checked /> <label
-								class="write_level_check" for="carping_level">상</label> <input
-								type="radio" name="carping_level" value="중" /> <label
-								class="write_level_check" for="carping_level">중</label> <input
-								type="radio" name="carping_level" value="하" /> <label
-								class="write_level_check" for="carping_level">하</label>
+							<%if (vo.getCarping_level().equals("상")){ %>
+						
+							<input type="radio" name="carping_level" value="상" checked /> 
+							<label class="write_level_check" for="carping_level">상</label>
+							<input type="radio" name="carping_level" value="중" /> 
+							<label class="write_level_check" for="carping_level">중</label> 
+							<input type="radio" name="carping_level" value="하" /> 
+							<label class="write_level_check" for="carping_level">하</label>
 							<div id="carping_level_explanation">
 								상 : 화장실 없음, 전기 안됨 <br /> 중 : 화장실 있음 <br /> 하 : 유료 차박지
 							</div>
+							<% }else if(vo.getCarping_level().equals("중")){ %>
+						
+							<input type="radio" name="carping_level" value="상"  /> 
+							<label class="write_level_check" for="carping_level">상</label>
+							<input type="radio" name="carping_level" value="중" checked/> 
+							<label class="write_level_check" for="carping_level">중</label> 
+							<input type="radio" name="carping_level" value="하" /> 
+							<label class="write_level_check" for="carping_level">하</label>
+							<div id="carping_level_explanation">
+								상 : 화장실 없음, 전기 안됨 <br /> 중 : 화장실 있음 <br /> 하 : 유료 차박지
+							</div>
+							<% }else{ %>
+						
+							<input type="radio" name="carping_level" value="상"  /> 
+							<label class="write_level_check" for="carping_level">상</label>
+							<input type="radio" name="carping_level" value="중" /> 
+							<label class="write_level_check" for="carping_level">중</label> 
+							<input type="radio" name="carping_level" value="하" checked/> 
+							<label class="write_level_check" for="carping_level">하</label>
+							<div id="carping_level_explanation">
+								상 : 화장실 없음, 전기 안됨 <br /> 중 : 화장실 있음 <br /> 하 : 유료 차박지
+							</div>
+							<% } %>				
 						</div>
 					</div>
 					<hr />
@@ -166,9 +196,9 @@
 				<hr />
 				<div id="write_fourth">
 					<textarea class="form-control" name="article_content" id="write_content" cols="135"
-						rows="50"></textarea>
-					<input type="submit" id="write_complete" value="글쓰기 완료" />
+						rows="50"><%=vo.getArticle_content() %></textarea>
 				</div>
+					<input type="submit" id="article_fix" value="수정 완료" />
 			</form>
 		</main>
 	</div>

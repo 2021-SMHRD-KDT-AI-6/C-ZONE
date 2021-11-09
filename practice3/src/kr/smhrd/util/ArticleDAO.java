@@ -94,9 +94,7 @@ public class ArticleDAO {
 
 	public List<SuperVO> search(String search) {
 		SqlSession session = sqlSessionFactory.openSession();
-		System.out.println("검색어" + search);
 		List<SuperVO> list = session.selectList("search", search);
-		System.out.println("검색리스트" + list);
 		session.close();
 		return list;
 	}
@@ -139,8 +137,7 @@ public class ArticleDAO {
 	public void likeaddU(int article_num) {
 		System.out.println("출력2:" + article_num);
 		SqlSession session = sqlSessionFactory.openSession();
-		int result = session.update("likeaddU", article_num);
-		System.out.println("업데이트결과:" + result);
+		session.update("likeaddU", article_num);
 		session.commit();
 		session.close();
 	}
@@ -162,7 +159,7 @@ public class ArticleDAO {
 	
 	public void likedeleteU(int article_num) {
 	      SqlSession session = sqlSessionFactory.openSession();
-	      int result = session.update("likedeleteU", article_num);
+	      session.update("likedeleteU", article_num);
 	      session.commit();
 	      session.close();
 	   }
@@ -188,4 +185,17 @@ public class ArticleDAO {
 		session.close();
 		return id;
 	}
+	public SuperVO articlefix(int article_num) {
+		SqlSession session = sqlSessionFactory.openSession();
+		SuperVO vo = session.selectOne("articlefix",article_num);
+		session.close();
+		return vo;
+	}
+    public void articlefixcomplete(SuperVO vo) {
+    	SqlSession session = sqlSessionFactory.openSession();
+	    session.update("articlefixcomplete", vo); 
+	    session.commit();
+	    session.close();
+    }
+	
 }

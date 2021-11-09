@@ -4,6 +4,8 @@ import java.util.HashMap;
 
 import kr.smhrd.controller.BoardArticleController;
 import kr.smhrd.controller.BoardArticleDeleteController;
+import kr.smhrd.controller.BoardArticleFixCompleteController;
+import kr.smhrd.controller.BoardArticleFixController;
 import kr.smhrd.controller.BoardCntSearchController;
 import kr.smhrd.controller.BoardCommentDeleteController;
 import kr.smhrd.controller.BoardCommentInsertController;
@@ -60,6 +62,8 @@ public class HandlerMapping {
 		mappings.put("/likeadd.do", new BoardLikeaddController());
 		mappings.put("/likedelete.do", new BoardLikedeleteController());
 		mappings.put("/ArticleDelete.do", new BoardArticleDeleteController());
+		mappings.put("/ArticleFix.do", new BoardArticleFixController());
+		mappings.put("/ArticleFixComplete.do", new BoardArticleFixCompleteController());
 	}
 	public Controller getController(String key) {
 		return mappings.get(key);
