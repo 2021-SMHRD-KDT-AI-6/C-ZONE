@@ -2177,3 +2177,18 @@ table a,
 	width: 70px;
 	height: 70px;
 }
+#trend_img{
+	width: 1140px;
+	height: 500px;
+	object-fit: cover;
+}
+.news_feed_hidden{
+	display: none;
+}
+#moreview{
+	border: 0;
+	outline: 0;
+	background-color: white;
+	margin: 0 auto;
+	cursor: pointer;
+}
