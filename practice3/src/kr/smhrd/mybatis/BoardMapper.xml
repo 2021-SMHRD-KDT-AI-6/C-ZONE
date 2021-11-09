@@ -128,9 +128,53 @@
 	</select>
 	
 	<update id="likeaddU" parameterType="int">
-      update articles set likes=likes+1 where article_num=#{article_num}
+      update articles set likes=likes+1, article_cnt=article_cnt-1 where article_num=#{article_num}
    </update>
    
+   <insert id = "likeadd" parameterType="kr.smhrd.util.SuperVO">
+    insert into likes
+		(mb_num, article_num)
+		values (#{mb_num}, #{article_num})
+   </insert>
+   
+   <select id="heart" resultType="kr.smhrd.util.SuperVO">
+    select *
+    from likes
+    where article_num=#{article_num} and mb_num = #{mb_num}
+   </select>
+   
+   <update id="likedeleteU" parameterType="int">
+      update articles set likes=likes-1, article_cnt=article_cnt-1 where article_num=#{article_num}
+   </update>
+   
+   <delete id = "likedelete" parameterType="kr.smhrd.util.SuperVO">
+    delete from likes
+		where mb_num=#{mb_num} and article_num=#{article_num}
+   </delete>
+   
+   <delete id="articledelete" parameterType="int">
+		delete from articles
+		where article_num = #{article_num}
+	</delete>
+	
+	<select id="checkid" resultType="String">
+		select mb_id from members where mb_id=#{mb_id}
+	</select>
+<<<<<<< HEAD
+     
+     <select id="articlefix" resultType="kr.smhrd.util.SuperVO">
+     	select * from articles where article_num=#{article_num}
+     </select>
+     
+     <update id = "articlefixcomplete" parameterType = "kr.smhrd.util.SuperVO">
+     	update articles set article_title=#{article_title}, article_content=#{article_content},
+     			carping_level=#{carping_level}, latitude = #{latitude}, longitude=#{longitude},
+     			carping_pic1=#{carping_pic1}
+     			where article_num=#{article_num}
+     </update>
+=======
+	
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-6/C-ZONE.git
 </mapper>
 
 

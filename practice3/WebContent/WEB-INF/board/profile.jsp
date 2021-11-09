@@ -85,14 +85,14 @@ function gomypage(){
 					<ul class="clear">
 						<li class="active"><a href="Index.do">Home</a></li>
 						<% if(members==null){ %>
-						<li><a href="login.do">글쓰기</a></li>
-						<li><a href="login.do">마이페이지</a></li>
+						<li><a href="sl.do">글쓰기</a></li>
+						<li><a href="sl.do">마이페이지</a></li>
 						<% } else { %>
 						<li><a href="writeForm.do">글쓰기</a></li>
 						<li><a href="mypage.do">마이페이지</a></li>
 						<% }%>
 						<% if(members==null){ %>
-						<li><a href="login.do">로그인</a></li>
+						<li><a href="sl.do">로그인</a></li>
 						<% } else { %>
 						<li><a href="logout.do" onclick="outFn()">로그아웃</a></li>
 						<% }%>

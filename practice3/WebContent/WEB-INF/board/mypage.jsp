@@ -80,8 +80,8 @@ Licence URI: https://www.os-templates.com/template-terms
 						<%
 							if (members == null) {
 						%>
-						<li><a href="login.do">글쓰기</a></li>
-						<li><a href="login.do">마이페이지</a></li>
+						<li><a href="sl.do">글쓰기</a></li>
+						<li><a href="sl.do">마이페이지</a></li>
 						<%
 							} else {
 						%>
@@ -93,7 +93,7 @@ Licence URI: https://www.os-templates.com/template-terms
 						<%
 							if (members == null) {
 						%>
-						<li><a href="login.do">로그인</a></li>
+						<li><a href="sl.do">로그인</a></li>
 						<%
 							} else {
 						%>
@@ -159,7 +159,7 @@ Licence URI: https://www.os-templates.com/template-terms
 					<div class="contents">
 						<header>
 							<a href="<%=cpath%>/memberpage.do?mb_num=<%=vo.getMb_num()%>">
-								<img class="profile_pic" src="https://via.placeholder.com/70"
+								<img class="profile_pic" src="<%=vo.getMb_profile_pic() %>"
 								alt="프로필사진" />
 							</a>
 							<div class="article_top">
@@ -192,7 +192,30 @@ Licence URI: https://www.os-templates.com/template-terms
 								<%=vo.getArticle_content()%>
 							</a>
 						</article>
-							<button class="article_content_del">삭제</button>
+						
+					<% if (members == null) {%> 
+					<% }else if (vo.getArticle_num() == vo.getArticle_num()){%>
+					<form action="ArticleDelete.do" id="article_delete">
+						<input type="hidden" name="article_num" value="<%=vo.getArticle_num() %>" />
+						<input type="submit" value="삭제" />
+					</form>
+					
+					
+					
+					
+					
+					<form action="ArticleFix.do" id="article_delete">
+						<input type="hidden" name="article_num" value="<%=vo.getArticle_num() %>" />
+						<input type="submit" value="수정" />
+					</form>
+					
+					
+					
+					
+					
+					
+					<% } %>
+					</div>
 					</div>
 				</div>
 				<%

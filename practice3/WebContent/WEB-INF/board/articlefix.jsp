@@ -1,38 +1,50 @@
-<%@page import="kr.smhrd.util.MbVO"%>
 <%@page import="kr.smhrd.util.SuperVO"%>
-<%@page import="java.util.ArrayList"%>
+<%@page import="kr.smhrd.util.MbVO"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 <%
+	String cpath = request.getContextPath();
+%>
+<%
 	MbVO members = (MbVO) session.getAttribute("succ");
 %>
-
 <%
-	// Object Cating(객체형변환-제일중요)
-ArrayList<SuperVO> list = (ArrayList<SuperVO>) request.getAttribute("list");
-String cpath = request.getContextPath();
+	SuperVO vo =  (SuperVO)request.getAttribute("vo");
 %>
 
-<!DOCTYPE html>
-<!--
-Template Name: Sislaf
-Author: <a href="https://www.os-templates.com/">OS Templates</a>
-Author URI: https://www.os-templates.com/
-Copyright: OS-Templates.com
-Licence: Free to use under our free template licence terms
-Licence URI: https://www.os-templates.com/template-terms
--->
-<html lang="">
 
-<!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
+
+
+
+
+<%@ page import="org.apache.commons.fileupload.DiskFileUpload"%>
+<%@ page import="org.apache.commons.fileupload.FileItem"%>
+<%@ page import="org.apache.commons.fileupload.FileUpload"%>
+<%@ page import="java.util.*"%>
+<%@ page import="java.io.File"%>
+<%@ page import="java.io.FileOutputStream"%>
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="">
 <head>
-<title>C-ZONE</title>
+<title>WRITE</title>
 <meta charset="utf-8" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <link href="layout/styles/layout.css" rel="stylesheet" type="text/css"
 	media="all" />
-
+<script type="text/javascript" src="ckeditor/ckeditor.js"></script>
 </head>
 <body id="top">
 	<!-- ################################################################################################ -->
@@ -80,9 +92,19 @@ Licence URI: https://www.os-templates.com/template-terms
 					<!-- ################################################################################################ -->
 					<ul class="clear">
 						<li class="active"><a href="Index.do">Home</a></li>
-						<li><a href="login.do">글쓰기</a></li>
-						<li><a href="login.do">마이페이지</a></li>
+						<li><a href="writeForm.do">글쓰기</a></li>
+						<li><a href="mypage.do">마이페이지</a></li>
+						<%
+							if (members == null) {
+						%>
 						<li><a href="login.do">로그인</a></li>
+						<%
+							} else {
+						%>
+						<li><a href="logout.do" onclick="outFn()">로그아웃</a></li>
+						<%
+							}
+						%>
 					</ul>
 					<!-- ################################################################################################ -->
 				</nav>
@@ -93,10 +115,10 @@ Licence URI: https://www.os-templates.com/template-terms
 		<!-- ################################################################################################ -->
 		<div id="breadcrumb" class="hoc clear">
 			<!-- ################################################################################################ -->
-			<h6 class="heading">로그인</h6>
+			<h6 class="heading">글쓰기</h6>
 			<ul>
 				<li><a href="Index.do">Home</a></li>
-				<li><a href="login.do">Log-in</a></li>
+				<li><a href="writeForm.do">Write</a></li>
 			</ul>
 			<!-- ################################################################################################ -->
 		</div>
@@ -106,51 +128,86 @@ Licence URI: https://www.os-templates.com/template-terms
 	<!-- ################################################################################################ -->
 	<!-- ################################################################################################ -->
 	<!-- ################################################################################################ -->
-	<div class="signupMain">
-		<!-- log-in -->
-
-		<div id="log-in">
-			<%
-				if (members == null) {
-			%>
-			<form class="form-inline" action="<%=cpath%>/login.do" method="post" onsubmit="return loginCheck()">
-				<hr class="signup_hr" />
-				<div class="log_in_menu">
-					<div class="e-mail">
-						<img class=e-mail_i src="images/demo/signup_logos/mail.png"></img>
-						<input class="e-mail_text" type="text" id="mb_id" name="mb_id"
-							placeholder="ID를 입력해주세요."></input>
+	<div class="wrapper row3">
+		<main class="hoc container clear">
+			<form name="frm" id="write_" action="ArticleFixComplete.do" method="post" enctype = "multipart/form-data"/>
+				<input type="hidden" name="latitude" id="latitude" value="" />
+				<input type="hidden" name="longitude" id="longitude" value="" />
+				<input type="hidden" name="mb_num" id="mb_num" value="<%=members.getMb_num()%>" />
+				<input type="hidden" name="article_num" value="<%=vo.getArticle_num()%>" />
+				<%System.out.print("article_num"+vo.getArticle_num()); %>
+				<div id="write_top">
+					<div id="write_first">
+						<h1 id="write_title">제목</h1>
+						<input type="text" placeholder="제목" name="article_title" value = "<%=vo.getArticle_title()%>"/>
 					</div>
-				</div>
-				<div class="log_in_menu">
-					<div class="password">
-						<img class=password_i src="images/demo/signup_logos/password.png"></img>
-						<input class="password_text" type="password" id="mb_pwd"
-							name="mb_pwd" maxlength="15" placeholder="비밀번호"></input>
-					</div>
-				</div>
+					<hr />
 
-				<div>
-					<button type="submit" class="log_in">로그인</button>
+					<div id="write_second">
+						
+						<h1 id="write_pic">사진 첨부</h1>
+						<input id="write_pic_file" type="file" name="carping_pic1" />
+						<div id="write_level_form">
+							<h1 id="write_level">난이도</h1>
+							<%if (vo.getCarping_level().equals("상")){ %>
+						
+							<input type="radio" name="carping_level" value="상" checked /> 
+							<label class="write_level_check" for="carping_level">상</label>
+							<input type="radio" name="carping_level" value="중" /> 
+							<label class="write_level_check" for="carping_level">중</label> 
+							<input type="radio" name="carping_level" value="하" /> 
+							<label class="write_level_check" for="carping_level">하</label>
+							<div id="carping_level_explanation">
+								상 : 화장실 없음, 전기 안됨 <br /> 중 : 화장실 있음 <br /> 하 : 유료 차박지
+							</div>
+							<% }else if(vo.getCarping_level().equals("중")){ %>
+						
+							<input type="radio" name="carping_level" value="상"  /> 
+							<label class="write_level_check" for="carping_level">상</label>
+							<input type="radio" name="carping_level" value="중" checked/> 
+							<label class="write_level_check" for="carping_level">중</label> 
+							<input type="radio" name="carping_level" value="하" /> 
+							<label class="write_level_check" for="carping_level">하</label>
+							<div id="carping_level_explanation">
+								상 : 화장실 없음, 전기 안됨 <br /> 중 : 화장실 있음 <br /> 하 : 유료 차박지
+							</div>
+							<% }else{ %>
+						
+							<input type="radio" name="carping_level" value="상"  /> 
+							<label class="write_level_check" for="carping_level">상</label>
+							<input type="radio" name="carping_level" value="중" /> 
+							<label class="write_level_check" for="carping_level">중</label> 
+							<input type="radio" name="carping_level" value="하" checked/> 
+							<label class="write_level_check" for="carping_level">하</label>
+							<div id="carping_level_explanation">
+								상 : 화장실 없음, 전기 안됨 <br /> 중 : 화장실 있음 <br /> 하 : 유료 차박지
+							</div>
+							<% } %>				
+						</div>
+					</div>
+					<hr />
+
+					<div id="write_third">
+						<h1 id="write_location">위치</h1>
+						<div id="map"
+							style="width: 1200px; height: 550px; margin: 0 auto;"></div>
+						</div>
 				</div>
+				<hr />
+				<div id="write_fourth">
+					<textarea class="form-control" name="article_content" id="write_content" cols="135"
+						rows="50"><%=vo.getArticle_content() %></textarea>
+				</div>
+					<input type="submit" id="article_fix" value="수정 완료" />
 			</form>
-			<%
-				}
-			%>
-			<div class="log_service">
-				<a class="log_service_menu" href="signup.do">회원가입</a>
-			</div>
-			<hr class="signup_hr" />
-		</div>
-	</div>
+		</main>
 	</div>
 	<!-- ################################################################################################ -->
 	<!-- ################################################################################################ -->
 	<!-- ################################################################################################ -->
 	<div class="bgded overlay row4"
-		style="background-image: url('images/demo/backgrounds/05.png');">
+		style="background-image: url('../images/demo/backgrounds/05.png')">
 		<footer id="footer" class="hoc clear">
-			<!-- ################################################################################################ -->
 			<div id="ctdetails" class="clear">
 				<ul class="nospace clear">
 					<li class="one_quarter first">
@@ -203,28 +260,52 @@ Licence URI: https://www.os-templates.com/template-terms
 	<!-- ################################################################################################ -->
 	<!-- ################################################################################################ -->
 	<a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
-
 	<!-- JAVASCRIPTS -->
-	<script src="layout/scripts/jquery.min.js"></script>
-	<script src="layout/scripts/jquery.backtotop.js"></script>
-	<script src="layout/scripts/jquery.mobilemenu.js"></script>
-<script>
-	let mb_id = document.querySelector('input[name="mb_id"]');
-	let mb_pwd = document.querySelector('input[name="mb_pwd"]');
-	function loginCheck(){
-		if(mb_id.value == ""){
-			alert('아이디를 입력해주세요');
-			mb_id.focus();
-			return false
-		}else if(mb_pwd.value == ""){
-			alert('패스워드를 입력해주세요');
-			mb_pwd.focus();
-			return false
-		}else{
-			return true
-		}
-		
-	}
-</script>
+	<script src="../layout/scripts/jquery.min.js"></script>
+	<script src="../layout/scripts/jquery.backtotop.js"></script>
+	<script src="../layout/scripts/jquery.mobilemenu.js"></script>
+	<script type="text/javascript"
+		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d98d9b2f0c4a6046323ef26fd36b2b16"></script>
+	<script>
+		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+		mapOption = {
+			center : new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+			level : 10
+		// 지도의 확대 레벨
+		};
+
+		var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+		// 지도를 클릭한 위치에 표출할 마커입니다
+		var marker = new kakao.maps.Marker({
+			// 지도 중심좌표에 마커를 생성합니다 
+			position : map.getCenter()
+		});
+		// 지도에 마커를 표시합니다
+		marker.setMap(map);
+
+		// 지도에 클릭 이벤트를 등록합니다
+		// 지도를 클릭하면 마지막 파라미터로 넘어온 함수를 호출합니다
+		kakao.maps.event.addListener(map, 'click', function(mouseEvent) {
+
+			// 클릭한 위도, 경도 정보를 가져옵니다 
+			var latlng = mouseEvent.latLng;
+
+			// 마커 위치를 클릭한 위치로 옮깁니다
+			marker.setPosition(latlng);
+
+			var latitude = latlng.getLat();
+			var longitude = latlng.getLng();
+			document.frm.latitude.value = latitude;
+			document.frm.longitude.value = longitude;
+
+		});
+	</script>
+	<script>
+		CKEDITOR.replace('write_content', {
+			height: 500,
+			enterMode: '2',
+		});
+	</script>
 </body>
 </html>

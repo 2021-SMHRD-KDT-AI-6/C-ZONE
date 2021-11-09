@@ -613,7 +613,7 @@ File: Layout CSS
 .article_content_mypage a:hover{
 	color: black !important;
 }
-.article_content_mypage:hover{
+.article_content_mypage:hover > a{
 	color: black !important;
 }
 .article_content_del{
@@ -1971,6 +1971,10 @@ table a,
 .profile_fix {
   cursor: pointer;	
 }
+#article_delete{
+	display: flex;
+	justify-content: end;
+}
 /* ========================  ======================== */
 /* 글쓰기페이지 */
 #write_ h1 {
@@ -2072,20 +2076,24 @@ table a,
 #articlepage_first {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
 }
 #articlepage_first_left {
 }
 #articlepage_title {
   font-size: 30px;
+  width: 630px;
   margin-bottom: 30px;
+  line-height: 35px;
 }
 #articlepage_profile_pic {
+	width: 70px;
+	height: 70px;
   border-radius: 100%;
   margin-right: 15px;
 }
 #articlepage_profile {
   line-height: 35px;
+  margin-right: 30px;
 }
 #articlepage_mb_id {
   font-size: 20px;
@@ -2095,14 +2103,7 @@ table a,
   margin-bottom: 30px;
 }
 #articlepage_like_num {
-  margin-right: 30px;
-}
-#articlepage_heart {
-  width: 20px;
-  height: 20px;
-  background-color: #ea2027;
-  position: relative;
-  transform: rotate(45deg);
+  margin-right: 10px;
 }
 #articlepage_like {
   display: flex;
@@ -2111,26 +2112,25 @@ table a,
   margin-top: 30px;
   margin-bottom: 30px;
 }
-#articlepage_heart::before {
-  content: "";
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  left: -50%;
-  border-radius: 50%;
-  background-color: #ea2027;
+#articlepage_third{
+	display: flex;
 }
-#articlepage_heart::after {
-  content: "";
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  top: -50%;
-  border-radius: 50%;
-  background-color: #ea2027;
+#articlepage_level{
+	margin-right: 10px;
 }
-#articlepage_heart:hover {
-  cursor: pointer;
+#articlepage_cnt{
+	margin-right: 10px;
+}
+.heart_btn{
+	color: red;
+	cursor: pointer;
+}
+#article_thumbnail{
+	width: 1000px;
+	heith: 300px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 #comment_title {
   margin-top: 30px;
@@ -2151,6 +2151,8 @@ table a,
   line-height: 25px;
 }
 .comment_profile_pic {
+	width: 70px;
+	height: 70px;
   border-radius: 100%;
   margin-right: 15px;
 }
@@ -2174,4 +2176,19 @@ table a,
 .profile_pic{
 	width: 70px;
 	height: 70px;
+}
+#trend_img{
+	width: 1140px;
+	height: 500px;
+	object-fit: cover;
+}
+.news_feed_hidden{
+	display: none;
+}
+#moreview{
+	border: 0;
+	outline: 0;
+	background-color: white;
+	margin: 0 auto;
+	cursor: pointer;
 }

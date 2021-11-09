@@ -3,6 +3,7 @@
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -34,7 +35,12 @@ public class BoardController extends HttpServlet {
 		if(view != null) {
 			if(view.indexOf("redirect:") != -1) {
 				response.sendRedirect(cpath+view.split(":")[1]); // Controller(FrontController)
-			}else {
+			}else if(view.indexOf("data:") != -1) {
+				PrintWriter out = response.getWriter();
+				String[] sarr = view.split(":");
+				out.print(String.join(":", Arrays.copyOfRange(sarr,1,sarr.length)));
+			}
+			else {
 				RequestDispatcher rd = request.getRequestDispatcher(ViewResolver.makeViewUrl(view));
 				rd.forward(request, response); // View(JSP)
 			}
