@@ -126,7 +126,7 @@ Licence URI: https://www.os-templates.com/template-terms
 	<!-- ################################################################################################ -->
 	<div class="signupMain">
 		<!-- signup -->
-		<form action="<%=cpath%>/insert.do" method="post">
+		<form action="<%=cpath%>/insert.do" method="post" onsubmit="return signUpCheck()">
 			<div id="signup">
 				<hr class="signup_hr" />
 				<div class="signup_menu">
@@ -135,26 +135,26 @@ Licence URI: https://www.os-templates.com/template-terms
 						<input class="id_text" type="text" id="mb_id" name="mb_id"
 							placeholder="ID를 입력해주세요."></input>
 					</div>
+							<font id = "checkId" size = "2"></font>
 				</div>
 				<div class="signup_menu">
 					<div class="signup_menu_2">
 						<div class="signup_id_2">PW</div>
 						<input class="pw_text" type="password" id="mb_pwd" name="mb_pwd"
-							maxlength="5" placeholder="비밀번호"></input>
+							maxlength="15" placeholder="비밀번호" value=""></input>
 					</div>
 				</div>
 				<div class="signup_menu">
 					<div class="signup_menu_3">
 						<div class="signup_id_3">name</div>
-						<input class="name_text" type="text" id="mb_nickname"
-							name="mb_nickname" maxlength="5" placeholder="닉네임" /> <input
-							type="hidden" name="admin_yn" value="N" /> <input type="hidden"
-							name="mb_profile_pic"
-							value="images/demo/signup_logos/profile_pic.jpg" />
+						<input class="name_text" type="text" id="mb_nickname" name="mb_nickname" maxlength="5" placeholder="닉네임" />
+						<input type="hidden" name="admin_yn" value="N" /> 
+						<input type="hidden" name="mb_profile_pic" value="images/demo/signup_logos/profile_pic.jpg" />
 					</div>
+					<font id = "checkNickname" size = "2"></font>
 				</div>
 
-				<button type="submit" class="sign_up">회원가입</button>
+				<input type="submit" class="sign_up" value="회원가입" />
 		</form>
 		<hr class="signup_hr" />
 	</div>
@@ -223,5 +223,82 @@ Licence URI: https://www.os-templates.com/template-terms
 	<script src="layout/scripts/jquery.min.js"></script>
 	<script src="layout/scripts/jquery.backtotop.js"></script>
 	<script src="layout/scripts/jquery.mobilemenu.js"></script>
+	
+	
+<script>
+let mb_id = document.querySelector('input[name="mb_id"]');
+let mb_pwd = document.querySelector('input[name="mb_pwd"]');
+let mb_nickname = document.querySelector('input[name="mb_nickname"]');
+function signUpCheck(){
+	if(mb_id.value == ""){
+console.log(mb_id.value);
+		alert('아이디를 입력해주세요');
+		mb_id.focus();
+		return false
+	}else if(mb_pwd.value == ""){
+		alert('패스워드를 입력해주세요');
+		mb_pwd.focus();
+		return false
+	}else if(mb_nickname.value == ""){
+		alert('닉네임을 입력해주세요');
+		mb_nickname.focus();
+		return false
+	}else{
+		alert('회원가입 성공!')
+		return true
+	}
+	
+}
+</script>
+<script >
+let id_text = document.querySelector('.id_text');
+let name_text = document.querySelector('.name_text');
+let pw_text = document.querySelector('.pw_text').value;
+	$('.name_text').focusout(function(){
+		let mb_nickname = $('.name_text').val();
+			$.ajax({
+				url : "checknickname.do",
+				type : "post",
+				data : {mb_nickname: mb_nickname},
+				dataType : 'json',
+				success : function(result){
+					if(result == 0){
+						$("#checkNickname").html('사용할 수 없는 닉네임입니다.');
+						$("#checkNickname").attr('color','red');
+					}else{
+						$("#checkNickname").html('사용할 수 있는 닉네임입니다.');
+						$("#checkNickname").attr('color','green');
+					}
+				},
+				error : function(){
+					alert("서버요청실패");
+				}
+		  })
+	})
+</script>
+<script>
+$('.id_text').focusout(function(){
+	let mb_id = $('.id_text').val();
+	
+		$.ajax({
+			url : "checkid.do",
+			type : "post",
+			data : {mb_id: mb_id},
+			dataType : 'json',
+			success : function(result){
+				if(result == 0){
+					$("#checkId").html('사용할 수 없는 아이디입니다.');
+					$("#checkId").attr('color','red');
+				}else{
+					$("#checkId").html('사용할 수 있는 아이디입니다.');
+					$("#checkId").attr('color','green');
+				}
+			},
+			error : function(){
+				alert("서버요청실패");
+			}
+	  })
+});
+</script>
 </body>
 </html>

@@ -113,7 +113,7 @@ Licence URI: https://www.os-templates.com/template-terms
 			<%
 				if (members == null) {
 			%>
-			<form class="form-inline" action="<%=cpath%>/login.do" method="post">
+			<form class="form-inline" action="<%=cpath%>/login.do" method="post" onsubmit="return loginCheck()">
 				<hr class="signup_hr" />
 				<div class="log_in_menu">
 					<div class="e-mail">
@@ -208,6 +208,23 @@ Licence URI: https://www.os-templates.com/template-terms
 	<script src="layout/scripts/jquery.min.js"></script>
 	<script src="layout/scripts/jquery.backtotop.js"></script>
 	<script src="layout/scripts/jquery.mobilemenu.js"></script>
-
+<script>
+	let mb_id = document.querySelector('input[name="mb_id"]');
+	let mb_pwd = document.querySelector('input[name="mb_pwd"]');
+	function loginCheck(){
+		if(mb_id.value == ""){
+			alert('아이디를 입력해주세요');
+			mb_id.focus();
+			return false
+		}else if(mb_pwd.value == ""){
+			alert('패스워드를 입력해주세요');
+			mb_pwd.focus();
+			return false
+		}else{
+			return true
+		}
+		
+	}
+</script>
 </body>
 </html>
