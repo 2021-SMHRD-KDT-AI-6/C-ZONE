@@ -7,31 +7,12 @@
 <%
 	MbVO members = (MbVO) session.getAttribute("succ");
 %>
-
-
-
-
-
-
-
 <%@ page import="org.apache.commons.fileupload.DiskFileUpload"%>
 <%@ page import="org.apache.commons.fileupload.FileItem"%>
 <%@ page import="org.apache.commons.fileupload.FileUpload"%>
 <%@ page import="java.util.*"%>
 <%@ page import="java.io.File"%>
 <%@ page import="java.io.FileOutputStream"%>
-
-
-
-
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="">
 <head>

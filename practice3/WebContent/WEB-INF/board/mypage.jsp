@@ -204,7 +204,7 @@ Licence URI: https://www.os-templates.com/template-terms
 					
 					
 					
-					<form action="ArticleFix.do" id="article_fix">
+					<form action="ArticleFix.do" id="article_delete">
 						<input type="hidden" name="article_num" value="<%=vo.getArticle_num() %>" />
 						<input type="submit" value="수정" />
 					</form>
