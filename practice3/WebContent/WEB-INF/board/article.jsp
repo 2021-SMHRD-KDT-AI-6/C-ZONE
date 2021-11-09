@@ -32,7 +32,9 @@ String cpath = request.getContextPath();
 	function likeDelete(){
 			location.href="likedelete.do?mb_num=<%=members.getMb_num()%>&article_num=<%=vo.getArticle_num()%>";
 		}
+	
 	</script>
+	<script>history.scrollRestoration = "auto"</script>
 </head>
 <body id="top">
 	<!-- ################################################################################################ -->
@@ -192,7 +194,7 @@ String cpath = request.getContextPath();
 					<form action="commentDelete.do" id="comment_delete">
 						<input type="hidden" name="article_num" value="<%=vo.getArticle_num() %>" />
 						<input type="hidden" name="comment_num" value="<%=comment.getComment_num() %>" />
-						<input type="submit" value="삭제" />
+						<input type="submit" value="삭제" id="btn1" />
 					</form>
 					<% } %>
 					</div>
