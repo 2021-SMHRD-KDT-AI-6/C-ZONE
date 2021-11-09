@@ -176,10 +176,14 @@ Licence URI: https://www.os-templates.com/template-terms
 				%>
 				<input type="hidden" name="article_num" value="<%=vo.getArticle_num()%>">
 				<div class="news_feed">
+				<%if(members == null){ %>
+					<a href="sl.do">
+				<%}else{ %>
 					<a href="<%=cpath%>/article.do?article_num=<%=vo.getArticle_num()%>">
+				<%} %>
 						<img class="thumbnail" src="<%=vo.getCarping_pic1()%>" alt="썸네일" />
-	
 					</a>
+	
 					<div class="contents">
 						<header>
 							<a href="<%=cpath%>/memberpage.do?mb_num=<%=vo.getMb_num()%>"> <img class="profile_pic"
@@ -191,7 +195,11 @@ Licence URI: https://www.os-templates.com/template-terms
 									<div class="reg_date"><%=vo.getReg_date()%></div>
 								</div>
 								<div class="article_top_down">
+								<%if(members == null){ %>
+									<a href="sl.do"> <%=vo.getArticle_title()%>
+								<%}else{ %>
 									<a href="article.do" class="article_title"> <%=vo.getArticle_title()%>
+								<%} %>
 									</a>
 									<div class="article_top_down_right">
 										<div class="likes">
@@ -208,7 +216,14 @@ Licence URI: https://www.os-templates.com/template-terms
 							</div>
 						</header>
 						<article class="article_content">
-							<%=vo.getArticle_content()%>
+							<%if(members == null){ %>
+									<a href="sl.do">
+									<%=vo.getArticle_content()%>
+							<%}else{ %>
+									<a href="<%=cpath%>/article.do?article_num=<%=vo.getArticle_num()%>">							
+									<%=vo.getArticle_content()%>
+							<%} %>
+									</a>
 						</article>
 					</div>
 				</div>

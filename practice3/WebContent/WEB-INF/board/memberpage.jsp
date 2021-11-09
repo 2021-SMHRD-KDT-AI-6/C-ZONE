@@ -108,7 +108,7 @@ Licence URI: https://www.os-templates.com/template-terms
 		<!-- ################################################################################################ -->
 		<div id="breadcrumb" class="hoc clear">
 			<div id="profile">
-				<img id="member_profile_pic" src="<%=members.getMb_profile_pic() %>"
+				<img id="member_profile_pic" src="<%=vo.getMb_profile_pic() %>"
 					alt="프로필사진" /> <span id="member_name"><%=vo.getMb_nickname()%></span>
 			</div>
 			<!-- ################################################################################################ -->
@@ -144,10 +144,12 @@ Licence URI: https://www.os-templates.com/template-terms
 				%>
 				<input type="hidden" name="mb_num" value="<%=vo2.getMb_num()%>" />
 				<div class="news_feed">
-					<a
-						href="<%=cpath%>/article.do?article_num=<%=vo2.getArticle_num()%>">
-						<img class="thumbnail" src="<%=vo2.getCarping_pic1() %>"
-						alt="썸네일" />
+				<%if(members == null) {%>
+					<a href="sl.do">
+				<%}else {%>
+					<a href="<%=cpath%>/article.do?article_num=<%=vo2.getArticle_num()%>">
+				<%} %>
+						<img class="thumbnail" src="<%=vo2.getCarping_pic1() %>" alt="썸네일" />
 					</a>
 					<div class="contents">
 						<header>
@@ -162,8 +164,11 @@ Licence URI: https://www.os-templates.com/template-terms
 									<div class="reg_date"><%=vo2.getReg_date()%></div>
 								</div>
 								<div class="article_top_down">
-									<a
-										href="<%=cpath%>/article.do?article_num=<%=vo2.getArticle_num()%>"><%=vo2.getArticle_title()%>
+								<%if(members == null) {%>
+									<a href="sl.do"><%=vo2.getArticle_title()%>
+								<%}else {%>
+									<a href="<%=cpath%>/article.do?article_num=<%=vo2.getArticle_num()%>"><%=vo2.getArticle_title()%>
+								<%} %>
 									</a>
 									<div class="article_top_down_right">
 										<div class="likes">
@@ -179,9 +184,11 @@ Licence URI: https://www.os-templates.com/template-terms
 							</div>
 						</header>
 						<article class="article_content">
-							<a
-								href="<%=cpath%>/article.do?article_num=<%=vo2.getArticle_num()%>">
-								<%=vo2.getArticle_content()%>
+						<%if(members == null) {%>
+							<a href="sl.do"><%=vo2.getArticle_content()%>
+						<%}else {%>
+							<a href="<%=cpath%>/article.do?article_num=<%=vo2.getArticle_num()%>"><%=vo2.getArticle_content()%>
+						<%} %>
 							</a>
 						</article>
 					</div>
