@@ -11,6 +11,7 @@ import kr.smhrd.controller.BoardIndexController;
 import kr.smhrd.controller.BoardLevelSearchController;
 import kr.smhrd.controller.BoardLikeSearchController;
 import kr.smhrd.controller.BoardLikeaddController;
+import kr.smhrd.controller.BoardLikedeleteController;
 import kr.smhrd.controller.BoardLoginController;
 import kr.smhrd.controller.BoardLogoutController;
 import kr.smhrd.controller.BoardMemberpageController;
@@ -53,6 +54,7 @@ public class HandlerMapping {
 		mappings.put("/cntsearch.do", new BoardCntSearchController());
 		mappings.put("/levelsearch.do", new BoardLevelSearchController());
 		mappings.put("/likeadd.do", new BoardLikeaddController());
+		mappings.put("/likedelete.do", new BoardLikedeleteController());
 		mappings.put("/ArticleDelete.do", new BoardArticleDeleteController());
 	}
 	public Controller getController(String key) {

@@ -12,6 +12,7 @@ String cpath = request.getContextPath();
 %>
 <%
 	ArrayList<SuperVO> list = (ArrayList<SuperVO>) request.getAttribute("list");
+	SuperVO result = (SuperVO)request.getAttribute("result");
 %>
 <!DOCTYPE html>
 <html lang="">
@@ -22,6 +23,16 @@ String cpath = request.getContextPath();
 	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <link href="layout/styles/layout.css" rel="stylesheet" type="text/css"
 	media="all" />
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+	<script>
+	function likeAdd(){
+			location.href="likeadd.do?mb_num=<%=members.getMb_num()%>&article_num=<%=vo.getArticle_num()%>";
+	}
+	
+	function likeDelete(){
+			location.href="likedelete.do?mb_num=<%=members.getMb_num()%>&article_num=<%=vo.getArticle_num()%>";
+		}
+	</script>
 </head>
 <body id="top">
 	<!-- ################################################################################################ -->
@@ -125,33 +136,35 @@ String cpath = request.getContextPath();
 						<div id="articlepage_second">
 							<a href="<%=cpath%>/memberpage.do?mb_num=<%=vo.getMb_num()%>"><img
 								id="articlepage_profile_pic"
-								src="https://via.placeholder.com/70" alt="프로필사진" /></a>
+								src="<%=vo.getCarping_pic1() %>" alt="프로필사진" /></a>
 							<div id="articlepage_profile">
 								<a href="<%=cpath%>/memberpage.do?mb_num=<%=vo.getMb_num()%>"><div id="articlepage_mb_id"><%=vo.getMb_nickname()%></div></a>
 								<div id="articlepage_reg_date"><%=vo.getReg_date()%></div>
 							</div>
-						</div>
 						<div id="articlepage_third">
 							<div id="articlepage_level">
 								난이도
 								<%=vo.getCarping_level()%></div>
+							<div id="articlepage_cnt">
+								조회수 <%=vo.getArticle_cnt()%>
+							</div>
 							<div id="articlepage_like">
 								<div id="articlepage_like_num">
-									좋아요
-									<%=vo.getLikes()%></div>
-								<form action='likeadd.do' method='post'>
-                        <input type="hidden" name="article_num" value="<%=vo.getArticle_num() %>" />
-                        <input type="hidden" name="mb_num" value="<%=vo.getMb_num() %>" />
-                        <div id="articlepage_heart"><input type="submit" /></div>
-                </form>
-								<div id="articlepage_cnt">
-									조회수
-								<%=vo.getArticle_cnt()%></div>
+									좋아요 <span id="like_cnt"><%=vo.getLikes()%></span>
+								</div>
+									<% if(result == null){ %>
+                        <div class="heart_btn" onclick="likeAdd();"><i class="far fa-heart"></i></div>
+                <% } else { %>
+                        <div class="heart_btn" onclick="likeDelete();"><i class="fas fa-heart"></i></div>
+                <% } %>
 							</div>
 						</div>
+						</div>
 					</div>
-					<div id="map" style="width: 500px; height: 200px; float: right;"></div>
+					<div id="map" style="width: 350px; height: 230px; float: right;"></div>
 				</div>
+				<hr />
+				<img id="article_thumbnail" src="<%=vo.getCarping_pic1()%>" />
 				<hr />
 				<div id="articlepage_content">
 					<%=vo.getArticle_content()%>
@@ -165,7 +178,7 @@ String cpath = request.getContextPath();
 				<div class="comment">
 					<div class="comment_first">
 						<a href="<%=cpath%>/memberpage.do?mb_num=<%=comment.getMb_num()%>"> <img class="comment_profile_pic"
-							src="https://via.placeholder.com/70" alt="프로필사진" />
+							src="<%=comment.getMb_profile_pic() %>" alt="프로필사진" />
 						</a>
 						<div class="comment_profile">
 							<a href="<%=cpath%>/memberpage.do?mb_num=<%=comment.getMb_num()%>"><div
@@ -275,6 +288,7 @@ String cpath = request.getContextPath();
 	<script src="../layout/scripts/jquery.min.js"></script>
 	<script src="../layout/scripts/jquery.backtotop.js"></script>
 	<script src="../layout/scripts/jquery.mobilemenu.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script type="text/javascript"
 		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d98d9b2f0c4a6046323ef26fd36b2b16"></script>
 	<script>

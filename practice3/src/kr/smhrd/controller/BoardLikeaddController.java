@@ -25,7 +25,7 @@ public class BoardLikeaddController implements Controller{
       System.out.println("Ãâ·Â :"+article_num+","+mb_num);
       ArticleDAO dao = new ArticleDAO();
       dao.likeaddU(article_num);
-//      dao.likeadd(vo);
+      dao.likeadd(vo);
       
       return "redirect:/article.do?article_num="+article_num;
    }
