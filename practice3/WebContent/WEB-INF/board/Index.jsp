@@ -81,8 +81,8 @@ Licence URI: https://www.os-templates.com/template-terms
 					<ul class="clear">
 						<li class="active"><a href="Index.do">Home</a></li>
 						<% if(members==null){ %>
-						<li><a href="login.do">글쓰기</a></li>
-						<li><a href="login.do">마이페이지</a></li>
+						<li><a href="sl.do">글쓰기</a></li>
+						<li><a href="sl.do">마이페이지</a></li>
 						<% } else { %>
 						<li><a href="writeForm.do">글쓰기</a></li>
 						<li><a href="mypage.do">마이페이지</a></li>
@@ -164,18 +164,22 @@ Licence URI: https://www.os-templates.com/template-terms
 				<div class="sectiontitle">
 					<p class="heading underline font-x2">트렌드</p>
 				</div>
-				<img src="https://via.placeholder.com/1140x500" alt="트렌드" />
+				<img src="images/trend.png" id="trend_img" alt="트렌드" />
 				<hr class="btmspace-80" />
 
 				<div class="sectiontitle">
 					<p class="heading underline font-x2">뉴스피드</p>
 				</div>
 				<%
+				int count = 0;
 					for (SuperVO vo : list) {
-						
 				%>
 				<input type="hidden" name="article_num" value="<%=vo.getArticle_num()%>">
+				<%if(count++<5){ %>
 				<div class="news_feed">
+				<%} else{%>
+				<div class="news_feed news_feed_hidden">
+				<%} %>
 				<%if(members == null){ %>
 					<a href="sl.do">
 				<%}else{ %>
@@ -230,6 +234,7 @@ Licence URI: https://www.os-templates.com/template-terms
 				<%
 					}
 				%>
+				<button onclick="moreview()" id="moreview"><i class="fas fa-angle-down fa-3x"></i></button>
 			</section>
 			<!-- ################################################################################################ -->
 			<!-- / main body -->
@@ -241,6 +246,22 @@ Licence URI: https://www.os-templates.com/template-terms
 	<script src="layout/scripts/jquery.min.js"></script>
 	<script src="layout/scripts/jquery.backtotop.js"></script>
 	<script src="layout/scripts/jquery.mobilemenu.js"></script>
+	<script>
+		
+		function moreview(){
+			let news_feed = document.querySelectorAll('.news_feed_hidden');
+			let moreViewBtn = document.querySelector('#moreview');
+			var target = 5;
+			if (news_feed.length<5){ 
+				target = news_feed.length; 
+				//더보기 버튼 없애주는(news_feed_hidden)
+				moreViewBtn.setAttribute('class', 'news_feed_hidden')
+			}
+			for(let i = 0; i < target; i++){
+				news_feed[i].setAttribute('class','news_feed');
+			}
+		}
+	</script>
 </body>
 </html>
 

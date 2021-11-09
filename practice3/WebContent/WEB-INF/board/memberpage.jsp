@@ -77,8 +77,8 @@ Licence URI: https://www.os-templates.com/template-terms
 						<%
 							if (members == null) {
 						%>
-						<li><a href="login.do">글쓰기</a></li>
-						<li><a href="login.do">마이페이지</a></li>
+						<li><a href="sl.do">글쓰기</a></li>
+						<li><a href="sl.do">마이페이지</a></li>
 						<%
 							} else {
 						%>
@@ -90,7 +90,7 @@ Licence URI: https://www.os-templates.com/template-terms
 						<%
 							if (members == null) {
 						%>
-						<li><a href="login.do">로그인</a></li>
+						<li><a href="sl.do">로그인</a></li>
 						<%
 							} else {
 						%>

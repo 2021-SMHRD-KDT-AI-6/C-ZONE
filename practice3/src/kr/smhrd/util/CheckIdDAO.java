@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 
 public class CheckIdDAO {
 
-	private Connection conn;
+	  private Connection conn;
 	  private PreparedStatement ps;
 	  private ResultSet rs;
 	  //연결메서드-->mysql용 접속 driver
