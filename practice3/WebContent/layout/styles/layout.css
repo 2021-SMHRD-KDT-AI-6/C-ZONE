@@ -1711,9 +1711,7 @@ table a,
     margin-right: 0;
   }
 
-  .font-x2 {
-    font-size: 1.6rem;
-  }
+
   .font-x3 {
     font-size: 1.8rem;
   }
@@ -2396,6 +2394,26 @@ table a,
 	margin: 0 auto;
 	cursor: pointer;
 }
+<<<<<<< HEAD
+
+
+/* ====== 11월 10일 ====== */
+/* ====== 폰트 ====== */
+
+@font-face {
+    font-family: '국립박물관문화재단클래식M';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/국립박물관문화재단클래식M.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+  .font-x2 {
+    font-family:'국립박물관문화재단클래식M';
+  }
+
+
+
+=======
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
 
       .preserve-3d {
@@ -2521,3 +2539,4 @@ table a,
 .article_update{
 	margin-right: 80px;
 }
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-6/C-ZONE.git
