@@ -191,6 +191,7 @@ String cpath = request.getContextPath();
 					<div class="comment_content"><%=comment.getComment_content()%>
 					<% if (members == null) {%> 
 					<% }else if ( comment.getMb_num() == members.getMb_num()){%>
+					<button onclick="commentUpdate()">수정</button>
 					<form action="commentDelete.do" id="comment_delete">
 						<input type="hidden" name="article_num" value="<%=vo.getArticle_num() %>" />
 						<input type="hidden" name="comment_num" value="<%=comment.getComment_num() %>" />
@@ -312,6 +313,11 @@ String cpath = request.getContextPath();
 		});
 		// 마커가 지도 위에 표시되도록 설정합니다
 		marker.setMap(map);
+	</script>
+	<script>
+		function commentUpdate(){
+			$('')
+		}
 	</script>
 </body>
 </html>
