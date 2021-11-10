@@ -131,92 +131,93 @@ Licence URI: https://www.os-templates.com/template-terms
 
               <div class="rank">
 	
-				<li class="one_third first" id="like_third">
-                  <a class="imgover imgover2" id="rank3_thumbnail" href="<%=cpath%>/article.do?article_num=<%=list.get(2).getArticle_num()%>">
-                    <img src="<%=list.get(2).getCarping_pic1() %>" alt="썸네일" />
-                  </a>
-                  <div class="rank_2">
-                    <h6 class="heading rankhead">2th <%=list.get(2).getLikes()%> Likes</h6>
-                    <div class="rank__">
-	                  <a href="<%=cpath%>/memberpage.do?mb_num=<%=list.get(2).getMb_num()%>">
-	                    <img src="<%=list.get(2).getMb_profile_pic() %>" class="profile_rank2" alt="profile_rank2">
-	                  </a>
-	                  <div class="rankname">
-	                    <a href="<%=cpath%>/memberpage.do?mb_num=<%=list.get(2).getMb_num()%>">
-	                      <div class="nick_rank2"><%=list.get(2).getMb_nickname() %></div>
-	                    </a>
-	                    <div class="rank_title_level">
-	                      <a href="<%=cpath%>/article.do?article_num=<%=list.get(2).getArticle_num()%>">
-	                        <div class="title_rank2"><%=list.get(2).getArticle_title()%></div>
-	                      </a>
-	                      <div class="level_rank">난이도 <%=list.get(2).getCarping_level() %></div>
-	                    </div>
-	                  </div>
-                    </div>
-                    <a href="<%=cpath%>/article.do?article_num=<%=list.get(2).getArticle_num()%>">
-                      <p class="rank_p2"><%=list.get(2).getArticle_content() %></p>
-                    </a>
-                  </div>
-              </li>
 	
               
             
             
-              <li class="one_third" id="like_first">
-                  <a class="imgover imgover1" href="<%=cpath%>/article.do?article_num=<%=list.get(0).getArticle_num()%>" id="rank1_thumbnail"><img
-                    src="<%=list.get(0).getCarping_pic1() %>"/></a>
-                  <div class="rank_1">
-                    <h6 class="heading rankhead">1st <%=list.get(0).getLikes()%> Likes</h6>
-                    <div class="rank__">
-                    <a href="<%=cpath%>/memberpage.do?mb_num=<%=list.get(0).getMb_num()%>">
-                    	<img src="<%=list.get(0).getMb_profile_pic() %>" class="profile_rank1" alt="profile_rank1">
-                    </a>
-                    <div class="rankname">
-                    <a href="<%=cpath%>/memberpage.do?mb_num=<%=list.get(0).getMb_num()%>">
-                    <div class="nick_rank1"><%=list.get(0).getMb_nickname() %></div>
-                    </a>
-                    <div class="rank_title_level">
-                    <a href="<%=cpath%>/article.do?article_num=<%=list.get(0).getArticle_num()%>">
-                    <div class="title_rank1"><%=list.get(0).getArticle_title()%></div>
-                    </a>
-                  	<div class="level_rank">난이도 <%=list.get(0).getCarping_level() %></div>
-                  	</div>
-                  </div>
-                  </div>
-                    <a href="<%=cpath%>/article.do?article_num=<%=list.get(0).getArticle_num()%>">
-                    	<p class="rank_p1"><%=like.get(0).getArticle_content() %></p>
-                    </a>
-                </div>
-              </li>
             
-              <li class="one_third" id="like_second">
-                  <a class="imgover imgover2" id="rank2_thumbnail" href="<%=cpath%>/article.do?article_num=<%=list.get(1).getArticle_num()%>">
-                    <img src="<%=list.get(1).getCarping_pic1() %>" alt="썸네일" />
+              <li class="one_third first" id="like_second">
+                  <a class="imgover imgover2" id="rank2_thumbnail" href="<%=cpath%>/article.do?article_num=<%=like.get(1).getArticle_num()%>">
+                    <img src="<%=like.get(1).getCarping_pic1() %>" alt="썸네일" />
                   </a>
                   <div class="rank_2">
-                    <h6 class="heading rankhead">3th <%=list.get(1).getLikes()%> Likes</h6>
+                    <h6 class="heading rankhead">2nd <%=like.get(1).getLikes()%> Likes</h6>
                     <div class="rank__">
-	                  <a href="<%=cpath%>/memberpage.do?mb_num=<%=list.get(1).getMb_num()%>">
-	                    <img src="<%=list.get(1).getMb_profile_pic() %>" class="profile_rank2" alt="profile_rank2">
+	                  <a href="<%=cpath%>/memberpage.do?mb_num=<%=like.get(1).getMb_num()%>">
+	                    <img src="<%=like.get(1).getMb_profile_pic() %>" class="profile_rank2" alt="profile_rank2">
 	                  </a>
 	                  <div class="rankname">
-	                    <a href="<%=cpath%>/memberpage.do?mb_num=<%=list.get(1).getMb_num()%>">
-	                      <div class="nick_rank2"><%=list.get(1).getMb_nickname() %></div>
+	                    <a href="<%=cpath%>/memberpage.do?mb_num=<%=like.get(1).getMb_num()%>">
+	                      <div class="nick_rank2"><%=like.get(1).getMb_nickname() %></div>
 	                    </a>
 	                    <div class="rank_title_level">
-	                      <a href="<%=cpath%>/article.do?article_num=<%=list.get(1).getArticle_num()%>">
-	                        <div class="title_rank2"><%=list.get(1).getArticle_title()%></div>
+	                      <a href="<%=cpath%>/article.do?article_num=<%=like.get(1).getArticle_num()%>">
+	                        <div class="title_rank2"><%=like.get(1).getArticle_title()%></div>
 	                      </a>
-	                      <div class="level_rank">난이도 <%=list.get(1).getCarping_level() %></div>
+	                      <div class="level_rank">난이도 <%=like.get(1).getCarping_level() %></div>
 	                    </div>
 	                  </div>
                     </div>
-                    <a href="<%=cpath%>/article.do?article_num=<%=list.get(1).getArticle_num()%>">
-                      <p class="rank_p2"><%=list.get(1).getArticle_content() %></p>
+                    <a href="<%=cpath%>/article.do?article_num=<%=like.get(1).getArticle_num()%>">
+                      <p class="rank_p2"><%=like.get(1).getArticle_content() %></p>
                     </a>
                   </div>
               </li>
               
+              <li class="one_third" id="like_first">
+                  <a class="imgover imgover1" href="<%=cpath%>/article.do?article_num=<%=like.get(0).getArticle_num()%>" id="rank1_thumbnail"><img
+                    src="<%=like.get(0).getCarping_pic1() %>"/></a>
+                  <div class="rank_1">
+                    <h6 class="heading rankhead">1st <%=like.get(0).getLikes()%> Likes</h6>
+                    <div class="rank__">
+                    <a href="<%=cpath%>/memberpage.do?mb_num=<%=like.get(0).getMb_num()%>">
+                    	<img src="<%=like.get(0).getMb_profile_pic() %>" class="profile_rank1" alt="profile_rank1">
+                    </a>
+                    <div class="rankname">
+                    <a href="<%=cpath%>/memberpage.do?mb_num=<%=like.get(0).getMb_num()%>">
+                    <div class="nick_rank1"><%=like.get(0).getMb_nickname() %></div>
+                    </a>
+                    <div class="rank_title_level">
+                    <a href="<%=cpath%>/article.do?article_num=<%=like.get(0).getArticle_num()%>">
+                    <div class="title_rank1"><%=like.get(0).getArticle_title()%></div>
+                    </a>
+                  	<div class="level_rank">난이도 <%=like.get(0).getCarping_level() %></div>
+                  	</div>
+                  </div>
+                  </div>
+                    <a href="<%=cpath%>/article.do?article_num=<%=like.get(0).getArticle_num()%>">
+                    	<p class="rank_p1"><%=like.get(0).getArticle_content() %></p>
+                    </a>
+                </div>
+              </li>
+              
+				<li class="one_third" id="like_third">
+                  <a class="imgover imgover2" id="rank3_thumbnail" href="<%=cpath%>/article.do?article_num=<%=like.get(2).getArticle_num()%>">
+                    <img src="<%=like.get(2).getCarping_pic1() %>" alt="썸네일" />
+                  </a>
+                  <div class="rank_2">
+                    <h6 class="heading rankhead">3rd <%=like.get(2).getLikes()%> Likes</h6>
+                    <div class="rank__">
+	                  <a href="<%=cpath%>/memberpage.do?mb_num=<%=like.get(2).getMb_num()%>">
+	                    <img src="<%=like.get(2).getMb_profile_pic() %>" class="profile_rank2" alt="profile_rank2">
+	                  </a>
+	                  <div class="rankname">
+	                    <a href="<%=cpath%>/memberpage.do?mb_num=<%=like.get(2).getMb_num()%>">
+	                      <div class="nick_rank2"><%=like.get(2).getMb_nickname() %></div>
+	                    </a>
+	                    <div class="rank_title_level">
+	                      <a href="<%=cpath%>/article.do?article_num=<%=like.get(2).getArticle_num()%>">
+	                        <div class="title_rank2"><%=like.get(2).getArticle_title()%></div>
+	                      </a>
+	                      <div class="level_rank">난이도 <%=like.get(2).getCarping_level() %></div>
+	                    </div>
+	                  </div>
+                    </div>
+                    <a href="<%=cpath%>/article.do?article_num=<%=like.get(2).getArticle_num()%>">
+                      <p class="rank_p2"><%=like.get(2).getArticle_content() %></p>
+                    </a>
+                  </div>
+              </li>
           </div>
           
           </section>
@@ -227,7 +228,9 @@ Licence URI: https://www.os-templates.com/template-terms
 				<div class="sectiontitle">
 					<p class="heading underline font-x2">트렌드</p>
 				</div>
-				<img src="images/trend.png" id="trend_img" alt="트렌드" />
+				<div id="trend">
+					<img src="images/trend.png" id="trend_img" alt="트렌드" />
+				</div>
 				<hr class="btmspace-80" />
 
 				<div class="sectiontitle">

@@ -2217,10 +2217,13 @@ table a,
    width: 70px;
    height: 70px;
 }
+#trend{
+	width: 1140px;
+   height: 500px;
+}
 #trend_img{
    width: 1140px;
    height: 500px;
-   object-fit: cover;
 }
 .news_feed_hidden{
    display: none;
@@ -2438,11 +2441,6 @@ table a,
   line-height: 25px;
   display: flex;
   justify-content: end;
-}
-#trend_img{
-	width: 1140px;
-	height: 500px;
-	object-fit: cover;
 }
 .news_feed_hidden{
 	display: none;
