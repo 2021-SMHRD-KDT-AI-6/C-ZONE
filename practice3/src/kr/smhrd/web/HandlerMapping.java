@@ -26,6 +26,7 @@ import kr.smhrd.controller.BoardSignupInsertController;
 import kr.smhrd.controller.BoardUpdateprofileController;
 import kr.smhrd.controller.BoardWriteController;
 import kr.smhrd.controller.BoardWriteFormController;
+import kr.smhrd.controller.BoardYoutubeController;
 import kr.smhrd.controller.Controller;
 
 public class HandlerMapping {
@@ -64,6 +65,7 @@ public class HandlerMapping {
 		mappings.put("/ArticleDelete.do", new BoardArticleDeleteController());
 		mappings.put("/ArticleFix.do", new BoardArticleFixController());
 		mappings.put("/ArticleFixComplete.do", new BoardArticleFixCompleteController());
+		mappings.put("/youtube.do", new BoardYoutubeController());
 	}
 	public Controller getController(String key) {
 		return mappings.get(key);
