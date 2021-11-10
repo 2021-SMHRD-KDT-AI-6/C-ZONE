@@ -50,7 +50,11 @@ public class HandlerMapping {
 		mappings.put("/logout.do", new BoardLogoutController());
 		mappings.put("/insert.do", new BoardSignupInsertController());
 		mappings.put("/profile.do", new BoardProfileController());
+		mappings.put("/updateprofile.do", new BoardUpdateprofileController());
 		mappings.put("/searchpage.do", new BoardSearchPageController());
+		mappings.put("/profile.do", new BoardProfileController());
+		mappings.put("/searchpage.do", new BoardSearchPageController());
+		mappings.put("/updateprofile1.do", new BoardUpdateprofileController());
 		mappings.put("/updateprofile.do", new BoardUpdateprofileController());
 		mappings.put("/likesearch.do", new BoardLikeSearchController());
 		mappings.put("/cntsearch.do", new BoardCntSearchController());

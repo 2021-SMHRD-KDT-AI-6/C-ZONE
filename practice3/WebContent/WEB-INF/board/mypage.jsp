@@ -120,8 +120,7 @@ Licence URI: https://www.os-templates.com/template-terms
 				<h6 class="heading">마이페이지</h6>
 				<ul>
 					<li><a href="Index.do">Home</a></li>
-					<li><a href="mypage.do">MY
-							PAGE</a></li>
+					<li><a href="mypage.do">MYPAGE</a></li>
 				</ul>
 			</div>
 			<!-- ################################################################################################ -->
@@ -195,32 +194,28 @@ Licence URI: https://www.os-templates.com/template-terms
 						
 					<% if (members == null) {%> 
 					<% }else if (vo.getArticle_num() == vo.getArticle_num()){%>
-					<form action="ArticleDelete.do" id="article_delete">
-						<input type="hidden" name="article_num" value="<%=vo.getArticle_num() %>" />
-						<input type="submit" value="삭제" />
-					</form>
-					
-					
-					
-					
-					
-					<form action="ArticleFix.do" id="article_delete">
-						<input type="hidden" name="article_num" value="<%=vo.getArticle_num() %>" />
-						<input type="submit" value="수정" />
-					</form>
-					
-					
-					
-					
-					
-					
+					<div class="mypage_article_btn">
+							<div class="back article_update">
+								<div class="button_base b05_3d_roll" onclick="location.href='ArticleFix.do?article_num=<%=vo.getArticle_num()%>'">
+									<div>수정</div>
+									<div>수정</div>
+								</div>
+							</div>
+						
+							<div class="back" onclick="location.href='ArticleDelete.do?article_num=<%=vo.getArticle_num()%>'">
+								<div class="button_base b05_3d_roll">
+									<div>삭제</div>
+									<div>삭제</div>
+								</div>
+							</div>
+					</div>
 					<% } %>
 					</div>
 					</div>
-				</div>
 				<%
 					}
 				%>
+				</div>
 			</section>
 		</main>
 	</div>
@@ -309,7 +304,6 @@ Licence URI: https://www.os-templates.com/template-terms
 		// 마커가 지도 위에 표시되도록 설정합니다
 		marker.setMap(map);
 	<%}%>
-		
 	</script>
 </body>
 </html>

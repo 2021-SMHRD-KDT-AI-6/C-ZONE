@@ -129,8 +129,7 @@ function gomypage(){
 				<div class="fix_menu_1">
 					<div class="pic_fix">사진 수정</div>
 					<input class="pic_fix_input" type="file" name="pic_fix_input" />					
-				</div>
-			
+				</div>	
 			</div>
 			<div class="fix_menu">
 				<div class="fix_menu_2">
@@ -138,7 +137,6 @@ function gomypage(){
 					<input class="nickname_fix_input" type="text"
 						name="nickname_fix_input" maxlength="10" placeholder="nickname" value="<%=members.getMb_nickname()%>"></input>
 				</div>
-		    
 			</div>
 
 			<!-- </form> -->

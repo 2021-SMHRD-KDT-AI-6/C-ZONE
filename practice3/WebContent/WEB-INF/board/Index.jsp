@@ -41,6 +41,9 @@ Licence URI: https://www.os-templates.com/template-terms
 	<!-- Top Background Image Wrapper -->
 	<div class="bgded overlay"
 		style="background-image: url('images/demo/backgrounds/01.png')">
+	<video muted autoplay loop class="videoMain">
+        <source src="layout/styles/video/Tree.mp4" type="video/mp4">
+    </video>
 		<!-- ################################################################################################ -->
 		<div class="wrapper row0">
 			<div id="topbar" class="hoc clear">
@@ -64,7 +67,7 @@ Licence URI: https://www.os-templates.com/template-terms
 				</div>
 			</div>
 		</div>
-		<!-- ################################################################################################ -->
+		<!-- ################################푸쉬좀하자################################################################ -->
 		<!-- ################################################################################################ -->
 		<!-- ################################################################################################ -->
 		<div class="wrapper row1">
@@ -119,44 +122,83 @@ Licence URI: https://www.os-templates.com/template-terms
 	<!-- ################################################################################################ -->
 	<!-- ################################################################################################ -->
 	<!-- ################################################################################################ -->
-	<div class="wrapper row3">
-		<main class="hoc container clear">
-			<!-- main body -->
-			<!-- ################################################################################################ -->
-			<section id="introblocks">
-				<ul class="nospace group btmspace-80">
-					<li class="one_third first">
-						<figure>
-							<a class="imgover" href="#"><img
-								src="images/demo/348x261.png" alt="" /></a>
-							<figcaption>
-								<h6 class="heading">좋아요 2등</h6>
-								<p><%=like.get(1).getLikes()%></p>
-							</figcaption>
-						</figure>
-					</li>
-					<li class="one_third" id="first">
-						<figure>
-							<a class="imgover" href="#"><img
-								src="images/demo/348x261.png" alt="" /></a>
-							<figcaption>
-								<h6 class="heading">좋아요1등</h6>
-								<p><%=like.get(0).getLikes()%></p>
-							</figcaption>
-						</figure>
-					</li>
-					<li class="one_third">
-						<figure>
-							<a class="imgover" href="#"><img
-								src="images/demo/348x261.png" alt="" /></a>
-							<figcaption>
-								<h6 class="heading">좋아요 3등</h6>
-								<p><%=like.get(2).getLikes()%></p>
-							</figcaption>
-						</figure>
-					</li>
-				</ul>
-			</section>
+      <div class="wrapper row3 rank_">
+        <main class="hoc container clear">
+          <!-- main body -->
+          <!-- ################################################################################################ -->
+          <section id="Rank">
+            
+            <div class="sectiontitle">
+              <p class="heading underline font-x2">좋아요 순위</p>
+            </div>
+
+              <div class="rank">
+
+              <li class="one_third first" id="like_second">
+                  <a class="imgover imgover2" id="rank2_thumbnail" href="#">
+                    <img src="images/demo/348x261.png" alt="" />
+                  </a>
+                  <div class="rank_2">
+                      <h6 class="heading rankhead">좋아요 2등</h6>
+                      <div class="rank__">
+                      <a href="#">
+                        <img src="http://placehold.it/70" class="profile_rank2" alt="profile_rank2">
+                      </a>
+                      <div class="rankname">
+                      <a href="#">
+                        <div class="nick_rank2" value="">닉네임</div>
+                      </a>
+                      <div class="rank_title_level">
+                      <a href="#">
+                        <div class="title_rank2" value="">제목</div>
+                      </a>
+                      <div class="level_rank">난이도 상</div>
+                    </div>
+
+                    </div>
+
+                    </div>
+                    <a href="#">
+                      <p class="rank_p2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit mollitia dolores quas aliquam voluptates veritatis labore numquam. Iusto dolorum veritatis sint quidem quibusdam, qui nostrum, vitae explicabo accusamus eligendi dolores!</p>
+                    </a>
+                    </div>
+              </li>
+            
+            
+              <li class="one_third" id="like_first">
+                  <a class="imgover imgover1" href="#"><img
+                    src="images/demo/348x261.png"/></a>
+                  <div class="rank_1">
+                    <h6 class="heading rankhead">좋아요1등</h6>
+                    <div class="rank__">
+                    <img src="http://placehold.it/70" class="profile_rank1" alt="profile_rank1">
+                    <div class="rankname">
+                    <div class="nick_rank1" value="">닉네임</div>
+                    <div class="title_rank1" value="">제목</div>
+                  </div>
+                  </div>
+                    <p class="rank_p1"><%=like.get(0).getLikes()%></p>
+                </div>
+              </li>
+            
+              <li class="one_third" id="like_third" id="like_third">
+                  <a class="imgover imgover3" href="#"><img
+                    src="images/demo/348x261.png"/></a>
+                  <div class="rank_3">
+                    <h6 class="heading rankhead">좋아요 3등</h6>
+                    <div class="rank__">
+                    <img src="http://placehold.it/70" class="profile_rank3" alt="profile_rank3">
+                    <div class="rankname">
+                    <div class="nick_rank3" value="">닉네임</div>
+                    <div class="title_rank3" value="">제목</div>
+                  </div>
+                  </div>
+                    <p class="rank_p3"><%=like.get(2).getLikes()%></p>
+                </div>
+              </li>
+            
+          </div>
+          </section>
 			<!-- ################################################################################################ -->
 			<hr class="btmspace-80" />
 			<!-- ################################################################################################ -->
