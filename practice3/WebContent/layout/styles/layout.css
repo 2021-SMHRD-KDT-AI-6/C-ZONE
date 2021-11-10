@@ -137,7 +137,8 @@ File: Layout CSS
 #pageintro {
   width: 100%;
   margin: 0 auto;
-  max-width: 1520px;
+  max-width: 100%;
+  margin-top: 6%;
 }
 
 .videoMain {
@@ -156,13 +157,12 @@ File: Layout CSS
   text-align: center;
 }
 
-.mainText {
-  font-size: 70px;
-}
+
 
 .mainText_p {
   text-align: center;
-  margin-top: 20%;
+  margin-top: 15%;
+  font-size: 16px
 }
 
 #pageintro article,
@@ -570,9 +570,11 @@ File: Layout CSS
 .thumbnail {
   width: 300px;
   height: 300px;
+  border-radius: 4%;
 }
 .contents {
   margin-left: 20px;
+  margin-top: 3px;
 }
 .contents > header > a > img {
   border-radius: 100%;
@@ -584,6 +586,8 @@ File: Layout CSS
   width: 730px;
   margin-left: 15px;
   line-height: 35px;
+  font-family: '박물관';
+  font-size: 16px;
 }
 .article_top_up {
   display: flex;
@@ -609,8 +613,13 @@ File: Layout CSS
    white-space: nowrap;
    width: 400px;
    height: 30px;
+   font-size: 23px;
+   font-weight: bold;
+   font-family: '고운밤';
 }
 .article_content{
+   font-family: '고운밤';
+   font-size: 17px;
    display: -webkit-box;
    overflow: hidden;
    text-overflow: ellipsis;
@@ -619,10 +628,10 @@ File: Layout CSS
    height: 3.6em;
    text-align: left;
    word-wrap: break-word;
-   -webkit-line-clamp: 9;
+   -webkit-line-clamp: 8;
    -webkit-box-orient: vertical;
    width: 820px;
-   height: 210px;
+   height: 220px;
 }
 .article_content_mypage{
    display: -webkit-box;
@@ -656,7 +665,7 @@ File: Layout CSS
    overflow: hidden;
    text-overflow: ellipsis;
    white-space: nowrap;
-   width: 300px;
+   width: 450px;
    height: 30px;
 }
 .article_content > a:hover {
@@ -816,7 +825,6 @@ Delete it completely to stop fading
 *,
 *::before,
 *::after {
-  transition: all 0.3s ease-in-out;
 }
 #mainav form * {
   transition: none !important;
@@ -1226,7 +1234,7 @@ textarea:focus,
 }
 
 .imgover:hover::before {
-  background-color: rgba(251, 171, 69, 0.5); /* #FBAB45 */
+  background-color: rgba(250, 250, 250, 0.1); /* #FBAB45 */
 }
 .imgover,
 .imgover:hover::after {
@@ -1263,7 +1271,7 @@ textarea:focus,
 
 /* Top Bar */
 #topbar #searchform {
-  color: #fbab45;
+  color: #FE9A2E;
 }
 #topbar #searchform:hover {
 }
@@ -1393,7 +1401,7 @@ textarea:focus,
 #mainav .active a,
 #mainav a:hover,
 #mainav li:hover > a {
-  color: #fbab45;
+  color: #FE9A2E;
   background-color: inherit;
 }
 #mainav li li a,
@@ -1740,7 +1748,7 @@ table a,
 }
 
 #log-in {
-  margin: 100px 100px;
+  margin: 0 100px 0 100px;
   text-align: center;
   padding: 120px 0px;
 }
@@ -1834,7 +1842,7 @@ table a,
 /* ====================== signup ======================= */
 
 #signup {
-  margin: 100px 100px;
+  margin: 0 100px 0 100px;
   text-align: center;
   padding: 120px 0px;
 }
@@ -2223,6 +2231,7 @@ table a,
    background-color: white;
    margin: 0 auto;
    cursor: pointer;
+   color: #088A29;
 }
 /* 서리 */
 :root {
@@ -2253,14 +2262,14 @@ table a,
  	width: 100%;
 }
 #Rank {
-  margin-top: 1000px;
+  margin-top: 77%;
 }
 
 .row3 {
 }
 .fl_right {
   font-weight: bold;
-  font-size: 15px;
+  font-size: 16px;
 }
 #header {
   text-shadow: 2px 2px 2px gray;
@@ -2272,6 +2281,9 @@ table a,
 .rankhead {
   text-align: center;
   margin-top: 15px;
+  font-family: '박물관';
+  font-size: 25px;
+  text-transform: none;
 }
 .rank {
   color: black;
@@ -2285,16 +2297,23 @@ table a,
   overflow: hidden;
   background: rgb(48, 214, 0);
   background: rgb(114, 255, 73);
-  background: linear-gradient(
-    180deg,
-    rgba(114, 255, 73, 0.47942927170868344) 0%,
-    rgba(178, 244, 182, 0.24413515406162467) 100%
-  );
-
-  /* background-color: var(--maincolor_8); */
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
+  background-image: linear-gradient(to top, white 0%, #dfe9f3 100%);
+  border-top-left-radius: 60px;
+  border-top-right-radius: 60px;
 }
+.rank_1:hover,
+.rank_2:hover,
+.rank_3:hover {
+	transform: scale(1.05);
+    transition: 0.3s;
+    transform-origin: 50% 100%;
+}
+.rank_1:not(:hover),
+.rank_2:not(:hover),
+.rank_3:not(:hover) {
+	transition: 0.3s;
+}
+  /* background-color: var(--maincolor_8); */
 
 .rank_1 a,
 .rank_2 a,
@@ -2315,8 +2334,13 @@ table a,
 .rankhead {
   font-weight: bold;
 }
-#rank2_thumbnail {
-  margin-top: ;
+#rank1_thumbnail > img,
+#rank2_thumbnail > img,
+#rank3_thumbnail > img {
+  object-fit: cover;
+  width: 347.98px;
+  height: 261px;
+  border-radius: 4%;
 }
 #like_second {
   margin-top: 50px;
@@ -2338,6 +2362,8 @@ table a,
   margin-left: 20px;
   margin-right: 10px;
   border-radius: 100%;
+  width: 70px;
+  height: 70px;
 }
 
 .nick_rank1,
@@ -2348,15 +2374,47 @@ table a,
 .title_rank3 {
   padding-right: 20px;
 }
-
+.title_rank1,
+.title_rank2,
+.title_rank3 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.rank_title_level{
+	width: 105px;
+	height: 35px;
+}
 .rank_p1,
 .rank_p2,
 .rank_p3 {
   margin: 0 20px 0 28px;
 }
+.rank_p2,
+.rank_p3 {
+	display: -webkit-box;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: normal;
+   text-align: left;
+   word-wrap: break-word;
+   -webkit-line-clamp: 5;
+   -webkit-box-orient: vertical;
+}
+.rank_p1{
+	display: -webkit-box;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: normal;
+   text-align: left;
+   word-wrap: break-word;
+   -webkit-line-clamp: 7;
+   -webkit-box-orient: vertical;
+}
 .rankname {
   display: flex;
   flex-direction: column;
+  font-family: '티웨이';
 }
 .rankname a {
   color: black;
@@ -2364,20 +2422,22 @@ table a,
 .nick_rank1,
 .nick_rank2,
 .nick_rank3 {
-  line-height: 35px;
+  line-height: 25px;
 }
 .title_rank1,
 .title_rank2,
 .title_rank3 {
-  line-height: 35px;
+  line-height: 25px;
 }
 .rank_title_level {
   width: 230px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
 }
 .level_rank {
-  line-height: 35px;
+  line-height: 25px;
+  display: flex;
+  justify-content: end;
 }
 #trend_img{
 	width: 1140px;
@@ -2394,26 +2454,59 @@ table a,
 	margin: 0 auto;
 	cursor: pointer;
 }
-<<<<<<< HEAD
+
 
 
 /* ====== 11월 10일 ====== */
 /* ====== 폰트 ====== */
+@font-face {
+    font-family: '단정해';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Danjunghae.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 @font-face {
-    font-family: '국립박물관문화재단클래식M';
+    font-family: '박물관';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/국립박물관문화재단클래식M.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
-  .font-x2 {
-    font-family:'국립박물관문화재단클래식M';
-  }
+.font-x2 {
+  font-family:'박물관';
+}
 
-
-
-=======
+@font-face {
+    font-family: '티웨이';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_tway@1.0/twayair.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: '빛';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/HeirofLightBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: '고운밤';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.rank_p1{
+	margin-top: 8px;
+}
+.rank_p1,
+.rank_p2,
+.rank_p3 {
+	font-family: '고운밤';
+	font-size: 18px;
+}
+.article_content{
+	
+}
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
 
       .preserve-3d {
@@ -2538,4 +2631,11 @@ table a,
       }
 .article_update{
 	margin-right: 80px;
+
 }
+
+
+.mainText {
+  font-size: 80px;
+}
+

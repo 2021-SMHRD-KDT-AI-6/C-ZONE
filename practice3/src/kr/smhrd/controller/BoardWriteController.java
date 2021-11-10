@@ -20,7 +20,7 @@ public class BoardWriteController implements Controller{
 	
 			
 		// TODO Auto-generated method stub
-				MultipartRequest multiRequest = new MultipartRequest(request, savePath, sizeLimit, "UTF-8", new DefaultFileRenamePolicy());
+		MultipartRequest multiRequest = new MultipartRequest(request, savePath, sizeLimit, "UTF-8", new DefaultFileRenamePolicy());
 								
 				String article_title = multiRequest.getParameter("article_title");
 				String article_content = multiRequest.getParameter("article_content");
