@@ -160,6 +160,7 @@
 	<select id="checkid" resultType="String">
 		select mb_id from members where mb_id=#{mb_id}
 	</select>
+
      
      <select id="articlefix" resultType="kr.smhrd.util.SuperVO">
      	select * from articles where article_num=#{article_num}
@@ -171,7 +172,7 @@
      			carping_pic1=#{carping_pic1}
      			where article_num=#{article_num}
      </update>
-	
+
 </mapper>
 
 
