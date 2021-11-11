@@ -282,11 +282,28 @@ Licence URI: https://www.os-templates.com/template-terms
 		// 마커를 생성합니다
 		var marker = new kakao.maps.Marker({
 			position : markerPosition,
+			clickable : true
 		});
 		// 마커가 지도 위에 표시되도록 설정합니다
 		marker.setMap(map);
-	<%}%>
 		
+		var infowindow = new kakao.maps.InfoWindow({
+			content : '<div><%=vo2.getArticle_title()%></div>'
+		});
+		
+		kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));
+		kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
+	<%}%>
+	function makeOverListener(map, marker, infowindow){
+		return function(){
+			infowindow.open(map, marker);
+		};
+	};
+	function makeOutListener(infowindow){
+		return function() {
+			infowindow.close();
+		};
+	};
 	</script>
 </body>
 </html>
