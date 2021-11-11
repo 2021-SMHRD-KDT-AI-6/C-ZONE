@@ -183,7 +183,7 @@ String cpath = request.getContextPath();
 					"></div>
 				<hr style = "margin: 15px 15px"/>
 				<div id="articlepage_content">
-					<div class="content_br"><%=vo.getArticle_content()%></div>
+					<%=vo.getArticle_content()%>
 				</div>
 				<hr />
 				<div id="comment_title">댓글</div>

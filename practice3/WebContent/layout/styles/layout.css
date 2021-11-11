@@ -642,10 +642,12 @@ File: Layout CSS
    height: 3.6em;
    text-align: left;
    word-wrap: break-word;
-   -webkit-line-clamp: 7;
+   -webkit-line-clamp: 6;
    -webkit-box-orient: vertical;
    width: 820px;
    height: 160px;
+       font-family: '고운밤';
+    font-size: 17px;
 }
 .article_content_mypage a:hover{
    color: black !important;
@@ -2247,6 +2249,10 @@ table a,
   text-align: center;
   font-family: '고운밤';
   font-size: 22px;
+    line-height:130%;
+}
+.content_br{
+
 }
 br{
 	margin-bottom:1px;
@@ -2296,9 +2302,7 @@ br{
   font-family:"박물관";
    font-size: 17px; 
 }
-.content_br{
-  line-height:130%;
-}
+
 .comment {
   margin-top: 20px;
 }
@@ -2727,6 +2731,7 @@ br{
         perspective: 500px;
         -webkit-perspective: 500px;
         -moz-perspective: 500px;
+            font-family: '박물관';
       }
 
       .b05_3d_roll div {
