@@ -181,7 +181,13 @@ Licence URI: https://www.os-templates.com/template-terms
 											조회수
 											<%=vo.getArticle_cnt()%></div>
 										<div class="carpinglevel">
-											난이도 <%=vo.getCarping_level()%></div>
+											난이도<%if(vo.getCarping_level().equals("상")) {%>
+											<img class="level_img" src="images/demo/backgrounds/상.png" />
+											<%}else if(vo.getCarping_level().equals("중")) {%>
+											<img class="level_img" src="images/demo/backgrounds/중.png" />
+											<%}else { %>
+											<img class="level_img" src="images/demo/backgrounds/하.png" />
+											<%} %>
 									</div>
 								</div>
 							</div>

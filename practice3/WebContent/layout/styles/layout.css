@@ -1207,7 +1207,6 @@ textarea:focus,
 .overlay {
 	width: 100%;
   color: #ffffff;
-  background-color: inherit;
 }
 .overlay::after {
   color: inherit;
@@ -2369,7 +2368,10 @@ table a,
   position: relative;
   top: -15px;
 }
-
+.rank__{
+	display: flex;
+	flex-direction: column;
+}
 .profile_rank1,
 .profile_rank2,
 .profile_rank3 {
@@ -2403,7 +2405,10 @@ table a,
 .rank_p1,
 .rank_p2,
 .rank_p3 {
-  margin: 0 20px 0 28px;
+  margin: 15px 20px 0 28px;
+}
+.rank_p1{
+	margin-top: 18px !important;
 }
 .rank_p2,
 .rank_p3 {
@@ -2681,3 +2686,9 @@ table a,
 	justify-content: center;
 	padding-top: 120px;
 }
+
+.level_img{
+	width : 30px;
+	height : 30px;
+}
+

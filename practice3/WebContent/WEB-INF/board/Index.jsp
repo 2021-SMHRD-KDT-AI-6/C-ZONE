@@ -131,11 +131,6 @@ Licence URI: https://www.os-templates.com/template-terms
             </div>
 
               <div class="rank">
-	
-	
-              
-            
-            
             
               <li class="one_third first" id="like_second">
                   <a class="imgover imgover2" id="rank2_thumbnail" href="<%=cpath%>/article.do?article_num=<%=like.get(1).getArticle_num()%>">
@@ -144,6 +139,7 @@ Licence URI: https://www.os-templates.com/template-terms
                   <div class="rank_2">
                     <h6 class="heading rankhead">2nd <%=like.get(1).getLikes()%> Likes</h6>
                     <div class="rank__">
+                    <div class="rank___">
 	                  <a href="<%=cpath%>/memberpage.do?mb_num=<%=like.get(1).getMb_num()%>">
 	                    <img src="<%=like.get(1).getMb_profile_pic() %>" class="profile_rank2" alt="profile_rank2">
 	                  </a>
@@ -155,9 +151,17 @@ Licence URI: https://www.os-templates.com/template-terms
 	                      <a href="<%=cpath%>/article.do?article_num=<%=like.get(1).getArticle_num()%>">
 	                        <div class="title_rank2"><%=like.get(1).getArticle_title()%></div>
 	                      </a>
-	                      <div class="level_rank">난이도 <%=like.get(1).getCarping_level() %></div>
+	                      <div class="level_rank">난이도
+	                      					<%if(like.get(1).getCarping_level().equals("상")) {%>
+											<img class="level_img" src="images/demo/backgrounds/상.png" />
+											<%}else if(like.get(1).getCarping_level().equals("중")) {%>
+											<img class="level_img" src="images/demo/backgrounds/중.png" />
+											<%}else { %>
+											<img class="level_img" src="images/demo/backgrounds/하.png" />
+											<%} %>
 	                    </div>
 	                  </div>
+                    </div>
                     </div>
                     <a href="<%=cpath%>/article.do?article_num=<%=like.get(1).getArticle_num()%>">
                       <p class="rank_p2"><%=like.get(1).getArticle_content() %></p>
@@ -171,6 +175,7 @@ Licence URI: https://www.os-templates.com/template-terms
                   <div class="rank_1">
                     <h6 class="heading rankhead">1st <%=like.get(0).getLikes()%> Likes</h6>
                     <div class="rank__">
+                    <div class="rank___">
                     <a href="<%=cpath%>/memberpage.do?mb_num=<%=like.get(0).getMb_num()%>">
                     	<img src="<%=like.get(0).getMb_profile_pic() %>" class="profile_rank1" alt="profile_rank1">
                     </a>
@@ -182,8 +187,15 @@ Licence URI: https://www.os-templates.com/template-terms
                     <a href="<%=cpath%>/article.do?article_num=<%=like.get(0).getArticle_num()%>">
                     <div class="title_rank1"><%=like.get(0).getArticle_title()%></div>
                     </a>
-                  	<div class="level_rank">난이도 <%=like.get(0).getCarping_level() %></div>
+                  	<div class="level_rank">난이도<%if(like.get(0).getCarping_level().equals("상")) {%>
+											<img class="level_img" src="images/demo/backgrounds/상.png" />
+											<%}else if(like.get(0).getCarping_level().equals("중")) {%>
+											<img class="level_img" src="images/demo/backgrounds/중.png" />
+											<%}else { %>
+											<img class="level_img" src="images/demo/backgrounds/하.png" />
+											<%} %>
                   	</div>
+                  </div>
                   </div>
                   </div>
                     <a href="<%=cpath%>/article.do?article_num=<%=like.get(0).getArticle_num()%>">
@@ -199,6 +211,7 @@ Licence URI: https://www.os-templates.com/template-terms
                   <div class="rank_2">
                     <h6 class="heading rankhead">3rd <%=like.get(2).getLikes()%> Likes</h6>
                     <div class="rank__">
+                    <div class="rank___">
 	                  <a href="<%=cpath%>/memberpage.do?mb_num=<%=like.get(2).getMb_num()%>">
 	                    <img src="<%=like.get(2).getMb_profile_pic() %>" class="profile_rank2" alt="profile_rank2">
 	                  </a>
@@ -210,9 +223,17 @@ Licence URI: https://www.os-templates.com/template-terms
 	                      <a href="<%=cpath%>/article.do?article_num=<%=like.get(2).getArticle_num()%>">
 	                        <div class="title_rank2"><%=like.get(2).getArticle_title()%></div>
 	                      </a>
-	                      <div class="level_rank">난이도 <%=like.get(2).getCarping_level() %></div>
+	                      <div class="level_rank">난이도
+	                                        <%if(like.get(2).getCarping_level().equals("상")) {%>
+											<img class="level_img" src="images/demo/backgrounds/상.png" />
+											<%}else if(like.get(2).getCarping_level().equals("중")) {%>
+											<img class="level_img" src="images/demo/backgrounds/중.png" />
+											<%}else { %>
+											<img class="level_img" src="images/demo/backgrounds/하.png" />
+											<%} %>
 	                    </div>
 	                  </div>
+                    </div>
                     </div>
                     <a href="<%=cpath%>/article.do?article_num=<%=like.get(2).getArticle_num()%>">
                       <p class="rank_p2"><%=like.get(2).getArticle_content() %></p>
@@ -226,13 +247,6 @@ Licence URI: https://www.os-templates.com/template-terms
 			<hr class="btmspace-80" />
 			<!-- ################################################################################################ -->
 			<section id="overview">
-				<div class="sectiontitle">
-					<p class="heading underline font-x2">트렌드</p>
-				</div>
-				<div id="trend">
-					<img src="images/trend.png" id="trend_img" alt="트렌드" />
-				</div>
-				<hr class="btmspace-80" />
 
 				<div class="sectiontitle">
 					<p class="heading underline font-x2">뉴스피드</p>
@@ -281,7 +295,14 @@ Licence URI: https://www.os-templates.com/template-terms
 											<%=vo.getArticle_cnt()%></div>
 										<div class="carpinglevel">
 											난이도
-											<%=vo.getCarping_level()%></div>
+											<%if(vo.getCarping_level().equals("상")) {%>
+											<img class="level_img" src="images/demo/backgrounds/상.png" />
+											<%}else if(vo.getCarping_level().equals("중")) {%>
+											<img class="level_img" src="images/demo/backgrounds/중.png" />
+											<%}else { %>
+											<img class="level_img" src="images/demo/backgrounds/하.png" />
+											<%} %>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -302,11 +323,69 @@ Licence URI: https://www.os-templates.com/template-terms
 					}
 				%>
 				<button onclick="moreview()" id="moreview"><i class="fas fa-angle-down fa-3x"></i></button>
+				<hr class="btmspace-80" />
+				<div class="sectiontitle">
+					<p class="heading underline font-x2">트렌드</p>
+				</div>
+				<div id="trend">
+					<img src="images/trend.png" id="trend_img" alt="트렌드" />
+				</div>
 			</section>
 			<!-- ################################################################################################ -->
 			<!-- / main body -->
 			<div class="clear"></div>
 		</main>
+	</div>
+	<div class="bgded overlay row4"
+		style="background-image: url('../images/demo/backgrounds/05.png')">
+		<footer id="footer" class="hoc clear">
+			<div id="ctdetails" class="clear">
+				<ul class="nospace clear">
+					<li class="one_quarter first">
+						<div class="block clear">
+							<a href="#"><i class="fas fa-phone"></i></a> <span><strong>Give
+									us a call:</strong> +00 (123) 456 7890</span>
+						</div>
+					</li>
+					<li class="one_quarter">
+						<div class="block clear">
+							<a href="#"><i class="fas fa-envelope"></i></a> <span><strong>Send
+									us a mail:</strong> support@domain.com</span>
+						</div>
+					</li>
+					<li class="one_quarter">
+						<div class="block clear">
+							<a href="#"><i class="fas fa-clock"></i></a> <span><strong>
+									Monday - Saturday:</strong> 08.00am - 18.00pm</span>
+						</div>
+					</li>
+					<li class="one_quarter">
+						<div class="block clear">
+							<a href="#"><i class="fas fa-map-marker-alt"></i></a> <span><strong>Come
+									visit us:</strong> Directions to <a href="#">our location</a></span>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<!-- ################################################################################################ -->
+		</footer>
+	</div>
+	<!-- ################################################################################################ -->
+	<!-- ################################################################################################ -->
+	<!-- ################################################################################################ -->
+	<div class="wrapper row5">
+		<div id="copyright" class="hoc clear">
+			<!-- ################################################################################################ -->
+			<p class="fl_left">
+				Copyright &copy; 2018 - All Rights Reserved - <a href="#">Domain
+					Name</a>
+			</p>
+			<p class="fl_right">
+				Template by <a target="_blank" href="https://www.os-templates.com/"
+					title="Free Website Templates">OS Templates</a>
+			</p>
+			<!-- ################################################################################################ -->
+		</div>
 	</div>
 	<a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
 	<!-- JAVASCRIPTS -->
