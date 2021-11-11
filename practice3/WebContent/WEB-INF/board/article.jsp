@@ -146,8 +146,14 @@ String cpath = request.getContextPath();
 							</div>
 						<div id="articlepage_third">
 							<div id="articlepage_level">
-								난이도
-								<%=vo.getCarping_level()%></div>
+	                      	   난이도 <%if(vo.getCarping_level().equals("상")) {%>
+							  <img class="level_img2" src="images/demo/backgrounds/상.png" />
+							  <%}else if(vo.getCarping_level().equals("중")) {%>
+							  <img class="level_img2" src="images/demo/backgrounds/중.png" />
+							  <%}else { %>
+							  <img class="level_img2" src="images/demo/backgrounds/하.png" />
+							  <%} %>
+	                        </div>
 							<div id="articlepage_cnt">
 								조회수 <%=vo.getArticle_cnt()%>
 							</div>
@@ -164,13 +170,20 @@ String cpath = request.getContextPath();
 						</div>
 						</div>
 					</div>
-					<div id="map" style="width: 350px; height: 230px; float: right;"></div>
+				<img id="article_thumbnail" src="<%=vo.getCarping_pic1()%>" />
 				</div>
 				<hr />
-				<img id="article_thumbnail" src="<%=vo.getCarping_pic1()%>" />
-				<hr />
+					<div id="map"
+					style="
+                    margin-right: 3%;
+                    width: 1100px;
+					height: 500px; 
+					float: right;
+					margin: 15px 15px;
+					"></div>
+				<hr style = "margin: 15px 15px"/>
 				<div id="articlepage_content">
-					<%=vo.getArticle_content()%>
+					<div class="content_br"><%=vo.getArticle_content()%></div>
 				</div>
 				<hr />
 				<div id="comment_title">댓글</div>
@@ -192,11 +205,12 @@ String cpath = request.getContextPath();
 					<div class="comment_content"><%=comment.getComment_content()%>
 					<% if (members == null) {%> 
 					<% }else if ( comment.getMb_num() == members.getMb_num()){%>
-					<button onclick="commentUpdate()">수정</button>
+					
 					<form action="commentDelete.do" id="comment_delete">
 						<input type="hidden" name="article_num" value="<%=vo.getArticle_num() %>" />
 						<input type="hidden" name="comment_num" value="<%=comment.getComment_num() %>" />
-						<input type="submit" value="삭제" id="btn1" />
+						<button class="DG" onclick="commentUpdate()">수정</button>
+						<input class="DG"type="submit" value="삭제" />
 					</form>
 					<% } %>
 					</div>

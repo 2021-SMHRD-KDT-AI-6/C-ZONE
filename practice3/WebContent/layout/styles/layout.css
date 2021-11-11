@@ -988,6 +988,8 @@ nav ol {
 #breadcrumb .heading {
   margin: 0;
   font-size: 2rem;
+  font-family:"박물관";
+  letter-spacing:1px;
 }
 
 /* Sidebar Navigation */
@@ -2202,14 +2204,18 @@ table a,
 #articlepage_first {
   display: flex;
   justify-content: space-between;
+  margin-left:50px;
 }
 #articlepage_first_left {
+	margin-top: 20px;
+;
 }
 #articlepage_title {
   font-size: 30px;
   width: 630px;
   margin-bottom: 30px;
   line-height: 35px;
+  font-family: "박물관";
 }
 #articlepage_profile_pic {
    width: 70px;
@@ -2221,9 +2227,10 @@ table a,
   line-height: 35px;
   margin-right: 30px;
 }
-#articlepage_mb_id {
-  font-size: 20px;
-}
+.articlepage_mb_id {
+  font-size: 17px;
+  font-family:"박물관";
+  }
 #articlepage_second {
   display: flex;
   margin-bottom: 30px;
@@ -2237,15 +2244,36 @@ table a,
 #articlepage_content {
   margin-top: 30px;
   margin-bottom: 30px;
+  text-align: center;
+  font-family: '고운밤';
+  font-size: 22px;
+}
+br{
+	margin-bottom:1px;
 }
 #articlepage_third{
    display: flex;
+   font-family:"박물관";
 }
 #articlepage_level{
-   margin-right: 10px;
+   margin-right: 20px;
+   font-family:"박물관";
+   font-size: 13px;
 }
 #articlepage_cnt{
-   margin-right: 10px;
+   margin-right: 20px;
+   font-family:"박물관";
+   font-size: 13px;
+}
+#articlepage_like_num{
+	font-family:"박물관";
+	font-size: 13px;
+}
+.level_img2{
+	width:20px;
+	height:20px;
+	margin-left:2px;
+	margin-bottom:2px;
 }
 .heart_btn{
    color: red;
@@ -2255,12 +2283,21 @@ table a,
    width: 1000px;
    heith: 300px;
    display: block;
-   margin-left: auto;
-   margin-right: auto;
+   margin-left: 10px;
+   margin-right: 17px;
 }
 #comment_title {
   margin-top: 30px;
   font-size: 30px;
+  font-family:"박물관";
+  margin-bottom: 30px;
+}
+#articlepage_mb_id{
+  font-family:"박물관";
+   font-size: 17px; 
+}
+.content_br{
+  line-height:130%;
 }
 .comment {
   margin-top: 20px;
@@ -2272,6 +2309,8 @@ table a,
   position: relative;
   top: -15px;
   margin-left: 85px;
+    font-family:"고운밤"; 
+  font-size:20px;
 }
 .comment_profile {
   line-height: 25px;
@@ -2282,6 +2321,23 @@ table a,
   border-radius: 100%;
   margin-right: 15px;
 }
+.DG{
+	font-family:"박물관";
+   margin-top:10px;
+     font-size:15px;
+   outline:none;
+   background-color:white;
+   cursor:pointer;
+   letter-spacing:1px;
+   border-radius: 2px;
+   width: 55px;
+   height: 30px;	
+   margin-right:2px;
+}
+.DG:hover{
+	background-color:black;
+	color:white;
+}
 #comment_write {
   display: flex;
   justify-content: space-between;
@@ -2290,9 +2346,23 @@ table a,
 }
 #comment_content {
   width: 88%;
+  border-color: black !important; 
+  font-family:"고운밤"; 
+  font-size:20px;
 }
 #comment_btn {
   width: 10%;
+    font-family:"박물관";
+    font-size:17px;
+    letter-spasing:2px;
+    outline:none;
+    background-color:white;
+       cursor:pointer;
+          border-radius: 5px;
+}
+#comment_btn:hover{
+	background-color:black;
+	color:white;
 }
 #comment_delete{
    float: right;
@@ -2770,3 +2840,7 @@ table a,
 	top: -3px;	
 }
 
+#article_thumbnail{
+	width: 350px;
+	height:230px;
+}
