@@ -6,11 +6,13 @@
 <%
 	MbVO members = (MbVO) session.getAttribute("succ");
 %>
+
 <%
 	// Object Cating(객체형변환-제일중요)
 ArrayList<SuperVO> list = (ArrayList<SuperVO>) request.getAttribute("list");
 String cpath = request.getContextPath();
 %>
+
 <!DOCTYPE html>
 <!--
 Template Name: Sislaf
@@ -21,6 +23,7 @@ Licence: Free to use under our free template licence terms
 Licence URI: https://www.os-templates.com/template-terms
 -->
 <html lang="">
+
 <!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
 <head>
 <title>C-ZONE</title>
@@ -29,15 +32,15 @@ Licence URI: https://www.os-templates.com/template-terms
 	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <link href="layout/styles/layout.css" rel="stylesheet" type="text/css"
 	media="all" />
+
 </head>
 <body id="top">
-	<input type="hidden" name="mb_num" value="<%=members.getMb_num()%>" />
 	<!-- ################################################################################################ -->
 	<!-- ################################################################################################ -->
 	<!-- ################################################################################################ -->
 	<!-- Top Background Image Wrapper -->
 	<div class="bgded overlay"
-		style="background-image: url('images/demo/backgrounds/후광.jpg')">
+		style="background-image: url('images/demo/backgrounds/01.png')">
 		<!-- ################################################################################################ -->
 		<div class="wrapper row0">
 			<div id="topbar" class="hoc clear">
@@ -78,30 +81,9 @@ Licence URI: https://www.os-templates.com/template-terms
 					<ul class="clear">
 						<li class="active"><a href="Index.do">Home</a></li>
 						<li><a href="youtube.do">차박 팁</a></li>
-						<%
-							if (members == null) {
-						%>
-						<li><a href="sl.do">글쓰기</a></li>
-						<li><a href="sl.do">마이페이지</a></li>
-						<%
-							} else {
-						%>
-						<li><a href="writeForm.do">글쓰기</a></li>
-						<li><a href="mypage.do">마이페이지</a></li>
-						<%
-							}
-						%>
-						<%
-							if (members == null) {
-						%>
-						<li><a href="sl.do">로그인</a></li>
-						<%
-							} else {
-						%>
-						<li><a href="logout.do" onclick="outFn()">로그아웃</a></li>
-						<%
-							}
-						%>
+						<li><a href="login.do">글쓰기</a></li>
+						<li><a href="login.do">마이페이지</a></li>
+						<li><a href="login.do">로그인</a></li>
 					</ul>
 					<!-- ################################################################################################ -->
 				</nav>
@@ -111,19 +93,12 @@ Licence URI: https://www.os-templates.com/template-terms
 		<!-- ################################################################################################ -->
 		<!-- ################################################################################################ -->
 		<div id="breadcrumb" class="hoc clear">
-			<div id="profile">
-				<a href="profile.do"><img id="member_profile_pic" src="<%=members.getMb_profile_pic()%>"
-					alt="프로필사진" /></a>
-					<a ><span id="member_name"><%=members.getMb_nickname()%></span></a>
-			</div>
 			<!-- ################################################################################################ -->
-			<div class="pushTop">
-				<h6 class="heading">마이페이지</h6>
-				<ul>
-					<li><a href="Index.do">Home</a></li>
-					<li><a href="mypage.do">MYPAGE</a></li>
-				</ul>
-			</div>
+			<h6 class="heading">로그인</h6>
+			<ul>
+				<li><a href="Index.do">Home</a></li>
+				<li><a href="login.do">Log-in</a></li>
+			</ul>
 			<!-- ################################################################################################ -->
 		</div>
 		<!-- ################################################################################################ -->
@@ -132,99 +107,49 @@ Licence URI: https://www.os-templates.com/template-terms
 	<!-- ################################################################################################ -->
 	<!-- ################################################################################################ -->
 	<!-- ################################################################################################ -->
-	<div class="wrapper row3">
-		<main class="hoc container clear">
-			<section id="overview">
-				<div class="sectiontitle">
-					<p class="heading underline font-x2">정복지</p>
-				</div>
-				<div id="map" style="width: 1200px; height: 550px; margin: 0 auto"></div>
-				<hr class="btmspace-80" />
+	<div class="signupMain">
+		<!-- log-in -->
 
-				<div class="sectiontitle">
-					<p class="heading underline font-x2">내가 쓴 게시물</p>
+		<div id="log-in">
+			<%
+				if (members == null) {
+			%>
+			<form class="form-inline" action="<%=cpath%>/login.do" method="post" onsubmit="return loginCheck()">
+				<hr class="signup_hr" />
+				<div class="log_in_menu">
+					<div class="e-mail">
+						<img class=e-mail_i src="images/demo/signup_logos/mail.png"></img>
+						<input class="e-mail_text" type="text" id="mb_id" name="mb_id"
+							placeholder="ID를 입력해주세요."></input>
+					</div>
 				</div>
-				<%
-					for (SuperVO vo : list) {
-				%>
-				<input type="hidden" id="members_latitude"
-					value="<%=vo.getLatitude()%>" /> <input type="hidden"
-					id="members_longitude" value="<%=vo.getLongitude()%>" />
-				<div class="news_feed">
-					<a
-						href="<%=cpath%>/article.do?article_num=<%=vo.getArticle_num()%>">
-						<img class="thumbnail" src="<%=vo.getCarping_pic1()%>"
-						alt="썸네일" />
-					</a>
-					<div class="contents">
-						<header>
-							<a href="<%=cpath%>/memberpage.do?mb_num=<%=vo.getMb_num()%>">
-								<img class="profile_pic" src="<%=vo.getMb_profile_pic() %>"
-								alt="프로필사진" />
-							</a>
-							<div class="article_top">
-								<div class="article_top_up">
-									<strong class="mb_num">
-									<a href="mypage.do"><%=vo.getMb_nickname()%></a>
-									</strong>
-									<div class="reg_date"><%=vo.getReg_date()%></div>
-								</div>
-								<div class="article_top_down">
-									<a
-										href="<%=cpath%>/article.do?article_num=<%=vo.getArticle_num()%>"><%=vo.getArticle_title()%>
-									</a>
-									<div class="article_top_down_right">
-										<div class="likes">
-											좋아요
-											<%=vo.getLikes()%></div>
-										<div class="article_cnt">
-											조회수
-											<%=vo.getArticle_cnt()%></div>
-										<div class="carpinglevel">
-											난이도 <%=vo.getCarping_level()%></div>
-									</div>
-								</div>
-							</div>
-						</header>
-						<article class="article_content_mypage">
-							<a 
-								href="<%=cpath%>/article.do?article_num=<%=vo.getArticle_num()%>">
-								<%=vo.getArticle_content()%>
-							</a>
-						</article>
-						
-					<% if (members == null) {%> 
-					<% }else if (vo.getArticle_num() == vo.getArticle_num()){%>
-					<div class="mypage_article_btn">
-							<div class="back article_update">
-								<div class="button_base b05_3d_roll" onclick="location.href='ArticleFix.do?article_num=<%=vo.getArticle_num()%>'">
-									<div>수정</div>
-									<div>수정</div>
-								</div>
-							</div>
-						
-							<div class="back" onclick="location.href='ArticleDelete.do?article_num=<%=vo.getArticle_num()%>'">
-								<div class="button_base b05_3d_roll">
-									<div>삭제</div>
-									<div>삭제</div>
-								</div>
-							</div>
+				<div class="log_in_menu">
+					<div class="password">
+						<img class=password_i src="images/demo/signup_logos/password.png"></img>
+						<input class="password_text" type="password" id="mb_pwd"
+							name="mb_pwd" maxlength="15" placeholder="비밀번호"></input>
 					</div>
-					<% } %>
-					</div>
-					</div>
-				<%
-					}
-				%>
 				</div>
-			</section>
-		</main>
+
+				<div>
+					<button type="submit" class="log_in">로그인</button>
+				</div>
+			</form>
+			<%
+				}
+			%>
+			<div class="log_service">
+				<a class="log_service_menu" href="signup.do">회원가입</a>
+			</div>
+			<hr class="signup_hr" />
+		</div>
+	</div>
 	</div>
 	<!-- ################################################################################################ -->
 	<!-- ################################################################################################ -->
 	<!-- ################################################################################################ -->
 	<div class="bgded overlay row4"
-		style="background-image: url('../images/demo/backgrounds/05.png')">
+		style="background-image: url('images/demo/backgrounds/05.png');">
 		<footer id="footer" class="hoc clear">
 			<!-- ################################################################################################ -->
 			<div id="ctdetails" class="clear">
@@ -270,7 +195,7 @@ Licence URI: https://www.os-templates.com/template-terms
 			</p>
 			<p class="fl_right">
 				Template by <a target="_blank" href="https://www.os-templates.com/"
-					title="Free Website Templates"> OS Templates </a>
+					title="Free Website Templates">OS Templates</a>
 			</p>
 			<!-- ################################################################################################ -->
 		</div>
@@ -279,51 +204,28 @@ Licence URI: https://www.os-templates.com/template-terms
 	<!-- ################################################################################################ -->
 	<!-- ################################################################################################ -->
 	<a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
+
 	<!-- JAVASCRIPTS -->
 	<script src="layout/scripts/jquery.min.js"></script>
 	<script src="layout/scripts/jquery.backtotop.js"></script>
 	<script src="layout/scripts/jquery.mobilemenu.js"></script>
-	<script type="text/javascript"
-		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d98d9b2f0c4a6046323ef26fd36b2b16"></script>
-	<script>
-		var mapContainer = document.getElementById("map"), // 지도를 표시할 div
-		mapOption = {
-			center : new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
-			level : 13, // 지도의 확대 레벨
-		};
-
-		var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+<script>
+	let mb_id = document.querySelector('input[name="mb_id"]');
+	let mb_pwd = document.querySelector('input[name="mb_pwd"]');
+	function loginCheck(){
+		if(mb_id.value == ""){
+			alert('아이디를 입력해주세요');
+			mb_id.focus();
+			return false
+		}else if(mb_pwd.value == ""){
+			alert('패스워드를 입력해주세요');
+			mb_pwd.focus();
+			return false
+		}else{
+			return true
+		}
 		
-	<%for (SuperVO vo : list) {%>
-		// 마커가 표시될 위치입니다
-		var markerPosition = new kakao.maps.LatLng(<%=vo.getLatitude()%>, <%=vo.getLongitude()%>);
-
-		// 마커를 생성합니다
-		var marker = new kakao.maps.Marker({
-			position : markerPosition,
-			clickable: true
-		});
-		// 마커가 지도 위에 표시되도록 설정합니다
-		marker.setMap(map);
-		
-		var infowindow = new kakao.maps.InfoWindow({
-			content : '<div><%=vo.getArticle_title()%></div>'
-		});
-		
-		kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));
-		kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
-		
-	<%}%>
-		function makeOverListener(map, marker, infowindow){
-			return function(){
-				infowindow.open(map, marker);
-			};
-		};
-		function makeOutListener(infowindow){
-			return function() {
-				infowindow.close();
-			};
-		};
-	</script>
+	}
+</script>
 </body>
 </html>
