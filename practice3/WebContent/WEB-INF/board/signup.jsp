@@ -111,10 +111,10 @@ Licence URI: https://www.os-templates.com/template-terms
 		<!-- ################################################################################################ -->
 		<div id="breadcrumb" class="hoc clear">
 			<!-- ################################################################################################ -->
-			<h6 class="heading">회원가입</h6>
+			<h6 class="heading">로그인</h6>
 			<ul>
 				<li><a href="Index.do">Home</a></li>
-				<li><a href="signup.do">Sign-Up</a></li>
+				<li><a href="signup.do" class="sl">LOG-IN</a></li>
 			</ul>
 			<!-- ################################################################################################ -->
 		</div>
@@ -125,9 +125,50 @@ Licence URI: https://www.os-templates.com/template-terms
 	<!-- ################################################################################################ -->
 	<!-- ################################################################################################ -->
 	<div class="signupMain">
+		<!-- log-in -->
+		<div id="radiobox">
+			<label class="box-radio-input">
+				<input type="radio" name="login" onclick="login(this.value)" value="login" />
+				<span>로그인</span>
+			</label>
+			<label class="box-radio-input">
+				<input type="radio" name="login" onclick="login(this.value)" value="signup" />
+				<span>회원가입</span>
+			</label>
+		</div>
+		<div id="log-in">
+			<%
+				if (members == null) {
+			%>
+			<form class="form-inline" action="<%=cpath%>/login.do" method="post" onsubmit="return loginCheck()">
+				<hr class="signup_hr" />
+				<div class="log_in_menu">
+					<div class="e-mail">
+						<img class=e-mail_i src="images/demo/signup_logos/mail.png"></img>
+						<input class="e-mail_text" type="text" id="mb_id" name="mb_id"
+							placeholder="ID를 입력해주세요."></input>
+					</div>
+				</div>
+				<div class="log_in_menu">
+					<div class="password">
+						<img class=password_i src="images/demo/signup_logos/password.png"></img>
+						<input class="password_text" type="password" id="mb_pwd"
+							name="mb_pwd" maxlength="15" placeholder="비밀번호"></input>
+					</div>
+				</div>
+
+				<div>
+					<button type="submit" class="log_in">로그인</button>
+				</div>
+			</form>
+			<%
+				}
+			%>
+			<hr class="signup_hr" />
+		</div>
 		<!-- signup -->
-		<form action="<%=cpath%>/insert.do" method="post" onsubmit="return signUpCheck()">
-			<div id="signup">
+		<div id="signup" class="hidden">
+			<form action="<%=cpath%>/insert.do" method="post" onsubmit="return signUpCheck()">
 				<hr class="signup_hr" />
 				<div class="signup_menu">
 					<div class="signup_menu_1">
@@ -155,9 +196,9 @@ Licence URI: https://www.os-templates.com/template-terms
 				</div>
 
 				<input type="submit" class="sign_up" value="회원가입" />
-		</form>
-		<hr class="signup_hr" />
-	</div>
+			</form>
+			<hr class="signup_hr" />
+		</div>
 	</div>
 	<!-- ################################################################################################ -->
 	<!-- ################################################################################################ -->
@@ -299,6 +340,26 @@ $('.id_text').focusout(function(){
 			}
 	  })
 });
+</script>
+<script>
+
+	function login(e){
+		let login = document.querySelector('#log-in');
+		let signup = document.querySelector('#signup');
+		let title = document.querySelector('.heading');
+		let sl = document.querySelector('.sl');
+		if(e === 'login'){
+			login.setAttribute('class', '');
+			signup.setAttribute('class', 'hidden');
+			title.textContent = '로그인';
+			sl.textContent = 'LOG-IN';
+		}else{
+			login.setAttribute('class', 'hidden');
+			signup.setAttribute('class', '');
+			title.textContent = '회원가입';
+			sl.textContent = 'SIGN-UP';
+		}
+	}
 </script>
 </body>
 </html>

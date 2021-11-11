@@ -1750,7 +1750,7 @@ table a,
 #log-in {
   margin: 0 100px 0 100px;
   text-align: center;
-  padding: 120px 0px;
+  padding: 0 0 120px 0;
 }
 
 .log_menu_list {
@@ -1844,7 +1844,7 @@ table a,
 #signup {
   margin: 0 100px 0 100px;
   text-align: center;
-  padding: 120px 0px;
+  padding: 0 0 120px 0;
 }
 
 .signup_menu {
@@ -2636,4 +2636,35 @@ table a,
 .mainText {
   font-size: 80px;
 }
-
+.hidden{
+	display: none;
+}
+.box-radio-input{
+	width: 100px;
+	height: 50px;
+}
+.box-radio-input input[type="radio"]{
+      display:none;
+    }
+.box-radio-input input[type="radio"] + span{
+      display:inline-block;
+      background:none;
+      border:1px solid #dfdfdf;  
+      padding:0px 10px;
+      text-align:center;
+      height:35px;
+      line-height:33px;
+      font-weight:500;
+      cursor:pointer;
+      color : black;
+}
+.box-radio-input input[type="radio"]:checked + span{
+      border:1px solid #23a3a7;
+      background:#23a3a7;
+      color: white;
+}
+#radiobox{
+	display: flex;
+	justify-content: center;
+	padding-top: 120px;
+}
