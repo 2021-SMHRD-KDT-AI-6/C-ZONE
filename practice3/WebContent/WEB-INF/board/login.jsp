@@ -80,6 +80,7 @@ Licence URI: https://www.os-templates.com/template-terms
 					<!-- ################################################################################################ -->
 					<ul class="clear">
 						<li class="active"><a href="Index.do">Home</a></li>
+						<li><a href="youtube.do">차박 팁</a></li>
 						<li><a href="login.do">글쓰기</a></li>
 						<li><a href="login.do">마이페이지</a></li>
 						<li><a href="login.do">로그인</a></li>

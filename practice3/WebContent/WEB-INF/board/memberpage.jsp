@@ -74,6 +74,7 @@ Licence URI: https://www.os-templates.com/template-terms
 					<!-- ################################################################################################ -->
 					<ul class="clear">
 						<li class="active"><a href="Index.do">Home</a></li>
+						<li><a href="youtube.do">차박 팁</a></li>
 						<%
 							if (members == null) {
 						%>
