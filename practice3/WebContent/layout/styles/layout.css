@@ -1736,7 +1736,7 @@ table a,
 .signup_hr {
   width: 500px;
   align: center;
-  border: 1px solid black;
+  border: 1px solid #6E6E6E;
   margin-top: 30px;
   margin-bottom: 30px;
 }
@@ -1769,7 +1769,7 @@ table a,
 
 .log_in_menu {
   margin: 10px auto;
-  border: 2px solid green;
+  border: 2px solid #6E6E6E;
   border-radius: 5px;
   width: 300px;
 }
@@ -1807,20 +1807,26 @@ table a,
   font-weight: bold;
   font-size: 20px;
   box-sizing: border-box;
-  border: 4px solid green;
   border-radius: 5px;
-  background-color: yellowgreen;
+  background-color: #DF7401;
   width: 300px;
   margin: 20px auto;
   cursor: pointer;
   text-align: center;
-  color: black;
+  color: white;
+  outline: 0;
+  border: 0;
+  font-family: '박물관';
+  letter-spacing: 1px;
 }
 
 .log_in:hover {
-  background-color: springgreen;
+	transform: scale(1.03);
+	transition: 0.3s;
 }
-
+.log_in:not(:hover){
+	transition: 0.3s;
+}
 .log_service {
   text-align: center;
 }
@@ -1849,7 +1855,7 @@ table a,
 
 .signup_menu {
   margin: 10px auto;
-  border: 2px solid green;
+  border: 2px solid #6E6E6E;
   border-radius: 5px;
   width: 300px;
 }
@@ -1891,21 +1897,27 @@ table a,
 .sign_up {
   height: 50px;
   line-height: 40px;
-  font-weight: bold;
   font-size: 20px;
   box-sizing: border-box;
-  border: 4px solid green;
   border-radius: 5px;
-  background-color: yellowgreen;
+  background-color: #DF7401;
   width: 300px;
   margin: 20px auto;
   cursor: pointer;
   text-align: center;
-  color: black;
+  color: white;
+  border: 0;
+  outline: 0;
+  font-family: '박물관';
+  letter-spacing: 2px;
 }
 
 .sign_up:hover {
-  background-color: springgreen;
+	transform: scale(1.03);
+	transition: 0.3s;
+}
+.sign_up:not(:hover){
+	transition: 0.3s;
 }
 
 /* ====================== profile ======================= */
@@ -2639,9 +2651,11 @@ table a,
 .hidden{
 	display: none;
 }
-.box-radio-input{
+.radio_span {
 	width: 100px;
 	height: 50px;
+	border-radius: 5px;
+	font-family: '박물관';
 }
 .box-radio-input input[type="radio"]{
       display:none;
@@ -2659,8 +2673,7 @@ table a,
       color : black;
 }
 .box-radio-input input[type="radio"]:checked + span{
-      border:1px solid #23a3a7;
-      background:#23a3a7;
+      background: #DF7401;
       color: white;
 }
 #radiobox{

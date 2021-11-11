@@ -37,7 +37,7 @@ Licence URI: https://www.os-templates.com/template-terms
 	<!-- ################################################################################################ -->
 	<!-- Top Background Image Wrapper -->
 	<div class="bgded overlay"
-		style="background-image: url('images/demo/backgrounds/01.png')">
+		style="background-image: url('images/demo/backgrounds/집.jpg')">
 		<!-- ################################################################################################ -->
 		<div class="wrapper row0">
 			<div id="topbar" class="hoc clear">
@@ -129,12 +129,12 @@ Licence URI: https://www.os-templates.com/template-terms
 		<!-- log-in -->
 		<div id="radiobox">
 			<label class="box-radio-input">
-				<input type="radio" name="login" onclick="login(this.value)" value="login" />
-				<span>로그인</span>
+				<input type="radio" name="login" onclick="login(this.value)" value="login" checked="checked" />
+				<span class="radio_span">로그인</span>
 			</label>
 			<label class="box-radio-input">
 				<input type="radio" name="login" onclick="login(this.value)" value="signup" />
-				<span>회원가입</span>
+				<span class="radio_span">회원가입</span>
 			</label>
 		</div>
 		<div id="log-in">
@@ -145,14 +145,14 @@ Licence URI: https://www.os-templates.com/template-terms
 				<hr class="signup_hr" />
 				<div class="log_in_menu">
 					<div class="e-mail">
-						<img class=e-mail_i src="images/demo/signup_logos/mail.png"></img>
+						<div class="signup_id_1">ID</div>
 						<input class="e-mail_text" type="text" id="mb_id" name="mb_id"
 							placeholder="ID를 입력해주세요."></input>
 					</div>
 				</div>
 				<div class="log_in_menu">
 					<div class="password">
-						<img class=password_i src="images/demo/signup_logos/password.png"></img>
+						<div class="signup_id_2">PW</div>
 						<input class="password_text" type="password" id="mb_pwd"
 							name="mb_pwd" maxlength="15" placeholder="비밀번호"></input>
 					</div>
