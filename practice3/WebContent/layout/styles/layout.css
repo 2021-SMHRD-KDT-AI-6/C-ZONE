@@ -2092,17 +2092,55 @@ table a,
   justify-content: center;
   margin-bottom: 40px;
 }
+#search_form > input:nth-child(1){
+	border: 1px solid black;
+    outline: 0;
+    background: white;
+    font-family: '박물관';
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+    line-height: 35px;
+    border-radius: 35px;
+    margin-right: 3px;
+    width: 60px;
+    padding-left: 10px;
+}
+#search_form > input:nth-child(1):focus{
+	border: 1px solid black !important;
+}
+#search_form > input:nth-child(2){
+	border: 1px solid black;
+    outline: 0;
+    background: white;
+    font-family: '박물관';
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+    line-height: 35px;
+    border-radius: 35px;
+    margin-right: 3px;
+    cursor: pointer;
+    width: 60px;
+}
+#search_form > input:nth-child(2):hover{
+	color: white;
+	background-color: black;
+}
 #search_form > #search_bar {
   width: 600px;
 }
 #search_first {
   display: flex;
-  margin-top: 40px;
+  margin-top: 10px;
   justify-content: space-between;
 }
 #search_first > h1 {
   margin: 0;
   line-height: 55px;
+  font-family: '박물관';
+  font-size: 30px;
+  letter-spacing: 2px;  
 }
 #search_first_right {
   display: flex;
@@ -2114,11 +2152,48 @@ table a,
   align-items: center;
   margin-left: 20px;
 }
+#level_button button{
+    border: 1px solid black;
+    outline: 0;
+    background: white;
+    font-family: '박물관';
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+    line-height: 35px;
+    border-radius: 100%;
+    margin-right: 3px;
+    cursor: pointer;
+}
+#level_button button:hover{
+	color: white;
+	background-color: black;
+}
 #search_button {
   display: flex;
   height: 55px;
   align-items: center;
   margin-left: 20px;
+}
+#search_count,
+#search_like,
+#search_recent{
+	border: 1px solid black;
+    outline: 0;
+    background: white;
+    font-family: '박물관';
+    font-size: 18px;
+    line-height: 35px;
+    margin-right: 3px;
+    cursor: pointer;
+    border-radius: 30px;
+    width: 74px;
+}
+#search_count:hover,
+#search_like:hover,
+#search_recent:hover{
+	color: white;
+	background-color: black;
 }
 /* 상세보기 */
 #articlepage a {
@@ -2690,5 +2765,8 @@ table a,
 .level_img{
 	width : 30px;
 	height : 30px;
+	margin-left: 4px;
+	position: relative;
+	top: -3px;	
 }
 

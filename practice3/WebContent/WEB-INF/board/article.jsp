@@ -42,7 +42,7 @@ String cpath = request.getContextPath();
 	<!-- ################################################################################################ -->
 	<!-- Top Background Image Wrapper -->
 	<div class="bgded overlay"
-		style="background-image: url('images/demo/backgrounds/01.png')">
+		style="background-image: url('images/demo/backgrounds/하늘.png')">
 		<!-- ################################################################################################ -->
 		<div class="wrapper row0">
 			<div id="topbar" class="hoc clear">
@@ -82,7 +82,7 @@ String cpath = request.getContextPath();
 					<!-- ################################################################################################ -->
 					<ul class="clear">
 						<li class="active"><a href="Index.do">Home</a></li>
-						<li><a href="youtube.do">차박 팁</a></li>
+						<li><a href="youtube.do">추천 유투브</a></li>
 						<%
 							if (members == null) {
 						%>

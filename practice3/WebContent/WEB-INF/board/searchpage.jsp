@@ -37,7 +37,7 @@ Licence URI: https://www.os-templates.com/template-terms
 	<!-- ################################################################################################ -->
 	<!-- Top Background Image Wrapper -->
 	<div class="bgded overlay"
-		style="background-image: url('images/demo/backgrounds/01.png')">
+		style="background-image: url('images/demo/backgrounds/자연.png')">
 		<!-- ################################################################################################ -->
 		<div class="wrapper row0">
 			<div id="topbar" class="hoc clear">
@@ -77,7 +77,7 @@ Licence URI: https://www.os-templates.com/template-terms
 					<!-- ################################################################################################ -->
 					<ul class="clear">
 						<li class="active"><a href="Index.do">Home</a></li>
-						<li><a href="youtube.do">차박 팁</a></li>
+						<li><a href="youtube.do">추천 유투브</a></li>
 						<%
 							if (members == null) {
 						%>
@@ -128,7 +128,7 @@ Licence URI: https://www.os-templates.com/template-terms
 	<div class="wrapper row3">
 		<main class="hoc container clear">
 			<form action="searchpage.do" method="post" id="search_form">
-					<input type="text" name="search" id="search_bar" />
+					<input type="text" name="search" id="search_bar" placeholder="검색어를 입력해주세요."/>
 					<input type="submit" value="검색" />
 			</form>
 			<hr/>
@@ -148,18 +148,19 @@ Licence URI: https://www.os-templates.com/template-terms
 				</div>
 			</div>
 			<hr/>
+			<br>
 			<%
 				for (SuperVO vo : list) {
 			%>
 			<div class="news_feed">
 				<a href="<%=cpath%>/article.do?article_num=<%=vo.getArticle_num()%>">
-					<img class="thumbnail" src="https://via.placeholder.com/300"
+					<img class="thumbnail" src="<%=vo.getCarping_pic1() %>"
 					alt="썸네일" />
 				</a>
 				<div class="contents">
 					<header>
 						<a href="<%=cpath%>/memberpage.do?mb_num=<%=vo.getMb_num()%>">
-							<img class="profile_pic" src="https://via.placeholder.com/70"
+							<img class="profile_pic" src="<%=vo.getMb_profile_pic() %>"
 							alt="프로필사진" />
 						</a>
 						<div class="article_top">
@@ -181,12 +182,19 @@ Licence URI: https://www.os-templates.com/template-terms
 										<%=vo.getArticle_cnt()%></div>
 									<div class="carpinglevel">
 										난이도
-										<%=vo.getCarping_level()%></div>
+										<%if(vo.getCarping_level().equals("상")) {%>
+											<img class="level_img" src="images/demo/backgrounds/상.png" />
+											<%}else if(vo.getCarping_level().equals("중")) {%>
+											<img class="level_img" src="images/demo/backgrounds/중.png" />
+											<%}else { %>
+											<img class="level_img" src="images/demo/backgrounds/하.png" />
+											<%} %>
+									</div>
 								</div>
 							</div>
 						</div>
 					</header>
-					<article>
+					<article class="article_content">
 						<a
 							href="<%=cpath%>/article.do?article_num=<%=vo.getArticle_num()%>">
 							<%=vo.getArticle_content()%>

@@ -77,7 +77,7 @@ Licence URI: https://www.os-templates.com/template-terms
 					<!-- ################################################################################################ -->
 					<ul class="clear">
 						<li class="active"><a href="Index.do">Home</a></li>
-						<li><a href="youtube.do">차박 팁</a></li>
+						<li><a href="youtube.do">추천 유투브</a></li>
 						<%
 							if (members == null) {
 						%>
@@ -294,7 +294,7 @@ Licence URI: https://www.os-templates.com/template-terms
 	<script>
 		var mapContainer = document.getElementById("map"), // 지도를 표시할 div
 		mapOption = {
-			center : new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+			center : new kakao.maps.LatLng(35.482074111417155, 127.98652334482115), // 지도의 중심좌표
 			level : 13, // 지도의 확대 레벨
 		};
 

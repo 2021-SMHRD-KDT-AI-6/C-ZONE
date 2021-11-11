@@ -9,6 +9,7 @@ import kr.smhrd.controller.BoardArticleFixController;
 import kr.smhrd.controller.BoardCntSearchController;
 import kr.smhrd.controller.BoardCommentDeleteController;
 import kr.smhrd.controller.BoardCommentInsertController;
+import kr.smhrd.controller.BoardEquipmentController;
 import kr.smhrd.controller.BoardIndexController;
 import kr.smhrd.controller.BoardLevelSearchController;
 import kr.smhrd.controller.BoardLikeSearchController;
@@ -66,6 +67,7 @@ public class HandlerMapping {
 		mappings.put("/ArticleFix.do", new BoardArticleFixController());
 		mappings.put("/ArticleFixComplete.do", new BoardArticleFixCompleteController());
 		mappings.put("/youtube.do", new BoardYoutubeController());
+		mappings.put("/equipment.do", new BoardEquipmentController());
 	}
 	public Controller getController(String key) {
 		return mappings.get(key);
