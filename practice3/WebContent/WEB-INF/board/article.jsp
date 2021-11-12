@@ -192,25 +192,14 @@ String cpath = request.getContextPath();
 					margin: 15px 15px;
 					"></div>
 					<div id="weather">
-        <div id="weather_title">광주</div>
-        <div id="weather_time">
-            <span>6시</span>
-            <span>12시</span>
-            <span>18시</span>
-            <span>24시</span>
-        </div>
+        <div id="weather_title">Now </div>
+        <div id="weather_content">
         <div id="weather_img">
-            <i class="fas fa-cloud"></i>
-            <i class="fas fa-sun"></i>
-            <i class="fas fa-snowflake"></i>
-            <i class="fas fa-cloud-showers-heavy"></i>
+
         </div>
         <div id="weather_temp">
-            <span>3℃</span>
-            <span>8℃</span>
-            <span>5℃</span>
-            <span>-2℃</span>
         </div>
+    </div>
     </div>
 				<hr style = "margin-top: 550px"/>
 				<div id="articlepage_content">
@@ -361,9 +350,31 @@ String cpath = request.getContextPath();
 		marker.setMap(map);
 	</script>
 	<script>
-		function commentUpdate(){
-			$('')
-		}
+	$.getJSON('http://api.openweathermap.org/data/2.5/weather?lat=<%=vo.getLatitude()%>&lon=<%=vo.getLongitude()%>&appid=d19125754412434c67742623d54b613a&units=metric',function(data){
+        let $Temp = Math.round(data.main.temp);
+        let $img = data.weather[0].main;
+        let $title = data.name;
+        console.log($img);
+        console.log($Temp);
+        console.log($title);
+        let img = document.querySelector('#weather_img');
+        let temp = document.querySelector('#weather_temp');
+        let title = document.querySelector('#weather_title');
+        if ($img === 'Clouds') {
+            img.innerHTML = '<i class="fas fa-cloud"></i>';
+        }else if ($img === 'Clear'){
+            img.innerHTML = '<i class="fas fa-sun"></i>';
+        }else if ($img === 'Rain'){
+            img.innerHTML = '<i class="fas fa-cloud-rain"></i>';
+        }else {
+            img.innerHTML = '<i class="fas fa-snowflake"></i>';
+        }
+        if ($Temp === 'Yach') {
+            $Temp = 'Gwangju';
+        }
+        temp.innerHTML = "<span>"+$Temp+"℃</span>";
+        title.innerHTML = "<span>Now "+$title+"</span>";
+        })
 	</script>
 </body>
 </html>

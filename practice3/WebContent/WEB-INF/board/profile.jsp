@@ -139,13 +139,21 @@ function gomypage(){
 			<input type="hidden" name="mb_num" value="<%=members.getMb_num() %>" />
 				<div class="fix_menu_1">
 					<div class="pic_fix">사진 수정</div>
-					<input class="pic_fix_input" type="file" name="pic_fix_input" />					
+					    <div id=profile___pic >
+						<div id="file_name" style="margin: 0;">
+						<input id="write_pic_file" type="text" name="carping_pic1" readonly="readonly" style="width: 195px;"/>
+						<label class="write_pic" name="carping_pic1" id="file_select" >파일선택
+						<input type="file" name="carping_pic1" onchange="javascript:document.getElementById('write_pic_file').value=this.value">
+						
+						</label>
+						</div>
+						</div>					
 				</div>	
 			</div>
 			<div class="fix_menu">
 				<div class="fix_menu_2">
 					<div class="nickname_fix">닉네임 수정</div>
-					<input class="nickname_fix_input" type="text"
+					<input class="nickname_fix_input" type="text" style="height: 27px;"
 						name="nickname_fix_input" maxlength="10" placeholder="nickname" value="<%=members.getMb_nickname()%>"></input>
 				</div>
 			</div>
