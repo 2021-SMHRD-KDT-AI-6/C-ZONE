@@ -84,7 +84,17 @@ function gomypage(){
 					<!-- ################################################################################################ -->
 					<ul class="clear">
 						<li class="active"><a href="Index.do">Home</a></li>
-						<li><a href="youtube.do">추천 유투브</a></li>
+						<li>
+							<a class="drop">추천</a>
+							<ul>
+								<li>
+									<a href="youtube.do">유투브</a>
+								</li>
+								<li>
+									<a href="equipment.do">장비</a>
+								</li>
+							</ul>
+						</li>
 						<% if(members==null){ %>
 						<li><a href="sl.do">글쓰기</a></li>
 						<li><a href="sl.do">마이페이지</a></li>

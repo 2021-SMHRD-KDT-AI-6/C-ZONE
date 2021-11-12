@@ -82,7 +82,17 @@ String cpath = request.getContextPath();
 					<!-- ################################################################################################ -->
 					<ul class="clear">
 						<li class="active"><a href="Index.do">Home</a></li>
-						<li><a href="youtube.do">추천 유투브</a></li>
+						<li>
+							<a class="drop">추천</a>
+							<ul>
+								<li>
+									<a href="youtube.do">유투브</a>
+								</li>
+								<li>
+									<a href="equipment.do">장비</a>
+								</li>
+							</ul>
+						</li>
 						<%
 							if (members == null) {
 						%>
@@ -181,7 +191,28 @@ String cpath = request.getContextPath();
 					float: right;
 					margin: 15px 15px;
 					"></div>
-				<hr style = "margin: 15px 15px"/>
+					<div id="weather">
+        <div id="weather_title">광주</div>
+        <div id="weather_time">
+            <span>6시</span>
+            <span>12시</span>
+            <span>18시</span>
+            <span>24시</span>
+        </div>
+        <div id="weather_img">
+            <i class="fas fa-cloud"></i>
+            <i class="fas fa-sun"></i>
+            <i class="fas fa-snowflake"></i>
+            <i class="fas fa-cloud-showers-heavy"></i>
+        </div>
+        <div id="weather_temp">
+            <span>3℃</span>
+            <span>8℃</span>
+            <span>5℃</span>
+            <span>-2℃</span>
+        </div>
+    </div>
+				<hr style = "margin-top: 550px"/>
 				<div id="articlepage_content">
 					<%=vo.getArticle_content()%>
 				</div>

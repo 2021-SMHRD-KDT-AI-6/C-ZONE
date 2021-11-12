@@ -25,16 +25,6 @@
 <%@ page import="java.io.FileOutputStream"%>
 
 
-
-
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="">
 <head>
@@ -52,7 +42,7 @@
 	<!-- ################################################################################################ -->
 	<!-- Top Background Image Wrapper -->
 	<div class="bgded overlay"
-		style="background-image: url('images/demo/backgrounds/01.png')">
+		style="background-image: url('images/demo/backgrounds/지도사진.jpg')">
 		<!-- ################################################################################################ -->
 		<div class="wrapper row0">
 			<div id="topbar" class="hoc clear">
@@ -140,19 +130,24 @@
 				<div id="write_top">
 					<div id="write_first">
 						<h1 id="write_title">제목</h1>
-						<input type="text" placeholder="제목" name="article_title" value = "<%=vo.getArticle_title()%>"/>
+						<input class="article__title" type="text" placeholder="제목" name="article_title" value = "<%=vo.getArticle_title()%>"/>
 					</div>
 					<hr />
 
 					<div id="write_second">
 						
-						<h1 id="write_pic">사진 첨부</h1>
-						<input id="write_pic_file" type="file" name="carping_pic1" />
+						<h1 class="write_pic">사진 첨부</h1>
+						<div id="file_name">
+						<label class="write_pic" name="carping_pic1" id="file_select">파일선택
+						<input type="file" name="carping_pic1" onchange="javascript:document.getElementById('write_pic_file').value=this.value">
+						</label>
+						<input id="write_pic_file" type="text" name="carping_pic1" readonly="readonly" />
+						</div>
 						<div id="write_level_form">
 							<h1 id="write_level">난이도</h1>
 							<%if (vo.getCarping_level().equals("상")){ %>
 						
-							<input type="radio" name="carping_level" value="상" checked /> 
+							<input class="levCheck" type="radio" name="carping_level" value="상" checked /> 
 							<label class="write_level_check" for="carping_level">상</label>
 							<input type="radio" name="carping_level" value="중" /> 
 							<label class="write_level_check" for="carping_level">중</label> 
@@ -163,22 +158,22 @@
 							</div>
 							<% }else if(vo.getCarping_level().equals("중")){ %>
 						
-							<input type="radio" name="carping_level" value="상"  /> 
+							<input class="levCheck" type="radio" name="carping_level" value="상"  /> 
 							<label class="write_level_check" for="carping_level">상</label>
-							<input type="radio" name="carping_level" value="중" checked/> 
+							<input class="levCheck" type="radio" name="carping_level" value="중" checked/> 
 							<label class="write_level_check" for="carping_level">중</label> 
-							<input type="radio" name="carping_level" value="하" /> 
+							<input class="levCheck" type="radio" name="carping_level" value="하" /> 
 							<label class="write_level_check" for="carping_level">하</label>
 							<div id="carping_level_explanation">
 								상 : 화장실 없음, 전기 안됨 <br /> 중 : 화장실 있음 <br /> 하 : 유료 차박지
 							</div>
 							<% }else{ %>
 						
-							<input type="radio" name="carping_level" value="상"  /> 
+							<input class="levCheck" type="radio" name="carping_level" value="상"  /> 
 							<label class="write_level_check" for="carping_level">상</label>
-							<input type="radio" name="carping_level" value="중" /> 
+							<input class="levCheck" type="radio" name="carping_level" value="중" /> 
 							<label class="write_level_check" for="carping_level">중</label> 
-							<input type="radio" name="carping_level" value="하" checked/> 
+							<input class="levCheck" type="radio" name="carping_level" value="하" checked/> 
 							<label class="write_level_check" for="carping_level">하</label>
 							<div id="carping_level_explanation">
 								상 : 화장실 없음, 전기 안됨 <br /> 중 : 화장실 있음 <br /> 하 : 유료 차박지
@@ -191,10 +186,10 @@
 					<div id="write_third">
 						<h1 id="write_location">위치</h1>
 						<div id="map"
-							style="width: 1200px; height: 550px; margin: 0 auto;"></div>
+							style="width: 1138px; height: 550px; margin: 0 auto;"></div>
 						</div>
 				</div>
-				<hr />
+				<hr style="margin-bottom:50px;"/>
 				<div id="write_fourth">
 					<textarea class="form-control" name="article_content" id="write_content" cols="135"
 						rows="50"><%=vo.getArticle_content() %></textarea>
@@ -307,6 +302,9 @@
 			height: 500,
 			enterMode: '2',
 		});
+	</script>
+	<script>
+		
 	</script>
 </body>
 </html>

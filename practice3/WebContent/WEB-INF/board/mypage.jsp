@@ -77,7 +77,17 @@ Licence URI: https://www.os-templates.com/template-terms
 					<!-- ################################################################################################ -->
 					<ul class="clear">
 						<li class="active"><a href="Index.do">Home</a></li>
-						<li><a href="youtube.do">추천 유투브</a></li>
+						<li>
+							<a class="drop">추천</a>
+							<ul>
+								<li>
+									<a href="youtube.do">유투브</a>
+								</li>
+								<li>
+									<a href="equipment.do">장비</a>
+								</li>
+							</ul>
+						</li>
 						<%
 							if (members == null) {
 						%>

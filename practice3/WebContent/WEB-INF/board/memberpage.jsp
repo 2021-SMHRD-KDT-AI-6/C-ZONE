@@ -74,7 +74,17 @@ Licence URI: https://www.os-templates.com/template-terms
 					<!-- ################################################################################################ -->
 					<ul class="clear">
 						<li class="active"><a href="Index.do">Home</a></li>
-						<li><a href="youtube.do">추천 유투브</a></li>
+						<li>
+							<a class="drop">추천</a>
+							<ul>
+								<li>
+									<a href="youtube.do">유투브</a>
+								</li>
+								<li>
+									<a href="equipment.do">장비</a>
+								</li>
+							</ul>
+						</li>
 						<%
 							if (members == null) {
 						%>
@@ -135,6 +145,7 @@ Licence URI: https://www.os-templates.com/template-terms
 					<p class="heading underline font-x2">정복지</p>
 				</div>
 				<div id="map" style="width: 1200px; height: 550px; margin: 0 auto"></div>
+				
 				<hr class="btmspace-80" />
 
 				<div class="sectiontitle">

@@ -70,7 +70,17 @@
 					<!-- ################################################################################################ -->
 					<ul class="clear">
 						<li class="active"><a href="Index.do">Home</a></li>
-						<li><a href="youtube.do">추천 유투브</a></li>
+						<li>
+							<a class="drop">추천</a>
+							<ul>
+								<li>
+									<a href="youtube.do">유투브</a>
+								</li>
+								<li>
+									<a href="equipment.do">장비</a>
+								</li>
+							</ul>
+						</li>
 						<li><a href="writeForm.do">글쓰기</a></li>
 						<li><a href="mypage.do">마이페이지</a></li>
 						<%
@@ -117,13 +127,18 @@
 				<div id="write_top">
 					<div id="write_first">
 						<h1 id="write_title">제목</h1>
-						<input type="text" placeholder="제목" name="article_title" />
+						<input class="article__title" type="text" placeholder="[장소] 제목을 입력해주세요" name="article_title" />
 					</div>
 					<hr />
 
 					<div id="write_second">
 						<h1 id="write_pic">사진 첨부</h1>
-						<input id="write_pic_file" type="file" name="carping_pic1" />
+						<div id="file_name">
+						<label class="write_pic" name="carping_pic1" id="file_select">파일선택
+						<input type="file" name="carping_pic1" onchange="javascript:document.getElementById('write_pic_file').value=this.value">
+						</label>
+						<input id="write_pic_file" type="text" name="carping_pic1" readonly="readonly" />
+						</div>
 						<div id="write_level_form">
 							<h1 id="write_level">난이도</h1>
 							<input type="radio" name="carping_level" value="상" checked /> <label
@@ -142,14 +157,14 @@
 					<div id="write_third">
 						<h1 id="write_location">위치</h1>
 						<div id="map"
-							style="width: 1200px; height: 550px; margin: 0 auto;"></div>
+							style="width: 1138px; height: 550px; margin: 0 auto;"></div>
 						</div>
 				</div>
 				<hr />
 				<div id="write_fourth">
 					<textarea class="form-control" name="article_content" id="write_content" cols="135"
 						rows="50"></textarea>
-					<input type="submit" id="write_complete" value="글쓰기 완료" />
+					<div><input type="submit" id="write_complete_" value="글쓰기 완료" /></div>
 				</div>
 			</form>
 		</main>

@@ -2033,7 +2033,11 @@ table a,
 /* ========================  ======================== */
 /* 글쓰기페이지 */
 #write_ h1 {
-  margin: 0;
+line-height: 66px;
+    padding-right: 20px;
+    font-family: "박물관";
+    margin:0px;
+    
 }
 #write_first {
   display: flex;
@@ -2042,30 +2046,52 @@ table a,
 #write_first > #write_title {
   padding-right: 20px;
   line-height: 43px;
+  font-family:"박물관";
 }
 #write_first > input {
   width: 1080px;
+  padding-left:10px
 }
 #write_second {
   display: flex;
 }
-#write_second > #write_pic {
+.levCheck {
+	margin-right:3px;
+}
+.article__title{
+	font-family:"고운밤";
+	font-size:20px;
+	font-weight:bold;
+} 
+#write_second > .write_pic {
   line-height: 66px;
   padding-right: 20px;
+  font-family:"박물관";
 }
 #write_second > #write_pic_file {
   line-height: 66px;
+    font-family:"박물관";
+}
+.write_pic{
+	outline:none;
+	cursor:pointer;
+	background-color:white;
+	font-family:"박물관";
 }
 #write_second > #write_level_form {
   display: flex;
   justify-content: space-between;
+  font-family:"박물관";
+  margin-left: 80px;
 }
 #write_second > #write_level_form > #write_level {
   line-height: 66px;
   margin-right: 10px;
+  font-family:"박물관";
 }
 #write_second > #write_level_form > .write_level_check {
   line-height: 66px;
+  font-family:"박물관";
 }
 #write_second > #write_level_form > input[type="radio"] {
   margin: 27px 10px 0 10px;
@@ -2076,9 +2102,10 @@ table a,
 #write_third {
   overflow: hidden;
   margin-bottom: 20px;
+  font-family:"박물관";
 }
 #write_third > #write_location {
-  padding: 20px 0 20px 0;
+    font-family:"박물관";
 }
 #write_fourth {
   margin-top: 20px;
@@ -2238,7 +2265,7 @@ table a,
   margin-bottom: 30px;
 }
 #articlepage_like_num {
-  margin-right: 10px;
+  margin-right: 5px;
 }
 #articlepage_like {
   display: flex;
@@ -2249,31 +2276,30 @@ table a,
   text-align: center;
   font-family: '고운밤';
   font-size: 22px;
-    line-height:130%;
+  line-height:200%;
 }
-.content_br{
-
-}
-br{
-	margin-bottom:1px;
+#articlepage_reg_date{
+	font-family: '박물관';
 }
 #articlepage_third{
    display: flex;
    font-family:"박물관";
+   margin-top: 6px;
+   margin-left: 15px;
 }
 #articlepage_level{
    margin-right: 20px;
    font-family:"박물관";
-   font-size: 13px;
+   font-size: 15px;
 }
 #articlepage_cnt{
    margin-right: 20px;
    font-family:"박물관";
-   font-size: 13px;
+   font-size: 15px;
 }
 #articlepage_like_num{
 	font-family:"박물관";
-	font-size: 13px;
+	font-size: 15px;
 }
 .level_img2{
 	width:20px;
@@ -2284,6 +2310,14 @@ br{
 .heart_btn{
    color: red;
    cursor: pointer;
+   font-size: 20px;
+}
+.heart_btn:hover{
+	transform: scale(1.05);
+	transition: 0.2s;
+}
+.heart_btn:not(:hover){
+	transition: 0.2s;
 }
 #article_thumbnail{
    width: 1000px;
@@ -2302,7 +2336,9 @@ br{
   font-family:"박물관";
    font-size: 17px; 
 }
-
+.articlepage_reg_date{
+	font-family: '박물관';
+}
 .comment {
   margin-top: 20px;
 }
@@ -2849,3 +2885,122 @@ br{
 	width: 350px;
 	height:230px;
 }
+.drop{
+	cursor: pointer !important;
+}
+#file_select{
+	margin: 0 !important;
+}
+#file_name{
+	margin-top: 17px;
+}
+#file_name label {
+    position:relative;
+    cursor:pointer;
+    display:inline-block;
+    vertical-align:middle;
+    overflow:hidden;
+    width:100px;
+    height:30px;
+    background:#777;
+    color:#fff;
+    text-align:center;
+    line-height:30px;
+}
+#file_name label input {
+    position:absolute;
+    width:0;
+    height:0;
+    overflow:hidden;
+}
+#file_name input[type=text] {
+    vertical-align:middle;
+    display:inline-block;
+    width:350px;
+    height:28px;
+    line-height:28px;
+    font-size:11px;
+    padding:0;
+    border:0;
+    border:1px solid #777;
+}
+#article_fix{
+	margin-left:45%;
+	margin-top:50px;
+	width:100px;
+	height:40px;
+	background-color:white;
+	font-family:"박물관";
+	
+}
+#article_fix:hover{
+	background-color:black;
+	color:white;
+	cursor:pointer;
+}
+#map{
+	position: absolute !important;
+	z-index: 1;
+}
+#weather{
+            width: 300px;
+            height: 150px;
+            background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);;
+            text-align: center;
+            font-size: 20px;
+            position: absolute;
+            z-index: 124;
+            margin-top: 365px;
+            margin-left: 16px;
+            border-top-right-radius: 25px;
+        }
+        #weather_title{
+            font-size: 30px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-family: '티웨이';
+        }
+        #weather_time{
+            font-size: 18px;
+            font-family: '티웨이';
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px 0 30px;
+        }
+        #weather_img{
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            margin: 5px 0;
+        }
+        #weather_img i{
+            font-size: 40px;
+            color: whitesmoke;
+        }
+        #weather_temp{
+            font-size: 18px;
+            font-weight: bold;
+            font-family: '티웨이';
+            display: flex;
+            justify-content: space-between;
+            padding: 0 24px 0 30px;
+        }
+        
+        #write_fourth{
+        margin-top:550px;
+        
+        }
+        
+        #write_complete_{
+        margin-top:25px;
+        margin-left:45%;
+        padding:10px 20px;
+        font-family:"박물관";
+        background-color:white;
+        }
+        #write_complete_:hover{
+        cursor:pointer;
+        background-color:black;
+        color:white;
+        }
+        
