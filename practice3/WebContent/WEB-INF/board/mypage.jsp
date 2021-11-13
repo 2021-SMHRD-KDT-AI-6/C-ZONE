@@ -323,7 +323,7 @@ Licence URI: https://www.os-templates.com/template-terms
 		marker.setMap(map);
 		
 		var infowindow = new kakao.maps.InfoWindow({
-			content : '<div><%=vo.getArticle_title()%></div>'
+			content : "<div id='marker_title'><%=vo.getArticle_title()%></div>"
 		});
 		
 		kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));

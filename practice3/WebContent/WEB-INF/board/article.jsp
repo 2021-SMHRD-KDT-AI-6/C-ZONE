@@ -185,6 +185,7 @@ String cpath = request.getContextPath();
 				<hr />
 					<div id="map"
 					style="
+					position: absolute;
                     margin-right: 3%;
                     width: 1100px;
 					height: 500px; 

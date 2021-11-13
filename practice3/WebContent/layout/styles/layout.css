@@ -1930,7 +1930,7 @@ table a,
 }
 
 #profile_ {
-  margin: 50px 50px;
+  margin: 0 50px;
   text-align: center;
   padding: 70px 0px;
 }
@@ -1953,14 +1953,19 @@ table a,
 }
 
 .nickname_fix {
-  margin-right: 20px;
+  margin-right: 23px;
+  line-height: 27px;
 }
-
+.nickname_fix_input{
+	padding-left: 3px;
+	width: 196px;
+}
 .fix_menu_1,
 .fix_menu_2 {
   display: flex;
   text-align: center;
   color: black;
+  font-family: '박물관';
 }
 
 .fix_menu_1 {
@@ -1986,12 +1991,24 @@ table a,
 }
 
 .fix_Btn {
-  border-radius: 3px;
-  background: transparent;
   display: inline-block;
+  background-color: white;
   text-align: center;
   cursor: pointer;
   color: black;
+  border: 1px solid black;
+  outline: 0;
+  width: 80px;
+  height: 40px;
+  font-family: '박물관';
+  letter-spacing:3px;
+  padding-left:9px;
+  font-size: 17px;
+  border-radius: 100px;
+}
+.fix_Btn:hover{
+	color: white;
+	background: black;
 }
 
 /* ======================== 마이페이지 ======================== */
@@ -2011,11 +2028,13 @@ table a,
   width: 200px;
   height: 200px;
   background-color: white;
+      margin-bottom: 15px;
 }
 #member_name {
   text-align: center;
-  padding-top: 18px;
   font-size: 30px;
+  margin-left: 20px;
+  font-family: '박물관';
 }
 
 .profile_fix {
@@ -2945,7 +2964,6 @@ line-height: 66px;
 	cursor:pointer;
 }
 #map{
-	position: absolute !important;
 	z-index: 1;
 }
 #weather{
@@ -2991,3 +3009,9 @@ line-height: 66px;
         margin-top: 5px;
         margin-right: 37px;
         }
+#marker_title{
+	font-family: '티웨이';
+	padding: 5px;
+	text-align: center;
+	white-space: nowrap;
+	}

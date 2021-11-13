@@ -44,7 +44,7 @@ function gomypage(){
 	<!-- ################################################################################################ -->
 	<!-- Top Background Image Wrapper -->
 	<div class="bgded overlay"
-		style="background-image: url('images/demo/backgrounds/01.png')">
+		style="background-image: url('images/demo/backgrounds/후광.jpg')">
 		<!-- ################################################################################################ -->
 		<div class="wrapper row0">
 			<div id="topbar" class="hoc clear">
@@ -141,9 +141,9 @@ function gomypage(){
 					<div class="pic_fix">사진 수정</div>
 					    <div id=profile___pic >
 						<div id="file_name" style="margin: 0;">
-						<input id="write_pic_file" type="text" name="carping_pic1" readonly="readonly" style="width: 195px;"/>
-						<label class="write_pic" name="carping_pic1" id="file_select" >파일선택
-						<input type="file" name="carping_pic1" onchange="javascript:document.getElementById('write_pic_file').value=this.value">
+						<input id="write_pic_file" type="text" name="pic_fix_input" readonly="readonly" style="width: 195px;"/>
+						<label class="write_pic" name="pic_fix_input" id="file_select" >파일선택
+						<input type="file" name="pic_fix_input" onchange="javascript:document.getElementById('write_pic_file').value=this.value">
 						
 						</label>
 						</div>
