@@ -2950,15 +2950,31 @@ line-height: 66px;
     border:1px solid #777;
 }
 #article_fix{
-	margin-left:45%;
+	margin-left:43%;
 	margin-top:50px;
-	width:100px;
+	width:150px;
 	height:40px;
 	background-color:white;
 	font-family:"박물관";
-	
+	border-radius: 100px;
+	font-size: 18px;	
 }
 #article_fix:hover{
+	background-color:black;
+	color:white;
+	cursor:pointer;
+}
+#write_complete_{
+	margin-left:43%;
+	margin-top:50px;
+	width:150px;
+	height:40px;
+	background-color:white;
+	font-family:"박물관";
+	border-radius: 100px;
+	font-size: 18px;
+}
+#write_complete_:hover{
 	background-color:black;
 	color:white;
 	cursor:pointer;
