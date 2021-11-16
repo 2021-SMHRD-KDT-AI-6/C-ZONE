@@ -278,20 +278,20 @@ Licence URI: https://www.os-templates.com/template-terms
 	
 	
 <script>
-let mb_id = document.querySelector('input[name="mb_id"]');
+/* let mb_id = document.querySelector('input[name="mb_id"]');
 let mb_pwd = document.querySelector('input[name="mb_pwd"]');
 let mb_nickname = document.querySelector('input[name="mb_nickname"]');
 function signUpCheck(){
-	if(mb_id.value == ""){
+	if(mb_id.value === ""){
 console.log(mb_id.value);
 		alert('아이디를 입력해주세요');
 		mb_id.focus();
 		return false
-	}else if(mb_pwd.value == ""){
+	}else if(mb_pwd.value === ""){
 		alert('패스워드를 입력해주세요');
 		mb_pwd.focus();
 		return false
-	}else if(mb_nickname.value == ""){
+	}else if(mb_nickname.value === ""){
 		alert('닉네임을 입력해주세요');
 		mb_nickname.focus();
 		return false
@@ -300,7 +300,7 @@ console.log(mb_id.value);
 		return true
 	}
 	
-}
+} */
 </script>
 <script >
 let id_text = document.querySelector('.id_text');

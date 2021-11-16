@@ -28,7 +28,7 @@
 		select m.mb_profile_pic, m.mb_nickname, a.*
 		from articles a, members m
 		where a.mb_num=m.mb_num and a.mb_num=#{mb_num}
-		order by a.article_num desc
+		order by a.reg_date desc
 	</select>
 	
 	<insert id="write" parameterType="kr.smhrd.util.SuperVO">
@@ -63,7 +63,7 @@
 		where
 		a.article_num = c.article_num and c.mb_num = m.mb_num and
 		a.article_num = #{article_num}
-		order by c.comment_num desc
+		order by c.comment_num asc
 	</select>
 
 	<insert id="commentInsert" parameterType="kr.smhrd.util.SuperVO">

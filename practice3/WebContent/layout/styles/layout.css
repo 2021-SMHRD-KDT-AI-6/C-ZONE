@@ -1058,7 +1058,6 @@ nav ol {
   z-index: 999;
   display: inline-block;
   position: fixed;
-  visibility: hidden;
   bottom: 20px;
   right: 20px;
   width: 36px;
@@ -2029,6 +2028,13 @@ table a,
   height: 200px;
   background-color: white;
       margin-bottom: 15px;
+}
+#member_profile_pic:hover{
+	transform: scale(1.02);
+	transition: 0.3s;
+}
+#member_profile_pic:not(:hover){
+	transition: 0.3s;
 }
 #member_name {
   text-align: center;

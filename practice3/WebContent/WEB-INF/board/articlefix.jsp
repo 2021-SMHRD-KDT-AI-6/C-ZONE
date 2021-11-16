@@ -257,9 +257,9 @@
 	<!-- ################################################################################################ -->
 	<a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
 	<!-- JAVASCRIPTS -->
-	<script src="../layout/scripts/jquery.min.js"></script>
-	<script src="../layout/scripts/jquery.backtotop.js"></script>
-	<script src="../layout/scripts/jquery.mobilemenu.js"></script>
+	<script src="layout/scripts/jquery.min.js"></script>
+	<script src="layout/scripts/jquery.backtotop.js"></script>
+	<script src="layout/scripts/jquery.mobilemenu.js"></script>
 	<script type="text/javascript"
 		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d98d9b2f0c4a6046323ef26fd36b2b16"></script>
 	<script>

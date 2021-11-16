@@ -230,7 +230,6 @@ String cpath = request.getContextPath();
 					<form action="commentDelete.do" id="comment_delete">
 						<input type="hidden" name="article_num" value="<%=vo.getArticle_num() %>" />
 						<input type="hidden" name="comment_num" value="<%=comment.getComment_num() %>" />
-						<button class="DG" onclick="commentUpdate()">수정</button>
 						<input class="DG"type="submit" value="삭제" />
 					</form>
 					<% } %>
@@ -324,9 +323,9 @@ String cpath = request.getContextPath();
 	<!-- ################################################################################################ -->
 	<a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
 	<!-- JAVASCRIPTS -->
-	<script src="../layout/scripts/jquery.min.js"></script>
-	<script src="../layout/scripts/jquery.backtotop.js"></script>
-	<script src="../layout/scripts/jquery.mobilemenu.js"></script>
+	<script src="layout/scripts/jquery.min.js"></script>
+	<script src="layout/scripts/jquery.backtotop.js"></script>
+	<script src="layout/scripts/jquery.mobilemenu.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script type="text/javascript"
 		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d98d9b2f0c4a6046323ef26fd36b2b16"></script>
